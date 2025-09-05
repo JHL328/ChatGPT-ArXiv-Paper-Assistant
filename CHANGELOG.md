@@ -1,5 +1,9 @@
 # Changelog
 
+### 2025-9-5
+
+- Added GPT-5 and updated prices.
+
 ### 2025-5-27
 
 - Added system prompts for GPT filtering.
