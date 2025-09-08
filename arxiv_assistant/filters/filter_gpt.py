@@ -117,7 +117,6 @@ def call_chatgpt(system_prompt, user_prompt, openai_client, model, limit_per_min
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
             ],
-            temperature=0.0,
             seed=0,
         )
 
