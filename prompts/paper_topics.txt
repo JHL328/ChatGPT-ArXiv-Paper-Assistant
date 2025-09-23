@@ -18,6 +18,30 @@ Use the following relevance criteria to focus on foundational research. Keep **r
    - Relevant: Insights into how deep networks encode information, feature/dictionary learning, sparse/contrastive methods, training dynamics in neural networks.
    - Irrelevant: Standard applications of known techniques lacking new theoretical or methodological contributions.
 
+5. ML Systems
+   - Goal: Keep ML-Systems work that provides fundamental, generalizable systems/algorithmic insights for training, inference, or deployment — not one-off application engineering.
+   - Relevant: 
+      - Distributed training algorithms and optimizations with theoretical/empirical scalability analysis (e.g., new sync/async protocols, communication compression with provable/empirical benefits).
+      - Memory / storage / I/O management improvements for very large models (hierarchical memory, recompute/checkpoint strategies, rematerialization optimizations).
+      - Communication & networking innovations (efficient AllReduce variants, topology-aware scheduling, bandwidth/latency–aware strategies).
+      - Compiler & automatic code-generation advances that enable operator fusion, memory scheduling, quantization-friendly IR passes.
+      - Heterogeneous acceleration & hardware–software co-design (CPU–GPU–NPU scheduling, kernel-level innovations with measurable gains).
+      - Inference-serving systems with strong evidence of low-latency / high-throughput tradeoffs, model-parallel + pipeline concurrency strategies, SLA-aware resource elasticity.
+      - Reproducible benchmarks & measurement methodologies that reveal system behavior and provide open tools/protocols.
+      - Algorithm–system co-design (e.g., systems built specifically for sparse/low-rank models, joint approximations that trade accuracy for system efficiency).
+      - Work with convincing quantitative/theoretical analysis, ablations, and results that generalize across topologies / hardware / model scales.
+
+   -Irrelevant (Filter out):
+      - Papers that simply apply an existing framework/library to a dataset and report speedups without new system/algorithmic design.
+      - Purely application-focused engineering for a single domain (medical imaging, autonomous driving, etc.) without extracting generalizable system principles.
+      - Deployment notes or single-node config checklists without system-level analysis or broader lessons.
+
+   - Practical filters / judging criteria:
+      - Does the paper include publicly reproducible code or benchmarks?
+      - Does it extract general principles or design patterns (not only case-specific optimizations)?
+      - Is there theoretical / complexity / communication-cost analysis or large-scale, multi-setting empirical validation?
+      - Does it address low-level kernels / communication / compilation / memory or propose a new system paradigm (e.g., new parallelism model, hierarchical storage design, combined algorithm/system optimization)?
+
 **Keywords:**
 
 - Relevant: Mixture of Experts (MoE), Representation Learning, Compression/Efficiency, Sparse/Sparsity, Pruning, Quantization, Low-rank, Foundation Model, etc.
