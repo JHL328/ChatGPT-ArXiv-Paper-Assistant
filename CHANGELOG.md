@@ -3,6 +3,7 @@
 ### 2025-9-23
 
 - Fixed the connection error when `OPENAI_BASE_URL` isn't set.
+- Updated the versions of some packages in `requirements.txt`.
 
 ### 2025-9-8
 
