@@ -1,5 +1,9 @@
 # Changelog
 
+### 2025-9-23
+
+- Fixed the connection error when `OPENAI_BASE_URL` isn't set.
+
 ### 2025-9-8
 
 - Fixed a bug that caused gpt-5 failed to work.
