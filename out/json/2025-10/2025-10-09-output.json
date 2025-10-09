@@ -1,0 +1,539 @@
+{
+    "2510.06477": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Enrique Queipo-de-Llano",
+            "\\'Alvaro Arroyo",
+            "Federico Barbero",
+            "Xiaowen Dong",
+            "Michael Bronstein",
+            "Yann LeCun",
+            "Ravid Shwartz-Ziv"
+        ],
+        "title": "Attention Sinks and Compression Valleys in LLMs are Two Sides of the Same Coin",
+        "abstract": "Attention sinks and compression valleys have attracted significant attention as two puzzling phenomena in large language models, but have been studied in isolation. In this work, we present a surprising connection between attention sinks and compression valleys, tracing both to the formation of massive activations in the residual stream. We prove theoretically that massive activations necessarily produce representational compression and establish bounds on the resulting entropy reduction. Through experiments across several models (410M-120B parameters), we confirm that when the beginning-of-sequence token develops extreme activation norms in the middle layers, both compression valleys and attention sinks emerge simultaneously. Targeted ablation studies validate our theoretical predictions. This unified view motivates us to propose the Mix-Compress-Refine theory of information flow, as an attempt to explain how LLMs organize their computation in depth by controlling attention and representational compression via massive activations. Specifically, we posit that Transformer-based LLMs process tokens in three distinct phases: (1) broad mixing in the early layers, (2) compressed computation with limited mixing in the middle layers, and (3) selective refinement in the late layers. Our framework helps explain why embedding tasks perform best at intermediate layers, whereas generation tasks benefit from full-depth processing, clarifying differences in task-dependent representations.",
+        "arxiv_id": "2510.06477"
+    },
+    "2510.06303": {
+        "SCORE": 19,
+        "ARXIVID": "2510.06303",
+        "COMMENT": "Model Architecture + Efficiency + MoE: converts AR models to blockwise discrete diffusion for parallel inference, preserving AR performance; validated across dense and Mixture-of-Experts models with speedups.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Shuang Cheng",
+            "Yihan Bian",
+            "Dawei Liu",
+            "Yuhua Jiang",
+            "Yihao Liu",
+            "Linfeng Zhang",
+            "Wenhai Wang",
+            "Qipeng Guo",
+            "Kai Chen",
+            "Biqing Qi",
+            "Bowen Zhou"
+        ],
+        "title": "SDAR: A Synergistic Diffusion-AutoRegression Paradigm for Scalable Sequence Generation",
+        "abstract": "We propose SDAR, a Synergistic Diffusion-Autoregression paradigm that unifies the training efficiency of autoregressive models with the parallel inference capability of diffusion. Instead of costly end-to-end diffusion training, SDAR performs a lightweight paradigm conversion that transforms a well-trained autoregressive (AR) model into a blockwise diffusion model through brief, data-efficient adaptation. During inference, SDAR generates sequences autoregressively across blocks for global coherence while decoding all tokens within each block in parallel via a discrete diffusion process. Extensive experiments show that AR models remain substantially more compute-efficient than masked diffusion models, providing a strong foundation for adaptation. Building on this insight, SDAR achieves efficient AR-to-diffusion conversion with minimal cost, preserving AR-level performance while enabling parallel generation. Scaling studies across dense and Mixture-of-Experts architectures confirm that SDAR scales without compromise: larger models exhibit stronger robustness to block size and decoding thresholds, yielding greater speedups without accuracy loss. Beyond efficiency, SDAR demonstrates enhanced reasoning and domain adaptability. Our 30B MoE model surpasses its AR counterpart on challenging scientific reasoning benchmarks such as GPQA and ChemBench, and gains further improvements under test-time scaling methods like majority voting and pass@k. Together, these results establish SDAR as a practical paradigm that combines the strengths of autoregression and diffusion for scalable, high-throughput reasoning.",
+        "arxiv_id": "2510.06303"
+    },
+    "2510.06662": {
+        "SCORE": 19,
+        "ARXIVID": "2510.06662",
+        "COMMENT": "Model Architecture (theory): rigorous analysis of transformer approximation power vs. attention head count with upper/lower bounds, including first nonlinear lower bound of this type.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Penghao Yu",
+            "Haotian Jiang",
+            "Zeyu Bao",
+            "Ruoxi Yu",
+            "Qianxiao Li"
+        ],
+        "title": "The Effect of Attention Head Count on Transformer Approximation",
+        "abstract": "Transformer has become the dominant architecture for sequence modeling, yet a detailed understanding of how its structural parameters influence expressive power remains limited. In this work, we study the approximation properties of transformers, with particular emphasis on the role of the number of attention heads. Our analysis begins with the introduction of a generalized $D$-retrieval task, which we prove to be dense in the space of continuous functions, thereby providing the basis for our theoretical framework. We then establish both upper and lower bounds on the parameter complexity required for $\\epsilon$-approximation. Specifically, we show that transformers with sufficiently many heads admit efficient approximation, whereas with too few heads, the number of parameters must scale at least as $O(1/\\epsilon^{cT})$, for some constant $c$ and sequence length $T$. To the best of our knowledge, this constitutes the first rigorous lower bound of this type in a nonlinear and practically relevant setting. We further examine the single-head case and demonstrate that an embedding dimension of order $O(T)$ allows complete memorization of the input, where approximation is entirely achieved by the feed-forward block. Finally, we validate our theoretical findings with experiments on both synthetic data and real-world tasks, illustrating the practical relevance of our results.",
+        "arxiv_id": "2510.06662"
+    },
+    "2510.07205": {
+        "SCORE": 19,
+        "ARXIVID": "2510.07205",
+        "COMMENT": "Model Architecture \u2014 rigorous theory for soft-routed Mixture-of-Experts with joint router/expert training; convergence guarantees and post-training pruning to global optimality.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Fangshuo Liao",
+            "Anastasios Kyrillidis"
+        ],
+        "title": "Guided by the Experts: Provable Feature Learning Dynamic of Soft-Routed Mixture-of-Experts",
+        "abstract": "Mixture-of-Experts (MoE) architectures have emerged as a cornerstone of modern AI systems. In particular, MoEs route inputs dynamically to specialized experts whose outputs are aggregated through weighted summation. Despite their widespread application, theoretical understanding of MoE training dynamics remains limited to either separate expert-router optimization or only top-1 routing scenarios with carefully constructed datasets. This paper advances MoE theory by providing convergence guarantees for joint training of soft-routed MoE models with non-linear routers and experts in a student-teacher framework. We prove that, with moderate over-parameterization, the student network undergoes a feature learning phase, where the router's learning process is ``guided'' by the experts, that recovers the teacher's parameters. Moreover, we show that a post-training pruning can effectively eliminate redundant neurons, followed by a provably convergent fine-tuning process that reaches global optimality. To our knowledge, our analysis is the first to bring novel insights in understanding the optimization landscape of the MoE architecture.",
+        "arxiv_id": "2510.07205"
+    },
+    "2510.07019": {
+        "SCORE": 18,
+        "ARXIVID": "2510.07019",
+        "COMMENT": "Model Architecture: hybrid linear/full attention for Transformers with single-softmax fusion; Efficiency: long-context memory via linear RNN KV slots and sliding-window control.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Jusen Du",
+            "Jiaxi Hu",
+            "Tao Zhang",
+            "Weigao Sun",
+            "Yu Cheng"
+        ],
+        "title": "Native Hybrid Attention for Efficient Sequence Modeling",
+        "abstract": "Transformers excel at sequence modeling but face quadratic complexity, while linear attention offers improved efficiency but often compromises recall accuracy over long contexts. In this work, we introduce Native Hybrid Attention (NHA), a novel hybrid architecture of linear and full attention that integrates both intra \\& inter-layer hybridization into a unified layer design. NHA maintains long-term context in key-value slots updated by a linear RNN, and augments them with short-term tokens from a sliding window. A single \\texttt{softmax attention} operation is then applied over all keys and values, enabling per-token and per-head context-dependent weighting without requiring additional fusion parameters. The inter-layer behavior is controlled through a single hyperparameter, the sliding window size, which allows smooth adjustment between purely linear and full attention while keeping all layers structurally uniform. Experimental results show that NHA surpasses Transformers and other hybrid baselines on recall-intensive and commonsense reasoning tasks. Furthermore, pretrained LLMs can be structurally hybridized with NHA, achieving competitive accuracy while delivering significant efficiency gains. Code is available at https://github.com/JusenD/NHA.",
+        "arxiv_id": "2510.07019"
+    },
+    "2510.06557": {
+        "SCORE": 18,
+        "ARXIVID": "2510.06557",
+        "COMMENT": "Matches HPC/ML Systems: algorithm\u2013system co-design that makes reasoning Markovian to achieve linear compute and constant memory by chunking context, fundamentally reducing quadratic attention costs for long CoT.",
+        "RELEVANCE": 9,
+        "NOVELTY": 9,
+        "authors": [
+            "Milad Aghajohari",
+            "Kamran Chitsaz",
+            "Amirhossein Kazemnejad",
+            "Sarath Chandar",
+            "Alessandro Sordoni",
+            "Aaron Courville",
+            "Siva Reddy"
+        ],
+        "title": "The Markovian Thinker",
+        "abstract": "Reinforcement learning (RL) has recently become a strong recipe for training reasoning LLMs that produce long chains of thought (LongCoT). Yet the standard RL \"thinking environment\", where the state is the prompt plus all prior reasoning tokens, makes the state unbounded and forces attention-based policies to pay quadratic compute as thoughts lengthen. We revisit the environment itself. We propose Markovian Thinking, a paradigm in which the policy advances reasoning while conditioning on a constant-size state, decoupling thinking length from context size. As an immediate consequence this yields linear compute with constant memory. We instantiate this idea with Delethink, an RL environment that structures reasoning into fixed-size chunks. Within each chunk, the model thinks as usual; at the boundary, the environment resets the context and reinitializes the prompt with a short carryover. Through RL, the policy learns to write a textual state near the end of each chunk sufficient for seamless continuation of reasoning after reset. Trained in this environment, an R1-Distill 1.5B model reasons in 8K-token chunks yet thinks up to 24K tokens, matching or surpassing LongCoT-RL trained with a 24K budget. With test-time scaling, Delethink continues to improve where LongCoT plateaus. The effect of linear compute is substantial: we empirically estimate at 96K average thinking length LongCoT-RL costs 27 H100-months vs. 7 for Delethink. Analysis at RL initialization shows off-the-shelf reasoning models (1.5B-120B) often sample Markovian traces zero-shot across diverse benchmarks, providing positive samples that make RL effective at scale. Our results show that redesigning the thinking environment is a powerful lever: it enables very long reasoning without quadratic overhead and opens a path toward efficient, scalable reasoning LLMs.",
+        "arxiv_id": "2510.06557"
+    },
+    "2510.06824": {
+        "SCORE": 17,
+        "ARXIVID": "2510.06824",
+        "COMMENT": "Matches Model Architecture/Efficiency: proposes single-token numeric tokenization (BitTokens) via IEEE 754 representations to improve numeracy and computational efficiency.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Linus Kreitner",
+            "Paul Hager",
+            "Jonathan Mengedoht",
+            "Georgios Kaissis",
+            "Daniel Rueckert",
+            "Martin J. Menten"
+        ],
+        "title": "Efficient numeracy in language models through single-token number embeddings",
+        "abstract": "To drive progress in science and engineering, large language models (LLMs) must be able to process large amounts of numerical data and solve long calculations efficiently. This is currently only possible through the use of external tools or extensive reasoning chains, either limiting the numerical intuition of LLMs or limiting the length of problems they can solve. We show that frontier LLMs require excessive amounts of reasoning tokens to solve even basic calculations, which is exacerbated by their tokenization strategies that split single numbers into multiple tokens. This motivates the need for efficient and effective single-token number encodings. We introduce a set of desiderata for such encodings and show that existing approaches fail to fulfill them. To address these shortcomings, we propose BitTokens, a novel tokenization strategy that embeds any number into a single token using its IEEE 754 binary floating-point representation. Through extensive experiments we show that our BitTokens allow even small language models to learn algorithms that solve basic arithmetic operations nearly perfectly. This newly gained efficiency could expand the length and complexity of problems language models can solve.",
+        "arxiv_id": "2510.06824"
+    },
+    "2510.06646": {
+        "SCORE": 17,
+        "ARXIVID": "2510.06646",
+        "COMMENT": "Representation Learning/Architecture analysis: rigorous evaluation of machine-learned operators\u2019 multi-resolution generalization and a data-driven training protocol to fix aliasing.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Mansi Sakarvadia",
+            "Kareem Hegazy",
+            "Amin Totounferoush",
+            "Kyle Chard",
+            "Yaoqing Yang",
+            "Ian Foster",
+            "Michael W. Mahoney"
+        ],
+        "title": "The False Promise of Zero-Shot Super-Resolution in Machine-Learned Operators",
+        "abstract": "A core challenge in scientific machine learning, and scientific computing more generally, is modeling continuous phenomena which (in practice) are represented discretely. Machine-learned operators (MLOs) have been introduced as a means to achieve this modeling goal, as this class of architecture can perform inference at arbitrary resolution. In this work, we evaluate whether this architectural innovation is sufficient to perform \"zero-shot super-resolution,\" namely to enable a model to serve inference on higher-resolution data than that on which it was originally trained. We comprehensively evaluate both zero-shot sub-resolution and super-resolution (i.e., multi-resolution) inference in MLOs. We decouple multi-resolution inference into two key behaviors: 1) extrapolation to varying frequency information; and 2) interpolating across varying resolutions. We empirically demonstrate that MLOs fail to do both of these tasks in a zero-shot manner. Consequently, we find MLOs are not able to perform accurate inference at resolutions different from those on which they were trained, and instead they are brittle and susceptible to aliasing. To address these failure modes, we propose a simple, computationally-efficient, and data-driven multi-resolution training protocol that overcomes aliasing and that provides robust multi-resolution generalization.",
+        "arxiv_id": "2510.06646"
+    },
+    "2510.07304": {
+        "SCORE": 17,
+        "ARXIVID": "2510.07304",
+        "COMMENT": "ML Systems & HW\u2013SW co-design \u2014 efficient DP training with correlated noises via precomputed noise storage and near-memory processing; strong system-level acceleration.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Donghwan Kim",
+            "Xin Gu",
+            "Jinho Baek",
+            "Timothy Lo",
+            "Younghoon Min",
+            "Kwangsik Shin",
+            "Jongryool Kim",
+            "Jongse Park",
+            "Kiwan Maeng"
+        ],
+        "title": "Cocoon: A System Architecture for Differentially Private Training with Correlated Noises",
+        "abstract": "Machine learning (ML) models memorize and leak training data, causing serious privacy issues to data owners. Training algorithms with differential privacy (DP), such as DP-SGD, have been gaining attention as a solution. However, DP-SGD adds a noise at each training iteration, which degrades the accuracy of the trained model. To improve accuracy, a new family of approaches adds carefully designed correlated noises, so that noises cancel out each other across iterations. We performed an extensive characterization study of these new mechanisms, for the first time to the best of our knowledge, and show they incur non-negligible overheads when the model is large or uses large embedding tables. Motivated by the analysis, we propose Cocoon, a hardware-software co-designed framework for efficient training with correlated noises. Cocoon accelerates models with embedding tables through pre-computing and storing correlated noises in a coalesced format (Cocoon-Emb), and supports large models through a custom near-memory processing device (Cocoon-NMP). On a real system with an FPGA-based NMP device prototype, Cocoon improves the performance by 2.33-10.82x(Cocoon-Emb) and 1.55-3.06x (Cocoon-NMP).",
+        "arxiv_id": "2510.07304"
+    },
+    "2510.06673": {
+        "SCORE": 17,
+        "ARXIVID": "2510.06673",
+        "COMMENT": "Model Architecture: causal Transformer for images with next-2D distribution prediction, unifying autoregressive and masked-autoencoding objectives via a reconstruction-focused tokenizer.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Yongxin Zhu",
+            "Jiawei Chen",
+            "Yuanzhe Chen",
+            "Zhuo Chen",
+            "Dongya Jia",
+            "Jian Cong",
+            "Xiaobin Zhuang",
+            "Yuping Wang",
+            "Yuxuan Wang"
+        ],
+        "title": "Heptapod: Language Modeling on Visual Signals",
+        "abstract": "We introduce Heptapod, an image autoregressive model that adheres to the foundational principles of language modeling. Heptapod employs \\textbf{causal attention}, \\textbf{eliminates reliance on CFG}, and \\textbf{eschews the trend of semantic tokenizers}. Our key innovation is \\textit{next 2D distribution prediction}: a causal Transformer with reconstruction-focused visual tokenizer, learns to predict the distribution over the entire 2D spatial grid of images at each timestep. This learning objective unifies the sequential modeling of autoregressive framework with the holistic self-supervised learning of masked autoencoding, enabling the model to capture comprehensive image semantics via generative training. On the ImageNet generation benchmark, Heptapod achieves an FID of $2.70$, significantly outperforming previous causal autoregressive approaches. We hope our work inspires a principled rethinking of language modeling on visual signals and beyond.",
+        "arxiv_id": "2510.06673"
+    },
+    "2510.06401": {
+        "SCORE": 17,
+        "ARXIVID": "2510.06401",
+        "COMMENT": "Representation Learning: quantifies information content in hidden representations under label noise using Information Imbalance, showing double descent and robustness in overparameterized regimes with theoretical/empirical insights.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Ali Hussaini Umar",
+            "Franky Kevin Nando Tezoh",
+            "Jean Barbier",
+            "Santiago Acevedo",
+            "Alessandro Laio"
+        ],
+        "title": "The Effect of Label Noise on the Information Content of Neural Representations",
+        "abstract": "In supervised classification tasks, models are trained to predict a label for each data point. In real-world datasets, these labels are often noisy due to annotation errors. While the impact of label noise on the performance of deep learning models has been widely studied, its effects on the networks' hidden representations remain poorly understood. We address this gap by systematically comparing hidden representations using the Information Imbalance, a computationally efficient proxy of conditional mutual information. Through this analysis, we observe that the information content of the hidden representations follows a double descent as a function of the number of network parameters, akin to the behavior of the test error. We further demonstrate that in the underparameterized regime, representations learned with noisy labels are more informative than those learned with clean labels, while in the overparameterized regime, these representations are equally informative. Our results indicate that the representations of overparameterized networks are robust to label noise. We also found that the information imbalance between the penultimate and pre-softmax layers decreases with cross-entropy loss in the overparameterized regime. This offers a new perspective on understanding generalization in classification tasks. Extending our analysis to representations learned from random labels, we show that these perform worse than random features. This indicates that training on random labels drives networks much beyond lazy learning, as weights adapt to encode labels information.",
+        "arxiv_id": "2510.06401"
+    },
+    "2510.07318": {
+        "SCORE": 17,
+        "ARXIVID": "2510.07318",
+        "COMMENT": "Model Architecture + Efficiency: introduces an artificial hippocampus memory framework combining Transformer KV cache with learnable compressive long-term memory (RNN-like modules) to cut FLOPs and KV memory while preserving long-context performance.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Yunhao Fang",
+            "Weihao Yu",
+            "Shu Zhong",
+            "Qinghao Ye",
+            "Xuehan Xiong",
+            "Lai Wei"
+        ],
+        "title": "Artificial Hippocampus Networks for Efficient Long-Context Modeling",
+        "abstract": "Long-sequence modeling faces a fundamental trade-off between the efficiency of compressive fixed-size memory in RNN-like models and the fidelity of lossless growing memory in attention-based Transformers. Inspired by the Multi-Store Model in cognitive science, we introduce a memory framework of artificial neural networks. Our method maintains a sliding window of the Transformer's KV cache as lossless short-term memory, while a learnable module termed Artificial Hippocampus Network (AHN) recurrently compresses out-of-window information into a fixed-size compact long-term memory. To validate this framework, we instantiate AHNs using modern RNN-like architectures, including Mamba2, DeltaNet, and Gated DeltaNet. Extensive experiments on long-context benchmarks LV-Eval and InfiniteBench demonstrate that AHN-augmented models consistently outperform sliding window baselines and achieve performance comparable or even superior to full-attention models, while substantially reducing computational and memory requirements. For instance, augmenting the Qwen2.5-3B-Instruct with AHNs reduces inference FLOPs by 40.5% and memory cache by 74.0%, while improving its average score on LV-Eval (128k sequence length) from 4.41 to 5.88. Code is available at: https://github.com/ByteDance-Seed/AHN.",
+        "arxiv_id": "2510.07318"
+    },
+    "2510.07018": {
+        "SCORE": 17,
+        "ARXIVID": "2510.07018",
+        "COMMENT": "Strong match to Model Compression and Efficiency: zero-shot quantization with sharpness-aware synthetic data generation and theory linking sharpness minimization to gradient matching.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Dung Hoang-Anh",
+            "Cuong Pham Trung Le",
+            "Jianfei Cai",
+            "Thanh-Toan Do"
+        ],
+        "title": "Sharpness-Aware Data Generation for Zero-shot Quantization",
+        "abstract": "Zero-shot quantization aims to learn a quantized model from a pre-trained full-precision model with no access to original real training data. The common idea in zero-shot quantization approaches is to generate synthetic data for quantizing the full-precision model. While it is well-known that deep neural networks with low sharpness have better generalization ability, none of the previous zero-shot quantization works considers the sharpness of the quantized model as a criterion for generating training data. This paper introduces a novel methodology that takes into account quantized model sharpness in synthetic data generation to enhance generalization. Specifically, we first demonstrate that sharpness minimization can be attained by maximizing gradient matching between the reconstruction loss gradients computed on synthetic and real validation data, under certain assumptions. We then circumvent the problem of the gradient matching without real validation set by approximating it with the gradient matching between each generated sample and its neighbors. Experimental evaluations on CIFAR-100 and ImageNet datasets demonstrate the superiority of the proposed method over the state-of-the-art techniques in low-bit quantization settings.",
+        "arxiv_id": "2510.07018"
+    },
+    "2510.07195": {
+        "SCORE": 17,
+        "ARXIVID": "2510.07195",
+        "COMMENT": "Matches HPC: fully coherent quantum implementation of multilayer neural networks with complexity analysis showing quadratic\u2013quartic\u2013polylog speedups under quantum access assumptions, targeting accelerated inference.",
+        "RELEVANCE": 8,
+        "NOVELTY": 9,
+        "authors": [
+            "Arthur G. Rattew",
+            "Po-Wei Huang",
+            "Naixu Guo",
+            "Lirand\\\"e Pira",
+            "Patrick Rebentrost"
+        ],
+        "title": "Accelerating Inference for Multilayer Neural Networks with Quantum Computers",
+        "abstract": "Fault-tolerant Quantum Processing Units (QPUs) promise to deliver exponential speed-ups in select computational tasks, yet their integration into modern deep learning pipelines remains unclear. In this work, we take a step towards bridging this gap by presenting the first fully-coherent quantum implementation of a multilayer neural network with non-linear activation functions. Our constructions mirror widely used deep learning architectures based on ResNet, and consist of residual blocks with multi-filter 2D convolutions, sigmoid activations, skip-connections, and layer normalizations. We analyse the complexity of inference for networks under three quantum data access regimes. Without any assumptions, we establish a quadratic speedup over classical methods for shallow bilinear-style networks. With efficient quantum access to the weights, we obtain a quartic speedup over classical methods. With efficient quantum access to both the inputs and the network weights, we prove that a network with an $N$-dimensional vectorized input, $k$ residual block layers, and a final residual-linear-pooling layer can be implemented with an error of $\\epsilon$ with $O(\\text{polylog}(N/\\epsilon)^k)$ inference cost.",
+        "arxiv_id": "2510.07195"
+    },
+    "2510.06434": {
+        "SCORE": 17,
+        "ARXIVID": "2510.06434",
+        "COMMENT": "Matches Representation Learning/training dynamics: general Hellinger localization framework yielding near instance-optimal rates for sequential/multi-trajectory learning, including linear-attention models.",
+        "RELEVANCE": 8,
+        "NOVELTY": 9,
+        "authors": [
+            "Eliot Shekhtman",
+            "Yichen Zhou",
+            "Ingvar Ziemann",
+            "Nikolai Matni",
+            "Stephen Tu"
+        ],
+        "title": "Nearly Instance-Optimal Parameter Recovery from Many Trajectories via Hellinger Localization",
+        "abstract": "Learning from temporally-correlated data is a core facet of modern machine learning. Yet our understanding of sequential learning remains incomplete, particularly in the multi-trajectory setting where data consists of many independent realizations of a time-indexed stochastic process. This important regime both reflects modern training pipelines such as for large foundation models, and offers the potential for learning without the typical mixing assumptions made in the single-trajectory case. However, instance-optimal bounds are known only for least-squares regression with dependent covariates; for more general models or loss functions, the only broadly applicable guarantees result from a reduction to either i.i.d. learning, with effective sample size scaling only in the number of trajectories, or an existing single-trajectory result when each individual trajectory mixes, with effective sample size scaling as the full data budget deflated by the mixing-time.   In this work, we significantly broaden the scope of instance-optimal rates in multi-trajectory settings via the Hellinger localization framework, a general approach for maximum likelihood estimation. Our method proceeds by first controlling the squared Hellinger distance at the path-measure level via a reduction to i.i.d. learning, followed by localization as a quadratic form in parameter space weighted by the trajectory Fisher information. This yields instance-optimal bounds that scale with the full data budget under a broad set of conditions. We instantiate our framework across four diverse case studies: a simple mixture of Markov chains, dependent linear regression under non-Gaussian noise, generalized linear models with non-monotonic activations, and linear-attention sequence models. In all cases, our bounds nearly match the instance-optimal rates from asymptotic normality, substantially improving over standard reductions.",
+        "arxiv_id": "2510.06434"
+    },
+    "2510.06502": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06502",
+        "COMMENT": "Matches Model Compression and Efficiency: guided initialization/distillation in parameter space reduces teacher\u2013student gap with no training/inference overhead.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Khoa Trinh",
+            "Gaurav Menghani",
+            "Erik Vee"
+        ],
+        "title": "GUIDE: Guided Initialization and Distillation of Embeddings",
+        "abstract": "Algorithmic efficiency techniques such as distillation (\\cite{hinton2015distillation}) are useful in improving model quality without increasing serving costs, provided a larger teacher model is available for a smaller student model to learn from during training. Standard distillation methods are limited to only forcing the student to match the teacher's outputs. Given the costs associated with training a large model, we believe we should be extracting more useful information from a teacher model than by just making the student match the teacher's outputs.   In this paper, we introduce \\guide (Guided Initialization and Distillation of Embeddings). \\guide can be considered a distillation technique that forces the student to match the teacher in the parameter space. Using \\guide we show 25-26\\% reduction in the teacher-student quality gap when using large student models (400M - 1B parameters) trained on $\\approx$ 20B tokens. We also present a thorough analysis demonstrating that \\guide can be combined with knowledge distillation with near additive improvements. Furthermore, we show that applying \\guide alone leads to substantially better model quality than applying knowledge distillation by itself.   Most importantly, \\guide introduces no training or inference overhead and hence any model quality gains from our method are virtually free.",
+        "arxiv_id": "2510.06502"
+    },
+    "2510.06834": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06834",
+        "COMMENT": "ML Systems/HPC: kernel-level vectorization of FlashAttention on RISC\u2011V with low-cost exponential approximation and tiling for memory locality.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Vasileios Titopoulos",
+            "Kosmas Alexandridis",
+            "Giorgos Dimitrakopoulos"
+        ],
+        "title": "Vectorized FlashAttention with Low-cost Exponential Computation in RISC-V Vector Processors",
+        "abstract": "Attention is a core operation in numerous machine learning and artificial intelligence models. This work focuses on the acceleration of attention kernel using FlashAttention algorithm, in vector processors, particularly those based on the RISC-V instruction set architecture (ISA). This work represents the first effort to vectorize FlashAttention, minimizing scalar code and simplifying the computational complexity of evaluating exponentials needed by softmax used in attention. By utilizing a low-cost approximation for exponentials in floating-point arithmetic, we reduce the cost of computing the exponential function without the need to extend baseline vector ISA with new custom instructions. Also, appropriate tiling strategies are explored with the goal to improve memory locality. Experimental results highlight the scalability of our approach, demonstrating significant performance gains with the vectorized implementations when processing attention layers in practical applications.",
+        "arxiv_id": "2510.06834"
+    },
+    "2510.06949": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06949",
+        "COMMENT": "Model Architecture \u2014 Transformer attention innovation with grouped, ratio-aware head allocation and selective expansion (GQA-like), improving scalability and efficiency.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Junghwan Lim",
+            "Sungmin Lee",
+            "Dongseok Kim",
+            "Wai Ting Cheung",
+            "Beomgyu Kim",
+            "Taehwan Kim",
+            "Haesol Lee",
+            "Junhyeok Lee",
+            "Dongpin Oh",
+            "Eunhwan Park"
+        ],
+        "title": "Grouped Differential Attention",
+        "abstract": "The self-attention mechanism, while foundational to modern Transformer architectures, suffers from a critical inefficiency: it frequently allocates substantial attention to redundant or noisy context. Differential Attention addressed this by using subtractive attention maps for signal and noise, but its required balanced head allocation imposes rigid constraints on representational flexibility and scalability.   To overcome this, we propose Grouped Differential Attention (GDA), a novel approach that introduces unbalanced head allocation between signal-preserving and noise-control groups. GDA significantly enhances signal focus by strategically assigning more heads to signal extraction and fewer to noise-control, stabilizing the latter through controlled repetition (akin to GQA). This design achieves stronger signal fidelity with minimal computational overhead. We further extend this principle to group-differentiated growth, a scalable strategy that selectively replicates only the signal-focused heads, thereby ensuring efficient capacity expansion.   Through large-scale pretraining and continual training experiments, we demonstrate that moderate imbalance ratios in GDA yield substantial improvements in generalization and stability compared to symmetric baselines. Our results collectively establish that ratio-aware head allocation and selective expansion offer an effective and practical path toward designing scalable, computation-efficient Transformer architectures.",
+        "arxiv_id": "2510.06949"
+    },
+    "2510.06660": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06660",
+        "COMMENT": "Model Architecture: introduces Gaussian Mixture\u2013inspired nonlinear modules as trainable alternatives to standard activations, integrable into MLPs/CNNs/attention/LSTMs.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Weiguo Lu",
+            "Gangnan Yuan",
+            "Hong-kun Zhang",
+            "Shangyang Li"
+        ],
+        "title": "Rethinking Nonlinearity: Trainable Gaussian Mixture Modules for Modern Neural Architectures",
+        "abstract": "Neural networks in general, from MLPs and CNNs to attention-based Transformers, are constructed from layers of linear combinations followed by nonlinear operations such as ReLU, Sigmoid, or Softmax. Despite their strength, these conventional designs are often limited in introducing non-linearity by the choice of activation functions. In this work, we introduce Gaussian Mixture-Inspired Nonlinear Modules (GMNM), a new class of differentiable modules that draw on the universal density approximation Gaussian mixture models (GMMs) and distance properties (metric space) of Gaussian kernal. By relaxing probabilistic constraints and adopting a flexible parameterization of Gaussian projections, GMNM can be seamlessly integrated into diverse neural architectures and trained end-to-end with gradient-based methods. Our experiments demonstrate that incorporating GMNM into architectures such as MLPs, CNNs, attention mechanisms, and LSTMs consistently improves performance over standard baselines. These results highlight GMNM's potential as a powerful and flexible module for enhancing efficiency and accuracy across a wide range of machine learning applications.",
+        "arxiv_id": "2510.06660"
+    },
+    "2510.06627": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06627",
+        "COMMENT": "Matches Model Compression/Efficiency: low-rank truncated-SVD projection on fine-tune deltas that equalizes update directions and prunes small singular values as a zero-cost post-optimization step.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Yong Liu",
+            "Di Fu",
+            "Yang Luo",
+            "Zirui Zhu",
+            "Minhao Cheng",
+            "Cho-Jui Hsieh",
+            "Yang You"
+        ],
+        "title": "POME: Post Optimization Model Edit via Muon-style Projection",
+        "abstract": "We introduce Post-Optimization Model Edit (POME), a new algorithm that enhances the performance of fine-tuned large language models using only their pretrained and fine-tuned checkpoints, without requiring extra data or further optimization. The core idea is to apply a muon-style projection to $\\Delta W$, the difference between the fine-tuned and pretrained weights. This projection uses truncated singular value decomposition (SVD) to equalize the influence of dominant update directions and prune small singular values, which often represent noise. As a simple post-processing step, POME is completely decoupled from the training pipeline. It requires zero modifications and imposes no overhead, making it universally compatible with any optimizer or distributed framework. POME delivers consistent gains, boosting average performance by +2.5\\% on GSM8K and +1.0\\% on code generation. Its broad applicability -- from 7B foundation models to 72B RLHF-instructed models -- establishes it as a practical, zero-cost enhancement for any fine-tuning pipeline. Code is available at https://github.com/NUS-HPC-AI-Lab/POME.",
+        "arxiv_id": "2510.06627"
+    },
+    "2510.06640": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06640",
+        "COMMENT": "Representation Learning/Architecture Analysis \u2014 token- and layer-level study of representation propagation in SSMs vs Transformers with theoretical/empirical oversmoothing insights.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Nhat M. Hoang",
+            "Do Xuan Long",
+            "Cong-Duy Nguyen",
+            "Min-Yen Kan",
+            "Luu Anh Tuan"
+        ],
+        "title": "A Comparative Analysis of Contextual Representation Flow in State-Space and Transformer Architectures",
+        "abstract": "State Space Models (SSMs) have recently emerged as efficient alternatives to Transformer-Based Models (TBMs) for long-sequence processing, offering linear scaling and lower memory use. Yet, how contextual information flows across layers and tokens in these architectures remains understudied. We present the first unified, token- and layer-level analysis of representation propagation in SSMs and TBMs. Using centered kernel alignment, stability metrics, and probing, we characterize how representations evolve within and across layers. We find a key divergence: TBMs rapidly homogenize token representations, with diversity reemerging only in later layers, while SSMs preserve token uniqueness early but converge to homogenization deeper. Theoretical analysis and parameter randomization further reveal that oversmoothing in TBMs stems from architectural design, whereas in SSMs it arises mainly from training dynamics. These insights clarify the inductive biases of both architectures and inform future model and training designs for long-context reasoning.",
+        "arxiv_id": "2510.06640"
+    },
+    "2510.06372": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06372",
+        "COMMENT": "Theory: constructive upper bound on neurons for function approximation in shallow nets (capacity/approximation complexity).",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Frantisek Hakl",
+            "Vit Fojtik"
+        ],
+        "title": "A General Constructive Upper Bound on Shallow Neural Nets Complexity",
+        "abstract": "We provide an upper bound on the number of neurons required in a shallow   neural network to approximate a continuous function on a compact set with a   given accuracy. This method, inspired by a specific proof of the   Stone-Weierstrass theorem, is constructive and more general than previous   bounds of this character, as it applies to any continuous function on any   compact set.",
+        "arxiv_id": "2510.06372"
+    },
+    "2510.07227": {
+        "SCORE": 16,
+        "ARXIVID": "2510.07227",
+        "COMMENT": "Model Compression and Efficiency: structurally sparse sub-network selection (via evolutionary search) and knowledge distillation to reduce pretraining compute/tokens.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Arjun Krishnakumar",
+            "Rhea Sanjay Sukthanker",
+            "Hannan Javed Mahadik",
+            "Gabriela Kadlecov\\'a",
+            "Vladyslav Moroshan",
+            "Timur Carstensen",
+            "Frank Hutter",
+            "Aaron Klein"
+        ],
+        "title": "Where to Begin: Efficient Pretraining via Subnetwork Selection and Distillation",
+        "abstract": "Small Language models (SLMs) offer an efficient and accessible alternative to Large Language Models (LLMs), delivering strong performance while using far fewer resources. We introduce a simple and effective framework for pretraining SLMs that brings together three complementary ideas. First, we identify structurally sparse sub-network initializations that consistently outperform randomly initialized models of similar size under the same compute budget. Second, we use evolutionary search to automatically discover high-quality sub-network initializations, providing better starting points for pretraining. Third, we apply knowledge distillation from larger teacher models to speed up training and improve generalization. Together, these components make SLM pretraining substantially more efficient: our best model, discovered using evolutionary search and initialized with LLM weights, matches the validation perplexity of a comparable Pythia SLM while requiring 9.2x fewer pretraining tokens. We release all code and models at https://github.com/whittle-org/whittle/, offering a practical and reproducible path toward cost-efficient small language model development at scale.",
+        "arxiv_id": "2510.07227"
+    },
+    "2510.06478": {
+        "SCORE": 16,
+        "ARXIVID": "2510.06478",
+        "COMMENT": "Matches ML Systems/Efficiency: introduces an anytime-valid sequential stopping rule (e-processes, mixture e-processes) that reduces inference tokens with formal error control, directly improving inference-time efficiency.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Sanjeda Akter",
+            "Ibne Farabi Shihab",
+            "Anuj Sharma"
+        ],
+        "title": "Valid Stopping for LLM Generation via Empirical Dynamic Formal Lift",
+        "abstract": "We introduce Sequential-EDFL (Empirical Dynamic Formal Lift), applying anytime-valid sequential testing to language model generation stopping. Our approach tracks information lift -- the log-likelihood ratio between full models and deliberately weakened \"skeleton\" baselines -- using self-normalized empirical-Bernstein e-processes that provide formal delta-level error control regardless of stopping time. We handle unknown centering through online mean estimation, combine multiple parameters via mixture e-processes, and support adaptive resets under distributional drift. On six benchmarks, Sequential-EDFL reduces generation by 22-28% vs. sequential baselines while maintaining delta-level control with 12% computational overhead. We introduce automated skeletons (distilled submodels, randomized logits) and show robustness across skeleton families. Composing EDFL with a lightweight correctness gate (sentence boundaries + verifier) improves end-task correctness while preserving anytime-valid guarantees by only delaying stopping. Our certificates control information sufficiency, not factual correctness -- 10.9% of stopped sequences remain incorrect even with the gate (13.2-22.7% without it). EDFL serves as a first-stage filter reducing verification burden by 83%, not as a standalone solution for safety-critical domains.",
+        "arxiv_id": "2510.06478"
+    },
+    "2510.06820": {
+        "SCORE": 15,
+        "ARXIVID": "2510.06820",
+        "COMMENT": "ML Systems/Efficiency: offline precomputation and compression of vision tokens with a lightweight adapter enabling a compact joint encoder for high-throughput reranking.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Mitchell Keren Taraday",
+            "Shahaf Wagner",
+            "Chaim Baskin"
+        ],
+        "title": "Efficient Discriminative Joint Encoders for Large Scale Vision-Language Reranking",
+        "abstract": "Multimodal retrieval still leans on embedding-based models like CLIP for fast vector search over pre-computed image embeddings. Yet, unlike text retrieval, where joint-encoder rerankers are standard, comparable vision--language rerankers are largely absent. We find that seminal joint encoders such as BLIP are severely bottlenecked by an expensive visual feature-extraction stage, preventing practical deployment at scale. Motivated by this bottleneck, we introduce EDJE, an Efficient Discriminative Joint Encoder that precomputes vision tokens offline and compresses them via a lightweight attention-based adapter, so online inference runs only a compact joint encoder over a small set of visual tokens plus the text. EDJE preserves strong retrieval performance while drastically reducing storage and online compute, enabling high-throughput inference. Specifically, EDJE processes 50k image--text pairs/second while requiring 49kB of disk storage per image, matching prior art on Flickr (zero-shot) and COCO (fine-tuned) retrieval. The implementation and checkpoints will be made publicly available shortly.",
+        "arxiv_id": "2510.06820"
+    },
+    "2510.06982": {
+        "SCORE": 15,
+        "ARXIVID": "2510.06982",
+        "COMMENT": "Compression/Efficiency + Training dynamics: GMixout introduces EMA-anchored masking and explicit resampling frequency; sparse-kernel updates yield no inference-time overhead while improving robustness in finetuning.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Masih Aminbeidokhti",
+            "Heitor Rapela Medeiros",
+            "Eric Granger",
+            "Marco Pedersoli"
+        ],
+        "title": "Revisiting Mixout: An Overlooked Path to Robust Finetuning",
+        "abstract": "Finetuning vision foundation models often improves in-domain accuracy but comes at the cost of robustness under distribution shift. We revisit Mixout, a stochastic regularizer that intermittently replaces finetuned weights with their pretrained reference, through the lens of a single-run, weight-sharing implicit ensemble. This perspective reveals three key levers that govern robustness: the \\emph{masking anchor}, \\emph{resampling frequency}, and \\emph{mask sparsity}. Guided by this analysis, we introduce GMixout, which (i) replaces the fixed anchor with an exponential moving-average snapshot that adapts during training, and (ii) regulates masking period via an explicit resampling-frequency hyperparameter. Our sparse-kernel implementation updates only a small fraction of parameters with no inference-time overhead, enabling training on consumer-grade GPUs. Experiments on benchmarks covering covariate shift, corruption, and class imbalance, ImageNet / ImageNet-LT, DomainNet, iWildCam, and CIFAR100-C, GMixout consistently improves in-domain accuracy beyond zero-shot performance while surpassing both Model Soups and strong parameter-efficient finetuning baselines under distribution shift.",
+        "arxiv_id": "2510.06982"
+    },
+    "2510.06377": {
+        "SCORE": 15,
+        "ARXIVID": "2510.06377",
+        "COMMENT": "Model Architecture: Relational Transformer with novel Relational Attention over rows/columns/PK\u2013FK links enabling zero-shot transfer across relational datasets; steps toward a foundation model for relational data.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Rishabh Ranjan",
+            "Valter Hudovernik",
+            "Mark Znidar",
+            "Charilaos Kanatsoulis",
+            "Roshan Upendra",
+            "Mahmoud Mohammadi",
+            "Joe Meyer",
+            "Tom Palczewski",
+            "Carlos Guestrin",
+            "Jure Leskovec"
+        ],
+        "title": "Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data",
+        "abstract": "Pretrained transformers readily adapt to new sequence modeling tasks via zero-shot prompting, but relational domains still lack architectures that transfer across datasets and tasks. The core challenge is the diversity of relational data, with varying heterogeneous schemas, graph structures and functional dependencies. In this paper, we present the Relational Transformer (RT) architecture, which can be pretrained on diverse relational databases and directly applied to unseen datasets and tasks without task- or dataset-specific fine-tuning, or retrieval of in-context examples. RT (i) tokenizes cells with table/column metadata, (ii) is pretrained via masked token prediction, and (iii) utilizes a novel \\textit{Relational Attention} mechanism over columns, rows, and primary-foreign key links. Pretrained on RelBench datasets spanning tasks such as churn and sales forecasting, RT attains strong zero-shot performance, averaging 94% of fully supervised AUROC on binary classification tasks with a single forward pass of a 22M parameter model, as opposed to 84% for a 27B LLM. Fine-tuning yields state-of-the-art results with high sample efficiency. Our experiments show that RT's zero-shot transfer harnesses task-table context, relational attention patterns and schema semantics. Overall, RT provides a practical path toward foundation models for relational data.",
+        "arxiv_id": "2510.06377"
+    },
+    "2510.07213": {
+        "SCORE": 15,
+        "ARXIVID": "2510.07213",
+        "COMMENT": "Matches Representation Learning: identifies sparse, interpretable dimensions governing cross-lingual transitions and provides a training-free manipulation method; aligns with sparsity-driven interpretability/efficiency.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Chengzhi Zhong",
+            "Fei Cheng",
+            "Qianying Liu",
+            "Yugo Murawaki",
+            "Chenhui Chu",
+            "Sadao Kurohashi"
+        ],
+        "title": "Language Lives in Sparse Dimensions: Toward Interpretable and Efficient Multilingual Control for Large Language Models",
+        "abstract": "Large language models exhibit strong multilingual capabilities despite limited exposure to non-English data. Prior studies show that English-centric large language models map multilingual content into English-aligned representations at intermediate layers and then project them back into target-language token spaces in the final layer. From this observation, we hypothesize that this cross-lingual transition is governed by a small and sparse set of dimensions, which occur at consistent indices across the intermediate to final layers. Building on this insight, we introduce a simple, training-free method to identify and manipulate these dimensions, requiring only as few as 50 sentences of either parallel or monolingual data. Experiments on a multilingual generation control task reveal the interpretability of these dimensions, demonstrating that the interventions in these dimensions can switch the output language while preserving semantic content, and that it surpasses the performance of prior neuron-based approaches at a substantially lower cost.",
+        "arxiv_id": "2510.07213"
+    },
+    "2510.06548": {
+        "SCORE": 15,
+        "ARXIVID": "2510.06548",
+        "COMMENT": "Training Dynamics/Efficiency \u2014 empirical scaling law for bootstrapped pretraining quantifying saturation across pretraining stages; actionable guidance for multi-stage LLM training.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Seng Pei Liew",
+            "Takuya Kato"
+        ],
+        "title": "From Acceleration to Saturation: Scaling Behavior of Bootstrapped Language Model Pretraining",
+        "abstract": "Bootstrapped pretraining, i.e., the reuse of a pretrained base model for further pretraining, such as continual pretraining or model growth, is promising at reducing the cost of training language models from scratch. However, its effectiveness remains unclear, especially when applied to overtrained base models. In this work, we empirically study the scaling behavior of bootstrapped pretraining and find that its scaling efficiency diminishes in a predictable manner: The scaling exponent with respect to second-stage pretraining tokens decreases logarithmically with the number of tokens used to pretrain the base model. The joint dependence on first- and second-stage tokens is accurately modeled by a simple scaling law. Such saturation effect reveals a fundamental trade-off in multi-stage pretraining strategies: the more extensively a model is pretrained, the less additional benefit bootstrapping provides. Our findings provide practical insights for efficient language model training and raise important considerations for the reuse of overtrained models.",
+        "arxiv_id": "2510.06548"
+    },
+    "2510.06945": {
+        "SCORE": 15,
+        "ARXIVID": "2510.06945",
+        "COMMENT": "Representation Learning: analytical Fisher information and effective-dimension theory linking geometry, bias, and trainability.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Lorenzo Pastori",
+            "Veronika Eyring",
+            "Mierk Schwabe"
+        ],
+        "title": "Fisher Information, Training and Bias in Fourier Regression Models",
+        "abstract": "Motivated by the growing interest in quantum machine learning, in particular quantum neural networks (QNNs), we study how recently introduced evaluation metrics based on the Fisher information matrix (FIM) are effective for predicting their training and prediction performance. We exploit the equivalence between a broad class of QNNs and Fourier models, and study the interplay between the \\emph{effective dimension} and the \\emph{bias} of a model towards a given task, investigating how these affect the model's training and performance. We show that for a model that is completely agnostic, or unbiased, towards the function to be learned, a higher effective dimension likely results in a better trainability and performance. On the other hand, for models that are biased towards the function to be learned a lower effective dimension is likely beneficial during training. To obtain these results, we derive an analytical expression of the FIM for Fourier models and identify the features controlling a model's effective dimension. This allows us to construct models with tunable effective dimension and bias, and to compare their training. We furthermore introduce a tensor network representation of the considered Fourier models, which could be a tool of independent interest for the analysis of QNN models. Overall, these findings provide an explicit example of the interplay between geometrical properties, model-task alignment and training, which are relevant for the broader machine learning community.",
+        "arxiv_id": "2510.06945"
+    },
+    "2510.06527": {
+        "SCORE": 15,
+        "ARXIVID": "2510.06527",
+        "COMMENT": "Model Architecture/Theory: property of wide nets with zero-mean activations yielding near-independent outputs; insights into activation design.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "John Dunbar",
+            "Scott Aaronson"
+        ],
+        "title": "Wide Neural Networks as a Baseline for the Computational No-Coincidence Conjecture",
+        "abstract": "We establish that randomly initialized neural networks, with large width and a natural choice of hyperparameters, have nearly independent outputs exactly when their activation function is nonlinear with zero mean under the Gaussian measure: $\\mathbb{E}_{z \\sim \\mathcal{N}(0,1)}[\\sigma(z)]=0$. For example, this includes ReLU and GeLU with an additive shift, as well as tanh, but not ReLU or GeLU by themselves. Because of their nearly independent outputs, we propose neural networks with zero-mean activation functions as a promising candidate for the Alignment Research Center's computational no-coincidence conjecture -- a conjecture that aims to measure the limits of AI interpretability.",
+        "arxiv_id": "2510.06527"
+    }
+}
