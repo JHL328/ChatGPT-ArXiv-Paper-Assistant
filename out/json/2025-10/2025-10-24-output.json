@@ -1,0 +1,417 @@
+{
+    "2510.20171": {
+        "SCORE": 19,
+        "ARXIVID": "2510.20171",
+        "COMMENT": "Matches Criterion 3/5 (High Performance Computing and ML Systems): introduces a new collective communication framework (NCCLX) with throughput/latency gains for 100k+ GPU clusters across training and inference.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Min Si",
+            "Pavan Balaji",
+            "Yongzhou Chen",
+            "Ching-Hsiang Chu",
+            "Adi Gangidi",
+            "Saif Hasan",
+            "Subodh Iyengar",
+            "Dan Johnson",
+            "Bingzhe Liu",
+            "Jingliang Ren",
+            "Ashmitha Jeevaraj Shetty",
+            "Greg Steinbrecher",
+            "Xinfeng Xie",
+            "Yulun Wang",
+            "Bruce Wu",
+            "Jingyi Yang",
+            "Mingran Yang",
+            "Minlan Yu",
+            "Cen Zhao",
+            "Wes Bland",
+            "Denis Boyda",
+            "Suman Gumudavelli",
+            "Cristian Lumezanu",
+            "Rui Miao",
+            "Zhe Qu",
+            "Venkat Ramesh",
+            "Maxim Samoylov",
+            "Jan Seidel",
+            "Feng Tian",
+            "Qiye Tan",
+            "Shuqiang Zhang",
+            "Yimeng Zhao",
+            "Shengbao Zheng",
+            "Art Zhu",
+            "Hongyi Zeng"
+        ],
+        "title": "Collective Communication for 100k+ GPUs",
+        "abstract": "The increasing scale of large language models (LLMs) necessitates highly efficient collective communication frameworks, particularly as training workloads extend to hundreds of thousands of GPUs. Traditional communication methods face significant throughput and latency limitations at this scale, hindering both the development and deployment of state-of-the-art models. This paper presents the NCCLX collective communication framework, developed at Meta, engineered to optimize performance across the full LLM lifecycle, from the synchronous demands of large-scale training to the low-latency requirements of inference. The framework is designed to support complex workloads on clusters exceeding 100,000 GPUs, ensuring reliable, high-throughput, and low-latency data exchange. Empirical evaluation on the Llama4 model demonstrates substantial improvements in communication efficiency. This research contributes a robust solution for enabling the next generation of LLMs to operate at unprecedented scales.",
+        "arxiv_id": "2510.20171"
+    },
+    "2510.20111": {
+        "SCORE": 18,
+        "ARXIVID": "2510.20111",
+        "COMMENT": "ML Systems: distributed training with hierarchical ZeRO, asynchronous scheduling, and communication/memory optimization.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Huawei Bai",
+            "Yifan Huang",
+            "Wenqi Shi",
+            "Ansheng You",
+            "Feifan Shao",
+            "Tengfei Han",
+            "Minghui Yu"
+        ],
+        "title": "AsyncHZP: Hierarchical ZeRO Parallelism with Asynchronous Scheduling for Scalable LLM Training",
+        "abstract": "The training efficiency and scalability of language models on massive clusters currently remain a critical bottleneck. Mainstream approaches like ND parallelism are often cumbersome and complex, while flexible alternatives such as the Zero Redundancy Optimizer (ZeRO) are frequently hampered by communication overhead. In this paper, we propose Asynchronous Hierarchical Zero Parallelism (AsyncHZP), a novel asynchronous variant of ZeRO designed to achieve superior performance while maintaining simplicity and memory efficiency. Unlike traditional ZeRO, which employs over-fine-grained sharding that can lead to inefficient communication, AsyncHZP adaptively reshards parameters, gradients, and optimizer states across different replica groups. This strategy optimizes device memory utilization and significantly reduces communication overhead. In addition, we also design a multi-stream asynchronous scheduling method that executes parameter all-gather and gradient reduce-scatter operations in dedicated background threads, effectively overlapping communication with computation while incurring negligible memory fragmentation. Empirical evaluations on both Dense and Mixture-of-Experts (MoE) models confirm that AsyncHZP maintains robust stability at scale. It consistently outperforms classic ND parallelism, achieving state-of-the-art performance without complex strategic tuning, thereby simplifying the path to efficient large-scale training.",
+        "arxiv_id": "2510.20111"
+    },
+    "2510.20644": {
+        "SCORE": 18,
+        "ARXIVID": "2510.20644",
+        "COMMENT": "Matches Representation Learning: derives a new tight lower bound connecting JSD and KLD/MI, providing theoretical justification for discriminative MI-based objectives.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Reuben Dorent",
+            "Polina Golland",
+            "William Wells III"
+        ],
+        "title": "Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning",
+        "abstract": "Mutual Information (MI) is a fundamental measure of statistical dependence widely used in representation learning. While direct optimization of MI via its definition as a Kullback-Leibler divergence (KLD) is often intractable, many recent methods have instead maximized alternative dependence measures, most notably, the Jensen-Shannon divergence (JSD) between joint and product of marginal distributions via discriminative losses. However, the connection between these surrogate objectives and MI remains poorly understood. In this work, we bridge this gap by deriving a new, tight, and tractable lower bound on KLD as a function of JSD in the general case. By specializing this bound to joint and marginal distributions, we demonstrate that maximizing the JSD-based information increases a guaranteed lower bound on mutual information. Furthermore, we revisit the practical implementation of JSD-based objectives and observe that minimizing the cross-entropy loss of a binary classifier trained to distinguish joint from marginal pairs recovers a known variational lower bound on the JSD. Extensive experiments demonstrate that our lower bound is tight when applied to MI estimation. We compared our lower bound to state-of-the-art neural estimators of variational lower bound across a range of established reference scenarios. Our lower bound estimator consistently provides a stable, low-variance estimate of a tight lower bound on MI. We also demonstrate its practical usefulness in the context of the Information Bottleneck framework. Taken together, our results provide new theoretical justifications and strong empirical evidence for using discriminative learning in MI-based representation learning.",
+        "arxiv_id": "2510.20644"
+    },
+    "2510.20787": {
+        "SCORE": 18,
+        "ARXIVID": "2510.20787",
+        "COMMENT": "Model Architecture + Efficiency: Hybrid sparse attention with contextualized learnable token eviction preserving linear time/space; ML Systems: provides efficient Triton kernels for sparse attention.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Mutian He",
+            "Philip N. Garner"
+        ],
+        "title": "Alleviating Forgetfulness of Linear Attention by Hybrid Sparse Attention and Contextualized Learnable Token Eviction",
+        "abstract": "Linear-attention models that compress the entire input sequence into a fixed-size recurrent state offer an efficient alternative to Transformers, but their finite memory induces forgetfulness that harms retrieval-intensive tasks. To mitigate the issue, we explore a series of hybrid models that restore direct access to past tokens. We interleave token mixers with intermediate time and space complexity between linear and full attention, including sparse attention with token eviction, and the query-aware native sparse attention. Particularly, we propose a novel learnable token eviction approach. Combined with sliding-window attention, an end-to-end trainable lightweight CNN aggregates information from both past and future adjacent tokens to adaptively retain a limited set of critical KV-pairs per head, maintaining linear attention's constant time and space complexity. Efficient Triton kernels for the sparse attention mechanisms are provided. Empirical evaluations on retrieval-intensive benchmarks support the effectiveness of our approaches.",
+        "arxiv_id": "2510.20787"
+    },
+    "2510.20064": {
+        "SCORE": 18,
+        "ARXIVID": "2510.20064",
+        "COMMENT": "Model Efficiency + ML Systems: provable no-regret online drafter selection for speculative decoding; evaluates all drafters without extra target queries and offers system-efficient learners.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Hongyi Liu",
+            "Jiaji Huang",
+            "Zhen Jia",
+            "Youngsuk Park",
+            "Yu-Xiang Wang"
+        ],
+        "title": "Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs",
+        "abstract": "Speculative decoding is widely used in accelerating large language model (LLM) inference. In this work, we focus on the online draft model selection problem in speculative decoding. We design an algorithm that provably competes with the best draft model in hindsight for each query in terms of either the token acceptance probability or expected acceptance length. In particular, we show that we can accurately evaluate all draft models, instead of only the chosen model without incurring additional queries to the target model, which allows us to improve exponentially over the existing bandit-based approach as the number of draft models increases. Our approach is generically applicable with any speculative decoding methods (single draft, multi-drafts and draft-trees). Moreover, we design system-efficient versions of online learners and demonstrate that the overhead in computation and latency can be substantially reduced. We conduct extensive experiments on open-source LLMs and diverse datasets, demonstrating that our methods substantially outperform the state-of-the-art EAGLE3 and the BanditSpec baseline in a variety of domains where specialized domain-expert drafters are available, especially when long reasoning chains are required.",
+        "arxiv_id": "2510.20064"
+    },
+    "2510.20800": {
+        "SCORE": 18,
+        "ARXIVID": "2510.20800",
+        "COMMENT": "Model Compression and Efficiency: selective low-rank/rank-reduction via singular-value gradients, clustered subspace factorization, and 100-sample single-step adaptation without finetuning.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Shiva Sreeram",
+            "Alaa Maalouf",
+            "Pratyusha Sharma",
+            "Daniela Rus"
+        ],
+        "title": "Compress to Impress: Efficient LLM Adaptation Using a Single Gradient Step on 100 Samples",
+        "abstract": "Recently, Sharma et al. suggested a method called Layer-SElective-Rank reduction (LASER) which demonstrated that pruning high-order components of carefully chosen LLM's weight matrices can boost downstream accuracy -- without any gradient-based fine-tuning. Yet LASER's exhaustive, per-matrix search (each requiring full-dataset forward passes) makes it impractical for rapid deployment. We demonstrate that this overhead can be removed and find that: (i) Only a small, carefully chosen subset of matrices needs to be inspected -- eliminating the layer-by-layer sweep, (ii) The gradient of each matrix's singular values pinpoints which matrices merit reduction, (iii) Increasing the factorization search space by allowing matrices rows to cluster around multiple subspaces and then decomposing each cluster separately further reduces overfitting on the original training data and further lifts accuracy by up to 24.6 percentage points, and finally, (iv) we discover that evaluating on just 100 samples rather than the full training data -- both for computing the indicative gradients and for measuring the final accuracy -- suffices to further reduce the search time; we explain that as adaptation to downstream tasks is dominated by prompting style, not dataset size. As a result, we show that combining these findings yields a fast and robust adaptation algorithm for downstream tasks. Overall, with a single gradient step on 100 examples and a quick scan of the top candidate layers and factorization techniques, we can adapt LLMs to new datasets -- entirely without fine-tuning.",
+        "arxiv_id": "2510.20800"
+    },
+    "2510.20519": {
+        "SCORE": 17,
+        "ARXIVID": "2510.20519",
+        "COMMENT": "Model Architecture: Introduces a Hybrid Mixture-of-Experts with a trainable router that dynamically selects between \u2018thinking\u2019 and \u2018non-thinking\u2019 expert branches for multimodal reasoning.",
+        "RELEVANCE": 10,
+        "NOVELTY": 7,
+        "authors": [
+            "Xiaohan Lan",
+            "Fanfan Liu",
+            "Haibo Qiu",
+            "Siqi Yang",
+            "Delian Ruan",
+            "Peng Shi",
+            "Lin Ma"
+        ],
+        "title": "Metis-HOME: Hybrid Optimized Mixture-of-Experts for Multimodal Reasoning",
+        "abstract": "Inspired by recent advancements in LLM reasoning, the field of multimodal reasoning has seen remarkable progress, achieving significant performance gains on intricate tasks such as mathematical problem-solving. Despite this progress, current multimodal large reasoning models exhibit two key limitations. They tend to employ computationally expensive reasoning even for simple queries, leading to inefficiency. Furthermore, this focus on specialized reasoning often impairs their broader, more general understanding capabilities. In this paper, we propose Metis-HOME: a Hybrid Optimized Mixture-of-Experts framework designed to address this trade-off. Metis-HOME enables a ''Hybrid Thinking'' paradigm by structuring the original dense model into two distinct expert branches: a thinking branch tailored for complex, multi-step reasoning, and a non-thinking branch optimized for rapid, direct inference on tasks like general VQA and OCR. A lightweight, trainable router dynamically allocates queries to the most suitable expert. We instantiate Metis-HOME by adapting the Qwen2.5-VL-7B into an MoE architecture. Comprehensive evaluations reveal that our approach not only substantially enhances complex reasoning abilities but also improves the model's general capabilities, reversing the degradation trend observed in other reasoning-specialized models. Our work establishes a new paradigm for building powerful and versatile MLLMs, effectively resolving the prevalent reasoning-vs-generalization dilemma.",
+        "arxiv_id": "2510.20519"
+    },
+    "2510.20094": {
+        "SCORE": 17,
+        "ARXIVID": "2510.20094",
+        "COMMENT": "Representation Learning / Theory of training dynamics: Fourier-mode characterization of stationary solutions and phase transitions in McKean\u2013Vlasov equations applied to mean-field (noisy) Transformers, revealing bifurcations and metastable states.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Krishnakumar Balasubramanian",
+            "Sayan Banerjee",
+            "Philippe Rigollet"
+        ],
+        "title": "On the Structure of Stationary Solutions to McKean-Vlasov Equations with Applications to Noisy Transformers",
+        "abstract": "We study stationary solutions of McKean-Vlasov equations on the circle. Our main contributions stem from observing an exact equivalence between solutions of the stationary McKean-Vlasov equation and an infinite-dimensional quadratic system of equations over Fourier coefficients, which allows explicit characterization of the stationary states in a sequence space rather than a function space. This framework provides a transparent description of local bifurcations, characterizing their periodicity, and resonance structures, while accommodating singular potentials. We derive analytic expressions that characterize the emergence, form and shape (supercritical, critical, subcritical or transcritical) of bifurcations involving possibly multiple Fourier modes and connect them with discontinuous phase transitions. We also characterize, under suitable assumptions, the detailed structure of the stationary bifurcating solutions that are accurate upto an arbitrary number of Fourier modes. At the global level, we establish regularity and concavity properties of the free energy landscape, proving existence, compactness, and coexistence of globally minimizing stationary measures, further identifying discontinuous phase transitions with points of non-differentiability of the minimum free energy map. As an application, we specialize the theory to the Noisy Mean-Field Transformer model, where we show how changing the inverse temperature parameter $\\beta$ affects the geometry of the infinitely many bifurcations from the uniform measure. We also explain how increasing $\\beta$ can lead to a rich class of approximate multi-mode stationary solutions which can be seen as `metastable states'. Further, a sharp transition from continuous to discontinuous (first-order) phase behavior is observed as $\\beta$ increases.",
+        "arxiv_id": "2510.20094"
+    },
+    "2510.19875": {
+        "SCORE": 17,
+        "ARXIVID": "2510.19875",
+        "COMMENT": "Compression/Efficiency and ML Systems: dynamic sparse attention with hierarchical pruning enables near-linear O(T log T) time and O(T) space long-context interpretability while preserving next-token behavior.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "J Rosser",
+            "Jos\\'e Luis Redondo Garc\\'ia",
+            "Gustavo Penha",
+            "Konstantina Palla",
+            "Hugues Bouchard"
+        ],
+        "title": "Stream: Scaling up Mechanistic Interpretability to Long Context in LLMs via Sparse Attention",
+        "abstract": "As Large Language Models (LLMs) scale to million-token contexts, traditional Mechanistic Interpretability techniques for analyzing attention scale quadratically with context length, demanding terabytes of memory beyond 100,000 tokens. We introduce Sparse Tracing, a novel technique that leverages dynamic sparse attention to efficiently analyze long context attention patterns. We present Stream, a compilable hierarchical pruning algorithm that estimates per-head sparse attention masks in near-linear time $O(T \\log T)$ and linear space $O(T)$, enabling one-pass interpretability at scale. Stream performs a binary-search-style refinement to retain only the top-$k$ key blocks per query while preserving the model's next-token behavior. We apply Stream to long chain-of-thought reasoning traces and identify thought anchors while pruning 97-99\\% of token interactions. On the RULER benchmark, Stream preserves critical retrieval paths while discarding 90-96\\% of interactions and exposes layer-wise routes from the needle to output. Our method offers a practical drop-in tool for analyzing attention patterns and tracing information flow without terabytes of caches. By making long context interpretability feasible on consumer GPUs, Sparse Tracing helps democratize chain-of-thought monitoring. Code is available at https://anonymous.4open.science/r/stream-03B8/.",
+        "arxiv_id": "2510.19875"
+    },
+    "2510.20535": {
+        "SCORE": 17,
+        "ARXIVID": "2510.20535",
+        "COMMENT": "Compression/Efficiency: external encoder replaces token embeddings with x-times fewer continuous vectors, reducing inference cost without modifying the decoder and generalizing across LLMs.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Hippolyte Pilchen",
+            "Edouard Grave",
+            "Patrick P\\'erez"
+        ],
+        "title": "ARC-Encoder: learning compressed text representations for large language models",
+        "abstract": "Recent techniques such as retrieval-augmented generation or chain-of-thought reasoning have led to longer contexts and increased inference costs. Context compression techniques can reduce these costs, but the most effective approaches require fine-tuning the target model or even modifying its architecture. This can degrade its general abilities when not used for this specific purpose. Here we explore an alternative approach: an encoder that compresses the context into continuous representations which replace token embeddings in decoder LLMs. First, we perform a systematic study of training strategies and architecture choices for the encoder. Our findings led to the design of an Adaptable text Representations Compressor, named ARC-Encoder, which outputs $x$-times fewer continuous representations (typically $x\\!\\in\\!\\{4,8\\}$) than text tokens. We evaluate ARC-Encoder across a variety of LLM usage scenarios, ranging from in-context learning to context window extension, on both instruct and base decoders. Results show that ARC-Encoder achieves state-of-the-art performance on several benchmarks while improving computational efficiency at inference. Finally, we demonstrate that our models can be adapted to multiple decoders simultaneously, allowing a single encoder to generalize across different decoder LLMs. This makes ARC-Encoder a flexible and efficient solution for portable encoders that work seamlessly with multiple LLMs. We release a training code at https://github.com/kyutai-labs/ARC-Encoder , fine-tuning dataset and pretrained models are available at https://huggingface.co/collections/kyutai/arc-encoders-68ee18787301407d60a57047 .",
+        "arxiv_id": "2510.20535"
+    },
+    "2510.20108": {
+        "SCORE": 17,
+        "ARXIVID": "2510.20108",
+        "COMMENT": "Representation Learning: diagnoses partial prototype collapse and prevents it via fully decoupled prototype learning using an online EM-style Gaussian mixture, improving representation diversity.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Gabriel Y. Arteaga",
+            "Marius Aasan",
+            "Rwiddhi Chakraborty",
+            "Martine Hjelkrem-Tan",
+            "Thalles Silva",
+            "Michael Kampffmeyer",
+            "Ad\\'in Ram\\'irez Rivera"
+        ],
+        "title": "Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning",
+        "abstract": "Prototypical self-supervised learning methods consistently suffer from partial prototype collapse, where multiple prototypes converge to nearly identical representations. This undermines their central purpose -- providing diverse and informative targets to guide encoders toward rich representations -- and has led practitioners to over-parameterize prototype sets or add ad-hoc regularizers, which mitigate symptoms rather than address the root cause. We empirically trace the collapse to the joint optimization of encoders and prototypes, which encourages a type of shortcut learning: early in training prototypes drift toward redundant representations that minimize loss without necessarily enhancing representation diversity. To break the joint optimization, we introduce a fully decoupled training strategy that learns prototypes and encoders under separate objectives. Concretely, we model prototypes as a Gaussian mixture updated with an online EM-style procedure, independent of the encoder's loss. This simple yet principled decoupling eliminates prototype collapse without explicit regularization and yields consistently diverse prototypes and stronger downstream performance.",
+        "arxiv_id": "2510.20108"
+    },
+    "2510.20673": {
+        "SCORE": 16,
+        "ARXIVID": "2510.20673",
+        "COMMENT": "Matches Model Compression and Efficiency: multi-bit quantization training with weight bias correction and bit-wise coreset sampling to reduce training cost without per-bit fine-tuning.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Jinhee Kim",
+            "Jae Jun An",
+            "Kang Eun Jeon",
+            "Jong Hwan Ko"
+        ],
+        "title": "Efficient Multi-bit Quantization Network Training via Weight Bias Correction and Bit-wise Coreset Sampling",
+        "abstract": "Multi-bit quantization networks enable flexible deployment of deep neural networks by supporting multiple precision levels within a single model. However, existing approaches suffer from significant training overhead as full-dataset updates are repeated for each supported bit-width, resulting in a cost that scales linearly with the number of precisions. Additionally, extra fine-tuning stages are often required to support additional or intermediate precision options, further compounding the overall training burden. To address this issue, we propose two techniques that greatly reduce the training overhead without compromising model utility: (i) Weight bias correction enables shared batch normalization and eliminates the need for fine-tuning by neutralizing quantization-induced bias across bit-widths and aligning activation distributions; and (ii) Bit-wise coreset sampling strategy allows each child model to train on a compact, informative subset selected via gradient-based importance scores by exploiting the implicit knowledge transfer phenomenon. Experiments on CIFAR-10/100, TinyImageNet, and ImageNet-1K with both ResNet and ViT architectures demonstrate that our method achieves competitive or superior accuracy while reducing training time up to 7.88x. Our code is released at https://github.com/a2jinhee/EMQNet_jk.",
+        "arxiv_id": "2510.20673"
+    },
+    "2510.19873": {
+        "SCORE": 16,
+        "ARXIVID": "2510.19873",
+        "COMMENT": "Matches ML Systems criterion: compiler/code-generation advances and algorithm\u2013system co-design for GPU kernels via a reasoning-graph + MCGS framework, with new CUDA benchmarks and kernel-level performance gains.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Junfeng Gong",
+            "Zhiyi Wei",
+            "Junying Chen",
+            "Cheng Liu",
+            "Huawei Li"
+        ],
+        "title": "From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph",
+        "abstract": "Despite significant evolution of CUDA programming and domain-specific libraries, effectively utilizing GPUs with massively parallel engines remains difficult. Large language models (LLMs) show strong potential in generating optimized CUDA code from sequential code. However, using LLMs in practice faces two major challenges: cloud-based APIs pose risks of code leakage, and local deployment is often computationally expensive and inefficient. These drawbacks have spurred interest in small language models (SLMs), which are more lightweight and privacy-friendly. Encouragingly, recent studies show that SLMs can achieve performance comparable to LLMs on specific tasks. While SLMs can match LLMs on domain-specific tasks, their limited reasoning abilities lead to suboptimal performance in complex CUDA generation according to our experiments. To bridge this gap, we propose ReGraphT, a training-free, retrieval-augmented generation framework that transfers LLM-level reasoning to smaller models. ReGraphT organizes CUDA optimization trajectories into a structured reasoning graph, modeling the combined CUDA optimizations as state transitions, and leverages Monte Carlo Graph Search (MCGS) for efficient exploration. We also present a CUDA-specific benchmark with difficulty tiers defined by reasoning complexity to evaluate models more comprehensively. Experiments show that ReGraphT outperforms HPC-specific fine-tuned models and other retrieval-augmented approaches, achieving an average 2.33X speedup on CUDAEval and ParEval. When paired with DeepSeek-Coder-V2-Lite-Instruct and Qwen2.5-Coder-7B-Instruct, ReGraphT enables SLMs to approach LLM-level performance without the associated privacy risks or excessive computing overhead.",
+        "arxiv_id": "2510.19873"
+    },
+    "2510.19933": {
+        "SCORE": 16,
+        "ARXIVID": "2510.19933",
+        "COMMENT": "Representation Learning (training dynamics): first theory for inexact Muon optimizer updates; ML Systems: highlights algorithm\u2013system co-design by linking approximation precision to learning-rate/momentum scheduling.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Egor Shulgin",
+            "Sultan AlRashed",
+            "Francesco Orabona",
+            "Peter Richt\\'arik"
+        ],
+        "title": "Beyond the Ideal: Analyzing the Inexact Muon Update",
+        "abstract": "The Muon optimizer has rapidly emerged as a powerful, geometry-aware alternative to AdamW, demonstrating strong performance in large-scale training of neural networks. However, a critical theory-practice disconnect exists: Muon's efficiency relies on fast, approximate orthogonalization, yet all prior theoretical work analyzes an idealized, computationally intractable version assuming exact SVD-based updates. This work moves beyond the ideal by providing the first analysis of the inexact orthogonalized update at Muon's core. We develop our analysis within the general framework of Linear Minimization Oracle (LMO)-based optimization, introducing a realistic additive error model to capture the inexactness of practical approximation schemes. Our analysis yields explicit bounds that quantify performance degradation as a function of the LMO inexactness/error. We reveal a fundamental coupling between this inexactness and the optimal step size and momentum: lower oracle precision requires a smaller step size but larger momentum parameter. These findings elevate the approximation procedure (e.g., the number of Newton-Schulz steps) from an implementation detail to a critical parameter that must be co-tuned with the learning schedule. NanoGPT experiments directly confirm the predicted coupling, with optimal learning rates clearly shifting as approximation precision changes.",
+        "arxiv_id": "2510.19933"
+    },
+    "2510.20627": {
+        "SCORE": 16,
+        "ARXIVID": "2510.20627",
+        "COMMENT": "Matches Criterion 4 (Representation Learning): explicit salient/non-salient latent decomposition with HSIC-based objective and theory linking robustness to representation compression (salient subspace dimensionality).",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Lukas Miklautz",
+            "Chengzhi Shi",
+            "Andrii Shkabrii",
+            "Theodoros Thirimachos Davarakis",
+            "Prudence Lam",
+            "Claudia Plant",
+            "Jennifer Dy",
+            "Stratis Ioannidis"
+        ],
+        "title": "H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition",
+        "abstract": "We introduce H-SPLID, a novel algorithm for learning salient feature representations through the explicit decomposition of salient and non-salient features into separate spaces. We show that H-SPLID promotes learning low-dimensional, task-relevant features. We prove that the expected prediction deviation under input perturbations is upper-bounded by the dimension of the salient subspace and the Hilbert-Schmidt Independence Criterion (HSIC) between inputs and representations. This establishes a link between robustness and latent representation compression in terms of the dimensionality and information preserved. Empirical evaluations on image classification tasks show that models trained with H-SPLID primarily rely on salient input components, as indicated by reduced sensitivity to perturbations affecting non-salient features, such as image backgrounds. Our code is available at https://github.com/neu-spiral/H-SPLID.",
+        "arxiv_id": "2510.20627"
+    },
+    "2510.20479": {
+        "SCORE": 16,
+        "ARXIVID": "2510.20479",
+        "COMMENT": "Matches Criterion 4 (Representation Learning): representation-aware, hierarchical model merging using layer-wise hidden similarity for data-free continual learning; also touches Criterion 1 via adaptive parameter fusion design.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Bowen Wang",
+            "Haiyuan Wan",
+            "Liwen Shi",
+            "Chen Yang",
+            "Peng He",
+            "Yue Ma",
+            "Haochen Han",
+            "Wenhao Li",
+            "Tiao Tan",
+            "Yongjian Li",
+            "Fangming Liu",
+            "Yifan Gong",
+            "Sheng Zhang"
+        ],
+        "title": "RECALL: REpresentation-aligned Catastrophic-forgetting ALLeviation via Hierarchical Model Merging",
+        "abstract": "We unveil that internal representations in large language models (LLMs) serve as reliable proxies of learned knowledge, and propose RECALL, a novel representation-aware model merging framework for continual learning without access to historical data. RECALL computes inter-model similarity from layer-wise hidden representations over clustered typical samples, and performs adaptive, hierarchical parameter fusion to align knowledge across models. This design enables the preservation of domain-general features in shallow layers while allowing task-specific adaptation in deeper layers. Unlike prior methods that require task labels or incur performance trade-offs, RECALL achieves seamless multi-domain integration and strong resistance to catastrophic forgetting. Extensive experiments across five NLP tasks and multiple continual learning scenarios show that RECALL outperforms baselines in both knowledge retention and generalization, providing a scalable and data-free solution for evolving LLMs.",
+        "arxiv_id": "2510.20479"
+    },
+    "2510.19990": {
+        "SCORE": 15,
+        "ARXIVID": "2510.19990",
+        "COMMENT": "Efficiency: algorithmic inference improvements via adaptive multi-token decoding and early-exit reasoning with masked diffusion LMs.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Zachary Horvitz",
+            "Raghav Singhal",
+            "Hao Zou",
+            "Carles Domingo-Enrich",
+            "Zhou Yu",
+            "Rajesh Ranganath",
+            "Kathleen McKeown"
+        ],
+        "title": "No Compute Left Behind: Rethinking Reasoning and Sampling with Masked Diffusion Models",
+        "abstract": "Masked diffusion language models (MDLMs) are trained to in-fill positions in randomly masked sequences, in contrast to next-token prediction models. Discussions around MDLMs focus on two benefits: (1) any-order decoding and 2) multi-token decoding. However, we observe that for math and coding tasks, any-order algorithms often underperform or behave similarly to left-to-right sampling, and standard multi-token decoding significantly degrades performance. At inference time, MDLMs compute the conditional distribution of all masked positions. A natural question is: How can we justify this additional compute when left-to-right one-token-at-a-time decoding is on par with any-order decoding algorithms? First, we propose reasoning-as-infilling. By using MDLMs to infill a reasoning template, we can structure outputs and distinguish between reasoning and answer tokens. In turn, this enables measuring answer uncertainty during reasoning, and early exits when the model converges on an answer. Next, given an answer, reasoning-as-infilling enables sampling from the MDLM posterior over reasoning traces conditioned on the answer, providing a new source of high-quality data for post-training. On GSM8k, we observe that fine-tuning LLaDA-8B Base on its posterior reasoning traces provides a performance boost on par with fine-tuning on human-written reasoning traces. Additionally, given an answer, reasoning-as-infilling provides a method for scoring the correctness of the reasoning process at intermediate steps. Second, we propose multi-token entropy decoding (MED), a simple adaptive sampler that minimizes the error incurred by decoding positions in parallel based on the conditional entropies of those positions. MED preserves performance across benchmarks and leads to 2.7x fewer steps. Our work demonstrates that the training and compute used by MDLMs unlock many new inference and post-training methods.",
+        "arxiv_id": "2510.19990"
+    },
+    "2510.20369": {
+        "SCORE": 15,
+        "ARXIVID": "2510.20369",
+        "COMMENT": "Matches ML Systems criterion: uncertainty-based routing that integrates a fast reward model with a costly LLM judge for online RLHF, with principled uncertainty quantification and efficiency gains.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Zhenghao Xu",
+            "Qin Lu",
+            "Qingru Zhang",
+            "Liang Qiu",
+            "Ilgee Hong",
+            "Changlong Yu",
+            "Wenlin Yao",
+            "Yao Liu",
+            "Haoming Jiang",
+            "Lihong Li",
+            "Hyokun Yun",
+            "Tuo Zhao"
+        ],
+        "title": "Ask a Strong LLM Judge when Your Reward Model is Uncertain",
+        "abstract": "Reward model (RM) plays a pivotal role in reinforcement learning with human feedback (RLHF) for aligning large language models (LLMs). However, classical RMs trained on human preferences are vulnerable to reward hacking and generalize poorly to out-of-distribution (OOD) inputs. By contrast, strong LLM judges equipped with reasoning capabilities demonstrate superior generalization, even without additional training, but incur significantly higher inference costs, limiting their applicability in online RLHF. In this work, we propose an uncertainty-based routing framework that efficiently complements a fast RM with a strong but costly LLM judge. Our approach formulates advantage estimation in policy gradient (PG) methods as pairwise preference classification, enabling principled uncertainty quantification to guide routing. Uncertain pairs are forwarded to the LLM judge, while confident ones are evaluated by the RM. Experiments on RM benchmarks demonstrate that our uncertainty-based routing strategy significantly outperforms random judge calling at the same cost, and downstream alignment results showcase its effectiveness in improving online RLHF.",
+        "arxiv_id": "2510.20369"
+    },
+    "2510.20387": {
+        "SCORE": 15,
+        "ARXIVID": "2510.20387",
+        "COMMENT": "Matches Criterion 4 (Representation Learning): proposes a new metric (RBP) and establishes a scaling law analyzing model behavior beyond cross-entropy, offering fundamental insights into LLM scaling dynamics.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Baoqing Yue",
+            "Jinyuan Zhou",
+            "Zixi Wei",
+            "Jingtao Zhan",
+            "Qingyao Ai",
+            "Yiqun Liu"
+        ],
+        "title": "Relative-Based Scaling Law for Neural Language Models",
+        "abstract": "Scaling laws aim to accurately predict model performance across different scales. Existing scaling-law studies almost exclusively rely on cross-entropy as the evaluation metric. However, cross-entropy provides only a partial view of performance: it measures the absolute probability assigned to the correct token, but ignores the relative ordering between correct and incorrect tokens. Yet, relative ordering is crucial for language models, such as in greedy-sampling scenario. To address this limitation, we investigate scaling from the perspective of relative ordering. We first propose the Relative-Based Probability (RBP) metric, which quantifies the probability that the correct token is ranked among the top predictions. Building on this metric, we establish the Relative-Based Scaling Law, which characterizes how RBP improves with increasing model size. Through extensive experiments on four datasets and four model families spanning five orders of magnitude, we demonstrate the robustness and accuracy of this law. Finally, we illustrate the broad application of this law with two examples, namely providing a deeper explanation of emergence phenomena and facilitating finding fundamental theories of scaling laws. In summary, the Relative-Based Scaling Law complements the cross-entropy perspective and contributes to a more complete understanding of scaling large language models. Thus, it offers valuable insights for both practical development and theoretical exploration.",
+        "arxiv_id": "2510.20387"
+    },
+    "2510.20068": {
+        "SCORE": 15,
+        "ARXIVID": "2510.20068",
+        "COMMENT": "Model Architecture / Representation Learning: a Coupled Transformer Autoencoder with explicit orthogonal shared vs. private latent subspaces for multi-region dynamics.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Ram Dyuthi Sristi",
+            "Sowmya Manojna Narasimha",
+            "Jingya Huang",
+            "Alice Despatin",
+            "Simon Musall",
+            "Vikash Gilja",
+            "Gal Mishne"
+        ],
+        "title": "Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics",
+        "abstract": "Simultaneous recordings from thousands of neurons across multiple brain areas reveal rich mixtures of activity that are shared between regions and dynamics that are unique to each region. Existing alignment or multi-view methods neglect temporal structure, whereas dynamical latent variable models capture temporal dependencies but are usually restricted to a single area, assume linear read-outs, or conflate shared and private signals. We introduce the Coupled Transformer Autoencoder (CTAE) - a sequence model that addresses both (i) non-stationary, non-linear dynamics and (ii) separation of shared versus region-specific structure in a single framework. CTAE employs transformer encoders and decoders to capture long-range neural dynamics and explicitly partitions each region's latent space into orthogonal shared and private subspaces. We demonstrate the effectiveness of CTAE on two high-density electrophysiology datasets with simultaneous recordings from multiple regions, one from motor cortical areas and the other from sensory areas. CTAE extracts meaningful representations that better decode behavioral variables compared to existing approaches.",
+        "arxiv_id": "2510.20068"
+    },
+    "2510.20296": {
+        "SCORE": 15,
+        "ARXIVID": "2510.20296",
+        "COMMENT": "ML Systems: introduces RAG-IR (intermediate representation), a performance cost model, and plan exploration for quality\u2013performance co-optimization in RAG pipelines (compiler-style co-design).",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Wenqi Jiang"
+        ],
+        "title": "RAG-Stack: Co-Optimizing RAG Quality and Performance From the Vector Database Perspective",
+        "abstract": "Retrieval-augmented generation (RAG) has emerged as one of the most prominent applications of vector databases. By integrating documents retrieved from a database into the prompt of a large language model (LLM), RAG enables more reliable and informative content generation. While there has been extensive research on vector databases, many open research problems remain once they are considered in the wider context of end-to-end RAG pipelines. One practical yet challenging problem is how to jointly optimize both system performance and generation quality in RAG, which is significantly more complex than it appears due to the numerous knobs on both the algorithmic side (spanning models and databases) and the systems side (from software to hardware). In this paper, we present RAG-Stack, a three-pillar blueprint for quality-performance co-optimization in RAG systems. RAG-Stack comprises: (1) RAG-IR, an intermediate representation that serves as an abstraction layer to decouple quality and performance aspects; (2) RAG-CM, a cost model for estimating system performance given an RAG-IR; and (3) RAG-PE, a plan exploration algorithm that searches for high-quality, high-performance RAG configurations. We believe this three-pillar blueprint will become the de facto paradigm for RAG quality-performance co-optimization in the years to come.",
+        "arxiv_id": "2510.20296"
+    },
+    "2510.20812": {
+        "SCORE": 15,
+        "ARXIVID": "2510.20812",
+        "COMMENT": "Model Architecture/Efficiency: training-free multi-expert speculative drafting with a strong verdict model and consensus routing for cost-effective, accurate visual reasoning.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Yuhan Liu",
+            "Lianhui Qin",
+            "Shengjie Wang"
+        ],
+        "title": "Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation",
+        "abstract": "Large Vision-Language Models (VLMs) have achieved remarkable progress in multimodal understanding, yet they struggle when reasoning over information-intensive images that densely interleave textual annotations with fine-grained graphical elements. The main challenges lie in precisely localizing critical cues in dense layouts and multi-hop reasoning to integrate dispersed evidence. We propose Speculative Verdict (SV), a training-free framework inspired by speculative decoding that combines multiple lightweight draft experts with a large verdict model. In the draft stage, small VLMs act as draft experts to generate reasoning paths that provide diverse localization candidates; in the verdict stage, a strong VLM synthesizes these paths to produce the final answer, minimizing computational cost while recovering correct answers. To further improve efficiency and accuracy, SV introduces a consensus expert selection mechanism that forwards only high-agreement reasoning paths to the verdict. Empirically, SV achieves consistent gains on challenging information-intensive and high-resolution visual question answering benchmarks, including InfographicVQA, ChartMuseum, ChartQAPro, and HR-Bench 4K. By synthesizing correct insights from multiple partially accurate reasoning paths, SV achieves both error correction and cost-efficiency compared to large proprietary models or training pipelines. Code is available at https://github.com/Tinaliu0123/speculative-verdict",
+        "arxiv_id": "2510.20812"
+    }
+}
