@@ -1,0 +1,355 @@
+{
+    "2510.27004": {
+        "SCORE": 19,
+        "ARXIVID": "2510.27004",
+        "COMMENT": "MoE/Transformers \u2014 theoretical framework for mixture-of-transformers with continuously trained gating; proves expert specialization and O(log(1/\u03b5)) convergence.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Hongbo Li",
+            "Qinhang Wu",
+            "Sen Lin",
+            "Yingbin Liang",
+            "Ness B. Shroff"
+        ],
+        "title": "Mixture-of-Transformers Learn Faster: A Theoretical Study on Classification Problems",
+        "abstract": "Mixture-of-Experts (MoE) models improve transformer efficiency but lack a unified theoretical explanation, especially when both feed-forward and attention layers are allowed to specialize. To this end, we study the Mixture-of-Transformers (MoT), a tractable theoretical framework in which each transformer block acts as an expert governed by a continuously trained gating network. This design allows us to isolate and study the core learning dynamics of expert specialization and attention alignment. In particular, we develop a three-stage training algorithm with continuous training of the gating network, and show that each transformer expert specializes in a distinct class of tasks and that the gating network accurately routes data samples to the correct expert. Our analysis shows how expert specialization reduces gradient conflicts and makes each subtask strongly convex. We prove that the training drives the expected prediction loss to near zero in $O(\\log(\\epsilon^{-1}))$ iteration steps, significantly improving over the $O(\\epsilon^{-1})$ rate for a single transformer. We further validate our theoretical findings through extensive real-data experiments, demonstrating the practical effectiveness of MoT. Together, these results offer the first unified theoretical account of transformer-level specialization and learning dynamics, providing practical guidance for designing efficient large-scale models.",
+        "arxiv_id": "2510.27004"
+    },
+    "2510.27688": {
+        "SCORE": 19,
+        "ARXIVID": "2510.27688",
+        "COMMENT": "Model Architecture and Efficiency: replaces next-token with next-vector prediction via an autoencoder, reducing generative steps and introducing a continuous likelihood-free training framework.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Chenze Shao",
+            "Darren Li",
+            "Fandong Meng",
+            "Jie Zhou"
+        ],
+        "title": "Continuous Autoregressive Language Models",
+        "abstract": "The efficiency of large language models (LLMs) is fundamentally limited by their sequential, token-by-token generation process. We argue that overcoming this bottleneck requires a new design axis for LLM scaling: increasing the semantic bandwidth of each generative step. To this end, we introduce Continuous Autoregressive Language Models (CALM), a paradigm shift from discrete next-token prediction to continuous next-vector prediction. CALM uses a high-fidelity autoencoder to compress a chunk of K tokens into a single continuous vector, from which the original tokens can be reconstructed with over 99.9\\% accuracy. This allows us to model language as a sequence of continuous vectors instead of discrete tokens, which reduces the number of generative steps by a factor of K. The paradigm shift necessitates a new modeling toolkit; therefore, we develop a comprehensive likelihood-free framework that enables robust training, evaluation, and controllable sampling in the continuous domain. Experiments show that CALM significantly improves the performance-compute trade-off, achieving the performance of strong discrete baselines at a significantly lower computational cost. More importantly, these findings establish next-vector prediction as a powerful and scalable pathway towards ultra-efficient language models. Code: https://github.com/shaochenze/calm. Project: https://shaochenze.github.io/blog/2025/CALM.",
+        "arxiv_id": "2510.27688"
+    },
+    "2510.27258": {
+        "SCORE": 19,
+        "ARXIVID": "2510.27258",
+        "COMMENT": "Strong match to Model Architecture and Efficiency: higher-order linear attention with constant-size state, causal streaming, and exact chunk-parallel training.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Yifan Zhang",
+            "Zhen Qin",
+            "Quanquan Gu"
+        ],
+        "title": "Higher-order Linear Attention",
+        "abstract": "The quadratic cost of scaled dot-product attention is a central obstacle to scaling autoregressive language models to long contexts. Linear-time attention and State Space Models (SSMs) provide scalable alternatives but are typically restricted to first-order or kernel-based approximations, which can limit expressivity. We introduce Higher-order Linear Attention (HLA), a causal, streaming mechanism that realizes higher interactions via compact prefix sufficient statistics. In the second-order case, HLA maintains a constant-size state and computes per-token outputs in linear time without materializing any $n \\times n$ matrices. We give closed-form streaming identities, a strictly causal masked variant using two additional summaries, and a chunk-parallel training scheme based on associative scans that reproduces the activations of a serial recurrence exactly. We further outline extensions to third and higher orders. Collectively, these results position HLA as a principled, scalable building block that combines attention-like, data-dependent mixing with the efficiency of modern recurrent architectures. Project Page: https://github.com/yifanzhang-pro/HLA.",
+        "arxiv_id": "2510.27258"
+    },
+    "2510.27527": {
+        "SCORE": 18,
+        "ARXIVID": "2510.27527",
+        "COMMENT": "Compression/Efficiency: end-to-end NVFP4 fully-quantized 4-bit training for LLMs with new double-block quantization, oscillation suppression, and outlier control.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Yuxiang Chen",
+            "Xiaoming Xu",
+            "Pengle Zhang",
+            "Michael Beyer",
+            "Martin Rapp",
+            "Jun Zhu",
+            "Jianfei Chen"
+        ],
+        "title": "TetraJet-v2: Accurate NVFP4 Training for Large Language Models with Oscillation Suppression and Outlier Control",
+        "abstract": "Large Language Models (LLMs) training is prohibitively expensive, driving interest in low-precision fully-quantized training (FQT). While novel 4-bit formats like NVFP4 offer substantial efficiency gains, achieving near-lossless training at such low precision remains challenging. We introduce TetraJet-v2, an end-to-end 4-bit FQT method that leverages NVFP4 for activations, weights, and gradients in all linear layers. We identify two critical issues hindering low-precision LLM training: weight oscillation and outliers. To address these, we propose: 1) an unbiased double-block quantization method for NVFP4 linear layers, 2) OsciReset, an algorithm to suppress weight oscillation, and 3) OutControl, an algorithm to retain outlier accuracy. TetraJet-v2 consistently outperforms prior FP4 training methods on pre-training LLMs across varying model sizes up to 370M and data sizes up to 200B tokens, reducing the performance gap to full-precision training by an average of 51.3%.",
+        "arxiv_id": "2510.27527"
+    },
+    "2510.27641": {
+        "SCORE": 18,
+        "ARXIVID": "2510.27641",
+        "COMMENT": "Matches Model Compression and Efficiency and ML Systems: training-free sparse attention via speculative decoding with GPU-optimized selection and KV-cache pruning.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Harsh Shah"
+        ],
+        "title": "SpecAttn: Speculating Sparse Attention",
+        "abstract": "Large Language Models (LLMs) face significant computational bottlenecks during inference due to the quadratic complexity of self-attention mechanisms, particularly as context lengths increase. We introduce SpecAttn, a novel training-free approach that seamlessly integrates with existing speculative decoding techniques to enable efficient sparse attention in pre-trained transformers. Our key insight is to exploit the attention weights already computed by the draft model during speculative decoding to identify important tokens for the target model, eliminating redundant computation while maintaining output quality. SpecAttn employs three core techniques: KL divergence-based layer alignment between draft and target models, a GPU-optimized sorting-free algorithm for top-p token selection from draft attention patterns, and dynamic key-value cache pruning guided by these predictions. By leveraging the computational work already performed in standard speculative decoding pipelines, SpecAttn achieves over 75% reduction in key-value cache accesses with a mere 15.29% increase in perplexity on the PG-19 dataset, significantly outperforming existing sparse attention methods. Our approach demonstrates that speculative execution can be enhanced to provide approximate verification without significant performance degradation.",
+        "arxiv_id": "2510.27641"
+    },
+    "2510.27517": {
+        "SCORE": 17,
+        "ARXIVID": "2510.27517",
+        "COMMENT": "HPC/ML Systems: learning GPU-friendly sparse approximate inverse preconditioners that avoid triangular solves and align with GPU kernels; adds a scale-invariant loss with strong speedups.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Zherui Yang",
+            "Zhehao Li",
+            "Kangbo Lyu",
+            "Yixuan Li",
+            "Tao Du",
+            "Ligang Liu"
+        ],
+        "title": "Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs",
+        "abstract": "The conjugate gradient solver (CG) is a prevalent method for solving symmetric and positive definite linear systems Ax=b, where effective preconditioners are crucial for fast convergence. Traditional preconditioners rely on prescribed algorithms to offer rigorous theoretical guarantees, while limiting their ability to exploit optimization from data. Existing learning-based methods often utilize Graph Neural Networks (GNNs) to improve the performance and speed up the construction. However, their reliance on incomplete factorization leads to significant challenges: the associated triangular solve hinders GPU parallelization in practice, and introduces long-range dependencies which are difficult for GNNs to model. To address these issues, we propose a learning-based method to generate GPU-friendly preconditioners, particularly using GNNs to construct Sparse Approximate Inverse (SPAI) preconditioners, which avoids triangular solves and requires only two matrix-vector products at each CG step. The locality of matrix-vector product is compatible with the local propagation mechanism of GNNs. The flexibility of GNNs also allows our approach to be applied in a wide range of scenarios. Furthermore, we introduce a statistics-based scale-invariant loss function. Its design matches CG's property that the convergence rate depends on the condition number, rather than the absolute scale of A, leading to improved performance of the learned preconditioner. Evaluations on three PDE-derived datasets and one synthetic dataset demonstrate that our method outperforms standard preconditioners (Diagonal, IC, and traditional SPAI) and previous learning-based preconditioners on GPUs. We reduce solution time on GPUs by 40%-53% (68%-113% faster), along with better condition numbers and superior generalization performance. Source code available at https://github.com/Adversarr/LearningSparsePreconditioner4GPU",
+        "arxiv_id": "2510.27517"
+    },
+    "2510.26997": {
+        "SCORE": 17,
+        "ARXIVID": "2510.26997",
+        "COMMENT": "Representation Learning / Training Dynamics: unifies gradient-based and adaptive optimizers via optimal control over loss landscapes, deriving GD, momentum, natural gradient, Adam.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "John J. Vastola",
+            "Samuel J. Gershman",
+            "Kanaka Rajan"
+        ],
+        "title": "Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules",
+        "abstract": "Learning rules -- prescriptions for updating model parameters to improve performance -- are typically assumed rather than derived. Why do some learning rules work better than others, and under what assumptions can a given rule be considered optimal? We propose a theoretical framework that casts learning rules as policies for navigating (partially observable) loss landscapes, and identifies optimal rules as solutions to an associated optimal control problem. A range of well-known rules emerge naturally within this framework under different assumptions: gradient descent from short-horizon optimization, momentum from longer-horizon planning, natural gradients from accounting for parameter space geometry, non-gradient rules from partial controllability, and adaptive optimizers like Adam from online Bayesian inference of loss landscape shape. We further show that continual learning strategies like weight resetting can be understood as optimal responses to task uncertainty. By unifying these phenomena under a single objective, our framework clarifies the computational structure of learning and offers a principled foundation for designing adaptive algorithms.",
+        "arxiv_id": "2510.26997"
+    },
+    "2510.27015": {
+        "SCORE": 17,
+        "ARXIVID": "2510.27015",
+        "COMMENT": "Model Architecture & Training Dynamics: quantitative bounds for length generalization in Transformers, sharpening theoretical understanding of extrapolation.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Zachary Izzo",
+            "Eshaan Nichani",
+            "Jason D. Lee"
+        ],
+        "title": "Quantitative Bounds for Length Generalization in Transformers",
+        "abstract": "We study the problem of length generalization (LG) in transformers: the ability of a model trained on shorter sequences to maintain performance when evaluated on much longer, previously unseen inputs. Prior work by Huang et al. (2025) established that transformers eventually achieve length generalization once the training sequence length exceeds some finite threshold, but left open the question of how large it must be. In this work, we provide the first quantitative bounds on the required training length for length generalization to occur. Motivated by previous empirical and theoretical work, we analyze LG in several distinct problem settings: $\\ell_\\infty$ error control vs. average error control over an input distribution, infinite-precision softmax attention vs. finite-precision attention (which reduces to an argmax) in the transformer, and one- vs. two-layer transformers. In all scenarios, we prove that LG occurs when the internal behavior of the transformer on longer sequences can be \"simulated\" by its behavior on shorter sequences seen during training. Our bounds give qualitative estimates for the length of training data required for a transformer to generalize, and we verify these insights empirically. These results sharpen our theoretical understanding of the mechanisms underlying extrapolation in transformers, and formalize the intuition that richer training data is required for generalization on more complex tasks.",
+        "arxiv_id": "2510.27015"
+    },
+    "2510.26843": {
+        "SCORE": 17,
+        "ARXIVID": "2510.26843",
+        "COMMENT": "Directly matches Compression/Efficiency (layer sparsity, activation quantization) and ML Systems for inference (speculative decoding with a new Dynamic Tree Cascade routing algorithm) enabling LLM acceleration.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Zhiyuan Ning",
+            "Jiawei Shao",
+            "Ruge Xu",
+            "Xinfei Guo",
+            "Jun Zhang",
+            "Chi Zhang",
+            "Xuelong Li"
+        ],
+        "title": "CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs",
+        "abstract": "Speculative decoding has become a widely adopted as an effective technique for lossless inference acceleration when deploying large language models (LLMs). While on-the-fly self-speculative methods offer seamless integration and broad utility, they often fall short of the speed gains achieved by methods relying on specialized training. Cascading a hierarchy of draft models promises further acceleration and flexibility, but the high cost of training multiple models has limited its practical application. In this paper, we propose a novel Cascade Adaptive Self-Speculative Decoding (CAS-Spec) method which constructs speculative draft models by leveraging dynamically switchable inference acceleration (DSIA) strategies, including layer sparsity and activation quantization. Furthermore, traditional vertical and horizontal cascade algorithms are inefficient when applied to self-speculative decoding methods. We introduce a Dynamic Tree Cascade (DyTC) algorithm that adaptively routes the multi-level draft models and assigns the draft lengths, based on the heuristics of acceptance rates and latency prediction. Our CAS-Spec method achieves state-of-the-art acceleration compared to existing on-the-fly speculative decoding methods, with an average speedup from $1.1\\times$ to $2.3\\times$ over autoregressive decoding across various LLMs and datasets. DyTC improves the average speedup by $47$\\% and $48$\\% over cascade-based baseline and tree-based baseline algorithms, respectively. CAS-Spec can be easily integrated into most existing LLMs and holds promising potential for further acceleration as self-speculative decoding techniques continue to evolve.",
+        "arxiv_id": "2510.26843"
+    },
+    "2510.27385": {
+        "SCORE": 16,
+        "ARXIVID": "2510.27385",
+        "COMMENT": "Representation Learning/Theory: establishes equivalence connecting Optimal Transport with Action/Flow Matching via optimal vector fields\u2014core algorithmic insight in generative modeling.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Nikita Kornilov",
+            "Alexander Korotin"
+        ],
+        "title": "On the Equivalence of Optimal Transport Problem and Action Matching with Optimal Vector Fields",
+        "abstract": "Flow Matching (FM) method in generative modeling maps arbitrary probability distributions by constructing an interpolation between them and then learning the vector field that defines ODE for this interpolation. Recently, it was shown that FM can be modified to map distributions optimally in terms of the quadratic cost function for any initial interpolation. To achieve this, only specific optimal vector fields, which are typical for solutions of Optimal Transport (OT) problems, need to be considered during FM loss minimization. In this note, we show that considering only optimal vector fields can lead to OT in another approach: Action Matching (AM). Unlike FM, which learns a vector field for a manually chosen interpolation between given distributions, AM learns the vector field that defines ODE for an entire given sequence of distributions.",
+        "arxiv_id": "2510.27385"
+    },
+    "2510.26835": {
+        "SCORE": 16,
+        "ARXIVID": "2510.26835",
+        "COMMENT": "Matches ML Systems: category-aware semantic caching with hybrid in-memory HNSW and adaptive thresholds/TTLs for LLM serving workloads.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Chen Wang",
+            "Xunzhuo Liu",
+            "Yue Zhu",
+            "Alaa Youssef",
+            "Priya Nagpurkar",
+            "Huamin Chen"
+        ],
+        "title": "Category-Aware Semantic Caching for Heterogeneous LLM Workloads",
+        "abstract": "LLM serving systems process heterogeneous query workloads where different categories exhibit different characteristics. Code queries cluster densely in embedding space while conversational queries distribute sparsely. Content staleness varies from minutes (stock data) to months (code patterns). Query repetition patterns range from power-law (code) to uniform (conversation), producing long tail cache hit rate distributions: high-repetition categories achieve 40-60% hit rates while low-repetition or volatile categories achieve 5-15% hit rates. Vector databases must exclude the long tail because remote search costs (30ms) require 15--20% hit rates to break even, leaving 20-30% of production traffic uncached. Uniform cache policies compound this problem: fixed thresholds cause false positives in dense spaces and miss valid paraphrases in sparse spaces; fixed TTLs waste memory or serve stale data. This paper presents category-aware semantic caching where similarity thresholds, TTLs, and quotas vary by query category. We present a hybrid architecture separating in-memory HNSW search from external document storage, reducing miss cost from 30ms to 2ms. This reduction makes low-hit-rate categories economically viable (break-even at 3-5% versus 15-20%), enabling cache coverage across the entire workload distribution. Adaptive load-based policies extend this framework to respond to downstream model load, dynamically adjusting thresholds and TTLs to reduce traffic to overloaded models by 9-17% in theoretical projections.",
+        "arxiv_id": "2510.26835"
+    },
+    "2510.27222": {
+        "SCORE": 16,
+        "ARXIVID": "2510.27222",
+        "COMMENT": "Model Architecture and Representation Learning: introduces soft task-aware routing of expert projection heads (MoE-style) to jointly learn invariant/equivariant features with reduced redundancy.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Jaebyeong Jeon",
+            "Hyeonseo Jang",
+            "Jy-yong Sohn",
+            "Kibok Lee"
+        ],
+        "title": "Soft Task-Aware Routing of Experts for Equivariant Representation Learning",
+        "abstract": "Equivariant representation learning aims to capture variations induced by input transformations in the representation space, whereas invariant representation learning encodes semantic information by disregarding such transformations. Recent studies have shown that jointly learning both types of representations is often beneficial for downstream tasks, typically by employing separate projection heads. However, this design overlooks information shared between invariant and equivariant learning, which leads to redundant feature learning and inefficient use of model capacity. To address this, we introduce Soft Task-Aware Routing (STAR), a routing strategy for projection heads that models them as experts. STAR induces the experts to specialize in capturing either shared or task-specific information, thereby reducing redundant feature learning. We validate this effect by observing lower canonical correlations between invariant and equivariant embeddings. Experimental results show consistent improvements across diverse transfer learning tasks. The code is available at https://github.com/YonseiML/star.",
+        "arxiv_id": "2510.27222"
+    },
+    "2510.27588": {
+        "SCORE": 16,
+        "ARXIVID": "2510.27588",
+        "COMMENT": "Compression/Efficiency: learned static function data structures using model-predicted value distributions to derive key-specific prefix codes, breaking the zero-order entropy barrier while supporting queries.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Stefan Hermann",
+            "Hans-Peter Lehmann",
+            "Giorgio Vinciguerra",
+            "Stefan Walzer"
+        ],
+        "title": "Learned Static Function Data Structures",
+        "abstract": "We consider the task of constructing a data structure for associating a static set of keys with values, while allowing arbitrary output values for queries involving keys outside the set. Compared to hash tables, these so-called static function data structures do not need to store the key set and thus use significantly less memory. Several techniques are known, with compressed static functions approaching the zero-order empirical entropy of the value sequence. In this paper, we introduce learned static functions, which use machine learning to capture correlations between keys and values. For each key, a model predicts a probability distribution over the values, from which we derive a key-specific prefix code to compactly encode the true value. The resulting codeword is stored in a classic static function data structure. This design allows learned static functions to break the zero-order entropy barrier while still supporting point queries. Our experiments show substantial space savings: up to one order of magnitude on real data, and up to three orders of magnitude on synthetic data.",
+        "arxiv_id": "2510.27588"
+    },
+    "2510.27391": {
+        "SCORE": 16,
+        "ARXIVID": "2510.27391",
+        "COMMENT": "Representation Learning: aligns hierarchical cross-modal feature trees on heterogeneous hyperbolic manifolds with a new KL distance and theory for manifold alignment.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Wu Wei",
+            "Xiaomeng Fan",
+            "Yuwei Wu",
+            "Zhi Gao",
+            "Pengxiang Li",
+            "Yunde Jia",
+            "Mehrtash Harandi"
+        ],
+        "title": "Modality Alignment across Trees on Heterogeneous Hyperbolic Manifolds",
+        "abstract": "Modality alignment is critical for vision-language models (VLMs) to effectively integrate information across modalities. However, existing methods extract hierarchical features from text while representing each image with a single feature, leading to asymmetric and suboptimal alignment. To address this, we propose Alignment across Trees, a method that constructs and aligns tree-like hierarchical features for both image and text modalities. Specifically, we introduce a semantic-aware visual feature extraction framework that applies a cross-attention mechanism to visual class tokens from intermediate Transformer layers, guided by textual cues to extract visual features with coarse-to-fine semantics. We then embed the feature trees of the two modalities into hyperbolic manifolds with distinct curvatures to effectively model their hierarchical structures. To align across the heterogeneous hyperbolic manifolds with different curvatures, we formulate a KL distance measure between distributions on heterogeneous manifolds, and learn an intermediate manifold for manifold alignment by minimizing the distance. We prove the existence and uniqueness of the optimal intermediate manifold. Experiments on taxonomic open-set classification tasks across multiple image datasets demonstrate that our method consistently outperforms strong baselines under few-shot and cross-domain settings.",
+        "arxiv_id": "2510.27391"
+    },
+    "2510.27497": {
+        "SCORE": 16,
+        "ARXIVID": "2510.27497",
+        "COMMENT": "Model Architecture: proposes SE(3)- and permutation-invariant canonical tokenization, GeoRoPE for geometric attention, and a hierarchical autoregressive design for 3D molecules\u2014core architectural advances.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Haorui Li",
+            "Weitao Du",
+            "Yuqiang Li",
+            "Hongyu Guo",
+            "Shengchao Liu"
+        ],
+        "title": "InertialAR: Autoregressive 3D Molecule Generation with Inertial Frames",
+        "abstract": "Transformer-based autoregressive models have emerged as a unifying paradigm across modalities such as text and images, but their extension to 3D molecule generation remains underexplored. The gap stems from two fundamental challenges: (1) tokenizing molecules into a canonical 1D sequence of tokens that is invariant to both SE(3) transformations and atom index permutations, and (2) designing an architecture capable of modeling hybrid atom-based tokens that couple discrete atom types with continuous 3D coordinates. To address these challenges, we introduce InertialAR. InertialAR devises a canonical tokenization that aligns molecules to their inertial frames and reorders atoms to ensure SE(3) and permutation invariance. Moreover, InertialAR equips the attention mechanism with geometric awareness via geometric rotary positional encoding (GeoRoPE). In addition, it utilizes a hierarchical autoregressive paradigm to predict the next atom-based token, predicting the atom type first and then its 3D coordinates via Diffusion loss. Experimentally, InertialAR achieves state-of-the-art performance on 7 of the 10 evaluation metrics for unconditional molecule generation across QM9, GEOM-Drugs, and B3LYP. Moreover, it significantly outperforms strong baselines in controllable generation for targeted chemical functionality, attaining state-of-the-art results across all 5 metrics.",
+        "arxiv_id": "2510.27497"
+    },
+    "2510.27042": {
+        "SCORE": 15,
+        "ARXIVID": "2510.27042",
+        "COMMENT": "Efficiency/Conditional Computation \u2014 trains models to adapt chain-of-thought length to a user-specified effort parameter, improving cost\u2013accuracy tradeoffs.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Michael Kleinman",
+            "Matthew Trager",
+            "Alessandro Achille",
+            "Wei Xia",
+            "Stefano Soatto"
+        ],
+        "title": "e1: Learning Adaptive Control of Reasoning Effort",
+        "abstract": "Increasing the thinking budget of AI models can significantly improve accuracy, but not all questions warrant the same amount of reasoning. Users may prefer to allocate different amounts of reasoning effort depending on how they value output quality versus latency and cost. To leverage this tradeoff effectively, users need fine-grained control over the amount of thinking used for a particular query, but few approaches enable such control. Existing methods require users to specify the absolute number of desired tokens, but this requires knowing the difficulty of the problem beforehand to appropriately set the token budget for a query. To address these issues, we propose Adaptive Effort Control, a self-adaptive reinforcement learning method that trains models to use a user-specified fraction of tokens relative to the current average chain-of-thought length for each query. This approach eliminates dataset- and phase-specific tuning while producing better cost-accuracy tradeoff curves compared to standard methods. Users can dynamically adjust the cost-accuracy trade-off through a continuous effort parameter specified at inference time. We observe that the model automatically learns to allocate resources proportionally to the task difficulty and, across model scales ranging from 1.5B to 32B parameters, our approach enables approximately 3x reduction in chain-of-thought length while maintaining or improving performance relative to the base model used for RL training.",
+        "arxiv_id": "2510.27042"
+    },
+    "2510.27182": {
+        "SCORE": 15,
+        "ARXIVID": "2510.27182",
+        "COMMENT": "ML Systems \u2014 SLO-aware inference serving with stage-wise resource provisioning and dynamic offloading across FaaS/IaaS, leveraging early exits and adaptive load balancing.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Zongshun Zhang",
+            "Ibrahim Matta"
+        ],
+        "title": "SERFLOW: A Cross-Service Cost Optimization Framework for SLO-Aware Dynamic ML Inference",
+        "abstract": "Dynamic offloading of Machine Learning (ML) model partitions across different resource orchestration services, such as Function-as-a-Service (FaaS) and Infrastructure-as-a-Service (IaaS), can balance processing and transmission delays while minimizing costs of adaptive inference applications. However, prior work often overlooks real-world factors, such as Virtual Machine (VM) cold starts, requests under long-tail service time distributions, etc. To tackle these limitations, we model each ML query (request) as traversing an acyclic sequence of stages, wherein each stage constitutes a contiguous block of sparse model parameters ending in an internal or final classifier where requests may exit. Since input-dependent exit rates vary, no single resource configuration suits all query distributions. IaaS-based VMs become underutilized when many requests exit early, yet rapidly scaling to handle request bursts reaching deep layers is impractical. SERFLOW addresses this challenge by leveraging FaaS-based serverless functions (containers) and using stage-specific resource provisioning that accounts for the fraction of requests exiting at each stage. By integrating this provisioning with adaptive load balancing across VMs and serverless functions based on request ingestion, SERFLOW reduces cloud costs by over $23\\%$ while efficiently adapting to dynamic workloads.",
+        "arxiv_id": "2510.27182"
+    },
+    "2510.27018": {
+        "SCORE": 15,
+        "ARXIVID": "2510.27018",
+        "COMMENT": "Model Architecture and Efficiency/HPC: domain-decomposition PINN architectures combined with Gauss-Newton training; exploits block-sparse structure to reduce computation\u2014an algorithm\u2013system co-design angle.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Alexander Heinlein",
+            "Taniya Kapoor"
+        ],
+        "title": "Domain decomposition architectures and Gauss-Newton training for physics-informed neural networks",
+        "abstract": "Approximating the solutions of boundary value problems governed by partial differential equations with neural networks is challenging, largely due to the difficult training process. This difficulty can be partly explained by the spectral bias, that is, the slower convergence of high-frequency components, and can be mitigated by localizing neural networks via (overlapping) domain decomposition. We combine this localization with the Gauss-Newton method as the optimizer to obtain faster convergence than gradient-based schemes such as Adam; this comes at the cost of solving an ill-conditioned linear system in each iteration. Domain decomposition induces a block-sparse structure in the otherwise dense Gauss-Newton system, reducing the computational cost per iteration. Our numerical results indicate that combining localization and Gauss-Newton optimization is promising for neural network-based solvers for partial differential equations.",
+        "arxiv_id": "2510.27018"
+    },
+    "2510.27359": {
+        "SCORE": 15,
+        "ARXIVID": "2510.27359",
+        "COMMENT": "Model Compression and Efficiency: gradient-free parameter selection via a single forward pass reduces peak memory and selection cost for PEFT.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Kenneth Yang",
+            "Wen-Li Wei",
+            "Jen-Chun Lin"
+        ],
+        "title": "FPS: Feedforward-based Parameter Selection For Efficient Fine-Tuning",
+        "abstract": "Parameter-Efficient Fine-Tuning (PEFT) has emerged as a key strategy for adapting large-scale pre-trained models to downstream tasks, but existing approaches face notable limitations. Addition-based methods, such as Adapters [1], introduce inference latency and engineering complexity, while selection-based methods like Gradient-based Parameter Selection (GPS) [2] require a full backward pass, which results in the same peak memory usage as full fine-tuning. To address this dilemma, we propose Feedforward-based Parameter Selection (FPS), a gradient-free method that identifies an optimal parameter subset in a single forward pass. FPS ranks parameters by the product of their magnitudes and corresponding input activations, leveraging both pre-trained knowledge and downstream data. Evaluated on $24$ visual tasks from FGVC and VTAB-1k, FPS achieves performance comparable to state-of-the-art methods while reducing peak memory usage by nearly $9 \\times$ and accelerating parameter selection by about $2 \\times$, offering a genuinely memory-efficient and practical solution for fine-tuning large-scale pre-trained models.",
+        "arxiv_id": "2510.27359"
+    },
+    "2510.26829": {
+        "SCORE": 15,
+        "ARXIVID": "2510.26829",
+        "COMMENT": "Representation Learning: probes internal representations under continual pre-training poisoning, analyzing training dynamics and belief drift across layers and scales.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Svetlana Churina",
+            "Niranjan Chebrolu",
+            "Kokil Jaidka"
+        ],
+        "title": "Layer of Truth: Probing Belief Shifts under Continual Pre-Training Poisoning",
+        "abstract": "Large language models (LLMs) continually evolve through pre-training on ever-expanding web data, but this adaptive process also exposes them to subtle forms of misinformation. While prior work has explored data poisoning during static pre-training, the effects of such manipulations under continual pre-training remain largely unexplored. Drawing inspiration from the illusory truth effect in human cognition - where repeated exposure to falsehoods increases belief in their accuracy - we ask whether LLMs exhibit a similar vulnerability. We investigate whether repeated exposure to false but confidently stated facts can shift a model's internal representation away from the truth.   We introduce Layer of Truth, a framework and dataset for probing belief dynamics in continually trained LLMs. By injecting controlled amounts of poisoned data and probing intermediate representations across checkpoints, model scales, and question types, we quantify when and how factual beliefs shift. Our findings reveal that even minimal exposure can induce persistent representational drift in well-established facts, with susceptibility varying across layers and model sizes. These results highlight an overlooked vulnerability of continually updated LLMs: their capacity to internalize misinformation analogously to humans, underscoring the need for robust monitoring of factual integrity during model updates.",
+        "arxiv_id": "2510.26829"
+    },
+    "2510.27413": {
+        "SCORE": 15,
+        "ARXIVID": "2510.27413",
+        "COMMENT": "Matches Representation Learning: aligns latent spaces to a labeled Concept Atlas for semantic feature retrieval and controllable generation, leveraging SAE-style components.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Bruno Puri",
+            "Jim Berend",
+            "Sebastian Lapuschkin",
+            "Wojciech Samek"
+        ],
+        "title": "Atlas-Alignment: Making Interpretability Transferable Across Language Models",
+        "abstract": "Interpretability is crucial for building safe, reliable, and controllable language models, yet existing interpretability pipelines remain costly and difficult to scale. Interpreting a new model typically requires costly training of model-specific sparse autoencoders, manual or semi-automated labeling of SAE components, and their subsequent validation. We introduce Atlas-Alignment, a framework for transferring interpretability across language models by aligning unknown latent spaces to a Concept Atlas - a labeled, human-interpretable latent space - using only shared inputs and lightweight representational alignment techniques. Once aligned, this enables two key capabilities in previously opaque models: (1) semantic feature search and retrieval, and (2) steering generation along human-interpretable atlas concepts. Through quantitative and qualitative evaluations, we show that simple representational alignment methods enable robust semantic retrieval and steerable generation without the need for labeled concept data. Atlas-Alignment thus amortizes the cost of explainable AI and mechanistic interpretability: by investing in one high-quality Concept Atlas, we can make many new models transparent and controllable at minimal marginal cost.",
+        "arxiv_id": "2510.27413"
+    },
+    "2510.27651": {
+        "SCORE": 15,
+        "ARXIVID": "2510.27651",
+        "COMMENT": "Matches Representation Learning (training dynamics via information-theoretic analysis) and Training Efficiency (greedy layer-wise training removing backprop/memory); proposes a DIB-based objective with auxiliary classifiers.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Shuyan Lyu",
+            "Zhanzimo Wu",
+            "Junliang Du"
+        ],
+        "title": "Information-Theoretic Greedy Layer-wise Training for Traffic Sign Recognition",
+        "abstract": "Modern deep neural networks (DNNs) are typically trained with a global cross-entropy loss in a supervised end-to-end manner: neurons need to store their outgoing weights; training alternates between a forward pass (computation) and a top-down backward pass (learning) which is biologically implausible. Alternatively, greedy layer-wise training eliminates the need for cross-entropy loss and backpropagation. By avoiding the computation of intermediate gradients and the storage of intermediate outputs, it reduces memory usage and helps mitigate issues such as vanishing or exploding gradients. However, most existing layer-wise training approaches have been evaluated only on relatively small datasets with simple deep architectures. In this paper, we first systematically analyze the training dynamics of popular convolutional neural networks (CNNs) trained by stochastic gradient descent (SGD) through an information-theoretic lens. Our findings reveal that networks converge layer-by-layer from bottom to top and that the flow of information adheres to a Markov information bottleneck principle. Building on these observations, we propose a novel layer-wise training approach based on the recently developed deterministic information bottleneck (DIB) and the matrix-based R\\'enyi's $\\alpha$-order entropy functional. Specifically, each layer is trained jointly with an auxiliary classifier that connects directly to the output layer, enabling the learning of minimal sufficient task-relevant representations. We empirically validate the effectiveness of our training procedure on CIFAR-10 and CIFAR-100 using modern deep CNNs and further demonstrate its applicability to a practical task involving traffic sign recognition. Our approach not only outperforms existing layer-wise training baselines but also achieves performance comparable to SGD.",
+        "arxiv_id": "2510.27651"
+    }
+}
