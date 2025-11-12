@@ -1,0 +1,539 @@
+{
+    "2511.08544": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Randall Balestriero",
+            "Yann LeCun"
+        ],
+        "title": "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics",
+        "abstract": "Learning manipulable representations of the world and its dynamics is central to AI. Joint-Embedding Predictive Architectures (JEPAs) offer a promising blueprint, but lack of practical guidance and theory has led to ad-hoc R&D. We present a comprehensive theory of JEPAs and instantiate it in {\\bf LeJEPA}, a lean, scalable, and theoretically grounded training objective. First, we identify the isotropic Gaussian as the optimal distribution that JEPAs' embeddings should follow to minimize downstream prediction risk. Second, we introduce a novel objective--{\\bf Sketched Isotropic Gaussian Regularization} (SIGReg)--to constrain embeddings to reach that ideal distribution. Combining the JEPA predictive loss with SIGReg yields LeJEPA with numerous theoretical and practical benefits: (i) single trade-off hyperparameter, (ii) linear time and memory complexity, (iii) stability across hyper-parameters, architectures (ResNets, ViTs, ConvNets) and domains, (iv) heuristics-free, e.g., no stop-gradient, no teacher-student, no hyper-parameter schedulers, and (v) distributed training-friendly implementation requiring only $\\approx$50 lines of code. Our empirical validation covers 10+ datasets, 60+ architectures, all with varying scales and domains. As an example, using imagenet-1k for pretraining and linear evaluation with frozen backbone, LeJEPA reaches 79\\% with a ViT-H/14. We hope that the simplicity and theory-friendly ecosystem offered by LeJEPA will reestablish self-supervised pre-training as a core pillar of AI research (\\href{git@github.com:rbalestr-lab/lejepa.git}{GitHub repo}).",
+        "arxiv_id": "2511.08544"
+    },
+    "2511.07776": {
+        "SCORE": 18,
+        "ARXIVID": "2511.07776",
+        "COMMENT": "Matches ML Systems (heterogeneous acceleration and compiler-like abstraction): proposes a streaming tensor programming model with explicit memory hierarchy and dynamic tiling/parallelization for spatial dataflow accelerators.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Gina Sohn",
+            "Genghan Zhang",
+            "Konstantin Hossfeld",
+            "Jungwoo Kim",
+            "Nathan Sobotka",
+            "Nathan Zhang",
+            "Olivia Hsu",
+            "Kunle Olukotun"
+        ],
+        "title": "Streaming Tensor Program: A streaming abstraction for dynamic parallelism",
+        "abstract": "Dynamic behaviors are becoming prevalent in many tensor applications. In machine learning, for example, the input tensors are dynamically shaped or ragged, and data-dependent control flow is widely used in many models. However, the limited expressiveness of prior programming abstractions for spatial dataflow accelerators forces the dynamic behaviors to be implemented statically or lacks the visibility for performance-critical decisions. To address these challenges, we present the Streaming Tensor Program (STeP), a new streaming abstraction that enables dynamic tensor workloads to run efficiently on spatial dataflow accelerators. STeP introduces flexible routing operators, an explicit memory hierarchy, and symbolic shape semantics that expose dynamic data rates and tensor dimensions. These capabilities unlock new optimizations-dynamic tiling, dynamic parallelization, and configuration time-multiplexing-that adapt to dynamic behaviors while preserving dataflow efficiency. Using a cycle-approximate simulator on representative LLM layers with real-world traces, dynamic tiling reduces on-chip memory requirement by 2.18x, dynamic parallelization improves latency by 1.5x, and configuration time-multiplexing improves compute utilization by 2.57x over implementations available in prior abstractions.",
+        "arxiv_id": "2511.07776"
+    },
+    "2511.08083": {
+        "SCORE": 18,
+        "ARXIVID": "2511.08083",
+        "COMMENT": "ML Systems/HPC: kernel-level, tile-based programming primitives and framework for AMD GPUs enabling high-performance AI kernels with cross-vendor generalization and strong empirical analysis.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "William Hu",
+            "Drew Wadsworth",
+            "Sean Siddens",
+            "Stanley Winata",
+            "Daniel Y. Fu",
+            "Ryann Swann",
+            "Muhammad Osama",
+            "Christopher R\\'e",
+            "Simran Arora"
+        ],
+        "title": "HipKittens: Fast and Furious AMD Kernels",
+        "abstract": "AMD GPUs offer state-of-the-art compute and memory bandwidth; however, peak performance AMD kernels are written in raw assembly. To address the difficulty of mapping AI algorithms to hardware, recent work proposes C++ embedded and PyTorch-inspired domain-specific languages like ThunderKittens (TK) to simplify high performance AI kernel development on NVIDIA hardware. We explore the extent to which such primitives -- for explicit tile-based programming with optimized memory accesses and fine-grained asynchronous execution across workers -- are NVIDIA-specific or general. We provide the first detailed study of the programming primitives that lead to performant AMD AI kernels, and we encapsulate these insights in the HipKittens (HK) programming framework. We find that tile-based abstractions used in prior DSLs generalize to AMD GPUs, however we need to rethink the algorithms that instantiate these abstractions for AMD. We validate the HK primitives across CDNA3 and CDNA4 AMD platforms. In evaluations, HK kernels compete with AMD's hand-optimized assembly kernels for GEMMs and attention, and consistently outperform compiler baselines. Moreover, assembly is difficult to scale to the breadth of AI workloads; reflecting this, in some settings HK outperforms all available kernel baselines by $1.2-2.4\\times$ (e.g., $d=64$ attention, GQA backwards, memory-bound kernels). These findings help pave the way for a single, tile-based software layer for high-performance AI kernels that translates across GPU vendors. HipKittens is released at: https://github.com/HazyResearch/HipKittens.",
+        "arxiv_id": "2511.08083"
+    },
+    "2511.07427": {
+        "SCORE": 18,
+        "ARXIVID": "2511.07427",
+        "COMMENT": "ML Systems: hierarchical memory/storage/I/O optimization for KV cache across DRAM and flash with adaptive clustering and flash layout\u2014directly addressing large-model inference memory management.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Tuowei Wang",
+            "Minxing Huang",
+            "Fengzu Li",
+            "Ligeng Chen",
+            "Jinrui Zhang",
+            "Ju Ren"
+        ],
+        "title": "DynaKV: Enabling Accurate and Efficient Long-Sequence LLM Decoding on Smartphones",
+        "abstract": "As the demand for human-like reasoning, multi-turn dialogues, and long-form responses grows, large language models (LLMs) are increasingly expected to support efficient and effective long-sequence decoding. However, due to limited DRAM capacity, long-seuqence LLM decoding on smartphones is constrained by the key-value cache (KVCache), whose memory footprint increases linearly with sequence length. Retrieval-based methods mitigate DRAM pressure by offloading KVCache to flash and retrieving query-relevant entries through cluster-based indexing. Unfortunately, as decoding progresses, KVCache distribution shifts render static or local cluster updates progressively misaligned, excluding essential entries or fetching redundant ones. These issues are further exacerbated by smartphone-specific limitations in bandwidth, IOPS, and memory capacity.   We propose DynaKV, the first adaptive KVCache management approach that jointly addresses accuracy and efficiency for long-sequence decoding on smartphones. DynaKV integrates three key techniques: (1) Migration-Free Cluster Adaptation, which adaptively splits clusters during retrieval without incurring additional transfers; (2) Continuity-Centric Flash Management, which co-locates correlated entries and clusters and employs a dual-head layout for efficient updates; and (3) Memory-Efficient Cache Design, which virtualizes cache space across DRAM and flash and extends replacement policies to align with cluster-level access patterns. Evaluations demonstrate that DynaKV improves retrieval accuracy and reduces end-to-end latency compared to state-of-the-art solutions, achieving average gains of $1.38\\times$ in accuracy and $1.47\\times$ speedups. Furthermore, the insights of DynaKV naturally extend to other long-context workloads and multi-tier memory hierarchies, underscoring its broader applicability.",
+        "arxiv_id": "2511.07427"
+    },
+    "2511.08360": {
+        "SCORE": 18,
+        "ARXIVID": "2511.08360",
+        "COMMENT": "Matches Model Compression and Efficiency: unified framework combining structured sparsity with low-bit quantization via a new angular-alignment regularizer.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Dan Liu",
+            "Nikita Dvornik",
+            "Xue Liu"
+        ],
+        "title": "Extreme Model Compression with Structured Sparsity at Low Precision",
+        "abstract": "Deep neural networks (DNNs) are used in many applications, but their large size and high computational cost make them hard to run on devices with limited resources. Two widely used techniques to address this challenge are weight quantization, which lowers the precision of all weights, and structured sparsity, which removes unimportant weights while retaining the important ones at full precision. Although both are effective individually, they are typically studied in isolation due to their compounded negative impact on model accuracy when combined. In this work, we introduce SLOPE Structured Sparsity at Low Precision), a unified framework, to effectively combine structured sparsity and low-bit quantization in a principled way. We show that naively combining sparsity and quantization severely harms performance due to the compounded impact of both techniques. To address this, we propose a training-time regularization strategy that minimizes the discrepancy between full-precision weights and their sparse, quantized counterparts by promoting angular alignment rather than direct matching. On ResNet-18, SLOPE achieves $\\sim20\\times$ model size reduction while retaining $\\sim$99% of the original accuracy. It consistently outperforms state-of-the-art quantization and structured sparsity methods across classification, detection, and segmentation tasks on models such as ResNet-18, ViT-Small, and Mask R-CNN.",
+        "arxiv_id": "2511.08360"
+    },
+    "2511.07869": {
+        "SCORE": 18,
+        "ARXIVID": "2511.07869",
+        "COMMENT": "Matches ML Systems/HPC criteria: parallel sampling algorithm (speculative rejection + autospeculation) with O(n^{1/2}) bounds for autoregressive/diffusion models.",
+        "RELEVANCE": 9,
+        "NOVELTY": 9,
+        "authors": [
+            "Nima Anari",
+            "Carlo Baronio",
+            "CJ Chen",
+            "Alireza Haqi",
+            "Frederic Koehler",
+            "Anqi Li",
+            "Thuy-Duong Vuong"
+        ],
+        "title": "Parallel Sampling via Autospeculation",
+        "abstract": "We present parallel algorithms to accelerate sampling via counting in two settings: any-order autoregressive models and denoising diffusion models. An any-order autoregressive model accesses a target distribution $\\mu$ on $[q]^n$ through an oracle that provides conditional marginals, while a denoising diffusion model accesses a target distribution $\\mu$ on $\\mathbb{R}^n$ through an oracle that provides conditional means under Gaussian noise. Standard sequential sampling algorithms require $\\widetilde{O}(n)$ time to produce a sample from $\\mu$ in either setting. We show that, by issuing oracle calls in parallel, the expected sampling time can be reduced to $\\widetilde{O}(n^{1/2})$. This improves the previous $\\widetilde{O}(n^{2/3})$ bound for any-order autoregressive models and yields the first parallel speedup for diffusion models in the high-accuracy regime, under the relatively mild assumption that the support of $\\mu$ is bounded.   We introduce a novel technique to obtain our results: speculative rejection sampling. This technique leverages an auxiliary ``speculative'' distribution~$\\nu$ that approximates~$\\mu$ to accelerate sampling. Our technique is inspired by the well-studied ``speculative decoding'' techniques popular in large language models, but differs in key ways. Firstly, we use ``autospeculation,'' namely we build the speculation $\\nu$ out of the same oracle that defines~$\\mu$. In contrast, speculative decoding typically requires a separate, faster, but potentially less accurate ``draft'' model $\\nu$. Secondly, the key differentiating factor in our technique is that we make and accept speculations at a ``sequence'' level rather than at the level of single (or a few) steps. This last fact is key to unlocking our parallel runtime of $\\widetilde{O}(n^{1/2})$.",
+        "arxiv_id": "2511.07869"
+    },
+    "2511.07482": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07482",
+        "COMMENT": "Matches Model Compression and Efficiency: dynamic structured pruning for LLMs that preserves alignment-critical circuits, advancing pruning beyond static methods.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Dev Patel",
+            "Gabrielle Gervacio",
+            "Diekola Raimi",
+            "Kevin Zhu",
+            "Ryan Lagasse",
+            "Gabriel Grand",
+            "Ashwinee Panda",
+            "Maheep Chaudhary"
+        ],
+        "title": "Alignment-Constrained Dynamic Pruning for LLMs: Identifying and Preserving Alignment-Critical Circuits",
+        "abstract": "Large Language Models require substantial computational resources for inference, posing deployment challenges. While dynamic pruning offers superior efficiency over static methods through adaptive circuit selection, it exacerbates alignment degradation by retaining only input-dependent safety-critical circuit preservation across diverse inputs. As a result, addressing these heightened alignment vulnerabilities remains critical. We introduce Alignment-Aware Probe Pruning (AAPP), a dynamic structured pruning method that adaptively preserves alignment-relevant circuits during inference, building upon Probe Pruning. Experiments on LLaMA 2-7B, Qwen2.5-14B-Instruct, and Gemma-3-12B-IT show AAPP improves refusal rates by 50\\% at matched compute, enabling efficient yet safety-preserving LLM deployment.",
+        "arxiv_id": "2511.07482"
+    },
+    "2511.08368": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08368",
+        "COMMENT": "Model Architecture: theoretical treatment of RoPE equivariance and introduction of Spherical RoPE for vision Transformers.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Chase van de Geijn",
+            "Timo L\\\"uddecke",
+            "Polina Turishcheva",
+            "Alexander S. Ecker"
+        ],
+        "title": "A Circular Argument : Does RoPE need to be Equivariant for Vision?",
+        "abstract": "Rotary Positional Encodings (RoPE) have emerged as a highly effective technique for one-dimensional sequences in Natural Language Processing spurring recent progress towards generalizing RoPE to higher-dimensional data such as images and videos. The success of RoPE has been thought to be due to its positional equivariance, i.e. its status as a relative positional encoding. In this paper, we mathematically show RoPE to be one of the most general solutions for equivariant positional embedding in one-dimensional data. Moreover, we show Mixed RoPE to be the analogously general solution for M-dimensional data, if we require commutative generators -- a property necessary for RoPE's equivariance. However, we question whether strict equivariance plays a large role in RoPE's performance. We propose Spherical RoPE, a method analogous to Mixed RoPE, but assumes non-commutative generators. Empirically, we find Spherical RoPE to have the equivalent or better learning behavior compared to its equivariant analogues. This suggests that relative positional embeddings are not as important as is commonly believed, at least within computer vision. We expect this discovery to facilitate future work in positional encodings for vision that can be faster and generalize better by removing the preconception that they must be relative.",
+        "arxiv_id": "2511.08368"
+    },
+    "2511.07857": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07857",
+        "COMMENT": "Model Architecture theory: general framework (Universal Approximation Module) unifying universal approximation proofs across diverse architectures.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Wei Wang"
+        ],
+        "title": "A General Method for Proving Networks Universal Approximation Property",
+        "abstract": "Deep learning architectures are highly diverse. To prove their universal approximation properties, existing works typically rely on model-specific proofs. Generally, they construct a dedicated mathematical formulation for each architecture (e.g., fully connected networks, CNNs, or Transformers) and then prove their universal approximability. However, this approach suffers from two major limitations: first, every newly proposed architecture often requires a completely new proof from scratch; second, these proofs are largely isolated from one another, lacking a common analytical foundation. This not only incurs significant redundancy but also hinders unified theoretical understanding across different network families. To address these issues, this paper proposes a general and modular framework for proving universal approximation. We define a basic building block (comprising one or multiple layers) that possesses the universal approximation property as a Universal Approximation Module (UAM). Under this condition, we show that any deep network composed of such modules inherently retains the universal approximation property. Moreover, the overall approximation process can be interpreted as a progressive refinement across modules. This perspective not only unifies the analysis of diverse architectures but also enables a step-by-step understanding of how expressive power evolves through the network.",
+        "arxiv_id": "2511.07857"
+    },
+    "2511.07971": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07971",
+        "COMMENT": "Compression/Efficiency: low-rank curvature-aware ZO preconditioning and variance reduction for LLM fine-tuning, reducing memory and improving convergence (aligns with low-rank and efficient training criteria).",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Hyunseok Seung",
+            "Jaewoo Lee",
+            "Hyunsuk Ko"
+        ],
+        "title": "Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning",
+        "abstract": "We introduce LOREN, a curvature-aware zeroth-order (ZO) optimization method for fine-tuning large language models (LLMs). Existing ZO methods, which estimate gradients via finite differences using random perturbations, often suffer from high variance and suboptimal search directions. Our approach addresses these challenges by: (i) reformulating the problem of gradient preconditioning as that of adaptively estimating an anisotropic perturbation distribution for gradient estimation, (ii) capturing curvature through a low-rank block diagonal preconditioner using the framework of natural evolution strategies, and (iii) applying a REINFORCE leave-one-out (RLOO) gradient estimator to reduce variance. Experiments on standard LLM benchmarks show that our method outperforms state-of-the-art ZO methods by achieving higher accuracy and faster convergence, while cutting peak memory usage by up to 27.3% compared with MeZO-Adam.",
+        "arxiv_id": "2511.07971"
+    },
+    "2511.08003": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08003",
+        "COMMENT": "Model compression/efficiency: adaptive visual token pruning and hierarchical KV-cache pruning for VideoLLMs, hardware-friendly and attention-score-free two-stage framework.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Jialong Qin",
+            "Xin Zou",
+            "Di Lu",
+            "Yibo Yan",
+            "Xuming Hu"
+        ],
+        "title": "Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning",
+        "abstract": "Current Video Large Language Models (VideoLLMs) suffer from quadratic computational complexity and key-value cache scaling, due to their reliance on processing excessive redundant visual tokens. To address this problem, we propose SharpV, a minimalist and efficient method for adaptive pruning of visual tokens and KV cache. Different from most uniform compression approaches, SharpV dynamically adjusts pruning ratios based on spatial-temporal information. Remarkably, this adaptive mechanism occasionally achieves performance gains over dense models, offering a novel paradigm for adaptive pruning. During the KV cache pruning stage, based on observations of visual information degradation, SharpV prunes degraded visual features via a self-calibration manner, guided by similarity to original visual features. In this way, SharpV achieves hierarchical cache pruning from the perspective of information bottleneck, offering a new insight into VideoLLMs' information flow. Experiments on multiple public benchmarks demonstrate the superiority of SharpV. Moreover, to the best of our knowledge, SharpV is notably the first two-stage pruning framework that operates without requiring access to exposed attention scores, ensuring full compatibility with hardware acceleration techniques like Flash Attention.",
+        "arxiv_id": "2511.08003"
+    },
+    "2511.07572": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07572",
+        "COMMENT": "Representation learning and sparsity: introduces SCALAR benchmark for interaction sparsity in SAEs and proposes Staircase SAEs to enforce sparse cross-layer connectivity.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Sean P. Fillingham",
+            "Andrew Gordon",
+            "Peter Lai",
+            "Xavier Poncini",
+            "David Quarel",
+            "Stefan Heimersheim"
+        ],
+        "title": "SCALAR: Benchmarking SAE Interaction Sparsity in Toy LLMs",
+        "abstract": "Mechanistic interpretability aims to decompose neural networks into interpretable features and map their connecting circuits. The standard approach trains sparse autoencoders (SAEs) on each layer's activations. However, SAEs trained in isolation don't encourage sparse cross-layer connections, inflating extracted circuits where upstream features needlessly affect multiple downstream features. Current evaluations focus on individual SAE performance, leaving interaction sparsity unexamined. We introduce SCALAR (Sparse Connectivity Assessment of Latent Activation Relationships), a benchmark measuring interaction sparsity between SAE features. We also propose \"Staircase SAEs\", using weight-sharing to limit upstream feature duplication across downstream features. Using SCALAR, we compare TopK SAEs, Jacobian SAEs (JSAEs), and Staircase SAEs. Staircase SAEs improve relative sparsity over TopK SAEs by $59.67\\% \\pm 1.83\\%$ (feedforward) and $63.15\\% \\pm 1.35\\%$ (transformer blocks). JSAEs provide $8.54\\% \\pm 0.38\\%$ improvement over TopK for feedforward layers but cannot train effectively across transformer blocks, unlike Staircase and TopK SAEs which work anywhere in the residual stream. We validate on a $216$K-parameter toy model and GPT-$2$ Small ($124$M), where Staircase SAEs maintain interaction sparsity improvements while preserving feature interpretability. Our work highlights the importance of interaction sparsity in SAEs through benchmarking and comparing promising architectures.",
+        "arxiv_id": "2511.07572"
+    },
+    "2511.07892": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07892",
+        "COMMENT": "Matches Representation Learning and Compression/Efficiency theory: generalized spectral framework unifying neural scaling laws and compression dynamics with invariant relations.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Yizhou Zhang"
+        ],
+        "title": "A Generalized Spectral Framework to Expain Neural Scaling and Compression Dynamics",
+        "abstract": "Empirical scaling laws describe how test loss and other performance metrics depend on model size, dataset size, and compute. While such laws are consistent within specific regimes, apparently distinct scaling behaviors have been reported for related settings such as model compression. Motivated by recent progress in spectral analyses of neural representations, this paper develops a \\emph{generalized spectral framework} that unifies learning dynamics and compression phenomena under a common functional ansatz. We generalize the spectral evolution function from the linear kernel form $g(\\lambda t)=\\lambda t$ to an asymptotically polynomial function $g(\\lambda,t;\\beta)$, characterized by an effective spectral--temporal elasticity $\\rho(\\beta)$. This framework recovers existing lazy and feature-learning theories as special cases and yields an invariant relation between learning and compression",
+        "arxiv_id": "2511.07892"
+    },
+    "2511.08577": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08577",
+        "COMMENT": "Strong match to Model Architecture and Efficiency: conditional/dynamic computation via selective latent iterations, duo-causal attention across iteration depth, and low-rank (LoRA) refinement for hard tokens.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Tianyu Fu",
+            "Yichen You",
+            "Zekai Chen",
+            "Guohao Dai",
+            "Huazhong Yang",
+            "Yu Wang"
+        ],
+        "title": "Think-at-Hard: Selective Latent Iterations to Improve Reasoning Language Models",
+        "abstract": "Improving reasoning capabilities of Large Language Models (LLMs), especially under parameter constraints, is crucial for real-world applications. Prior work proposes recurrent transformers, which allocate a fixed number of extra iterations per token to improve generation quality. After the first, standard forward pass, instead of verbalization, last-layer hidden states are fed back as inputs for additional iterations to refine token predictions. Yet we identify a latent overthinking phenomenon: easy token predictions that are already correct after the first pass are sometimes revised into errors in additional iterations. To address this, we propose Think-at-Hard (TaH), a dynamic latent thinking method that iterates deeper only at hard tokens. It employs a lightweight neural decider to trigger latent iterations only at tokens that are likely incorrect after the standard forward pass. During latent iterations, Low-Rank Adaptation (LoRA) modules shift the LLM objective from general next-token prediction to focused hard-token refinement. We further introduce a duo-causal attention mechanism that extends attention from the token sequence dimension to an additional iteration depth dimension. This enables cross-iteration information flow while maintaining full sequential parallelism. Experiments show that TaH boosts LLM reasoning performance across five challenging benchmarks while maintaining the same parameter count. Compared with baselines that iterate twice for all output tokens, TaH delivers 8.1-11.3% accuracy gains while exempting 94% of tokens from the second iteration. Against strong single-iteration Qwen3 models finetuned with the same data, it also delivers 4.0-5.0% accuracy gains. When allowing less than 3% additional parameters from LoRA and the iteration decider, the gains increase to 8.5-12.6% and 5.3-5.4%, respectively. Our code is available at https://github.com/thu-nics/TaH.",
+        "arxiv_id": "2511.08577"
+    },
+    "2511.08243": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08243",
+        "COMMENT": "Model Architecture: provides a unified geometric/field-theoretic framework for Transformers, linking positional encodings and attention to kernel operators.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Xianshuai Shi",
+            "Jianfeng Zhu",
+            "Leibo Liu"
+        ],
+        "title": "A Unified Geometric Field Theory Framework for Transformers: From Manifold Embeddings to Kernel Modulation",
+        "abstract": "The Transformer architecture has achieved tremendous success in natural language processing, computer vision, and scientific computing through its self-attention mechanism. However, its core components-positional encoding and attention mechanisms-have lacked a unified physical or mathematical interpretation. This paper proposes a structural theoretical framework that integrates positional encoding, kernel integral operators, and attention mechanisms for in-depth theoretical investigation. We map discrete positions (such as text token indices and image pixel coordinates) to spatial functions on continuous manifolds, enabling a field-theoretic interpretation of Transformer layers as kernel-modulated operators acting over embedded manifolds.",
+        "arxiv_id": "2511.08243"
+    },
+    "2511.08417": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08417",
+        "COMMENT": "Efficiency/Representation Learning: reformulates contrastive loss with neural normalizer; alternating optimization enabling large-scale CLIP with small batches.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Xiyuan Wei",
+            "Chih-Jen Lin",
+            "Tianbao Yang"
+        ],
+        "title": "NeuCLIP: Efficient Large-Scale CLIP Training with Neural Normalizer Optimization",
+        "abstract": "Accurately estimating the normalization term (also known as the partition function) in the contrastive loss is a central challenge for training Contrastive Language-Image Pre-training (CLIP) models. Conventional methods rely on large batches for approximation, demanding substantial computational resources. To mitigate this issue, prior works introduced per-sample normalizer estimators, which are updated at each epoch in a blockwise coordinate manner to keep track of updated encoders. However, this scheme incurs optimization error that scales with the ratio of dataset size to batch size, limiting effectiveness for large datasets or small batches. To overcome this limitation, we propose NeuCLIP, a novel and elegant optimization framework based on two key ideas: (i) $\\textbf{reformulating}$ the contrastive loss for each sample $\\textbf{via convex analysis}$ into a minimization problem with an auxiliary variable representing its log-normalizer; and (ii) $\\textbf{transforming}$ the resulting minimization over $n$ auxiliary variables (where $n$ is the dataset size) via $\\textbf{variational analysis}$ into the minimization over a compact neural network that predicts the log-normalizers. We design an alternating optimization algorithm that jointly trains the CLIP model and the auxiliary network. By employing a tailored architecture and acceleration techniques for the auxiliary network, NeuCLIP achieves more accurate normalizer estimation, leading to improved performance compared with previous methods. Extensive experiments on large-scale CLIP training, spanning datasets from millions to billions of samples, demonstrate that NeuCLIP outperforms previous methods.",
+        "arxiv_id": "2511.08417"
+    },
+    "2511.07842": {
+        "SCORE": 16,
+        "ARXIVID": "2511.07842",
+        "COMMENT": "Matches Model Compression and Efficiency: alignment-aware post-training quantization using a contrastive loss to preserve safety while enabling robust 4-bit (W4A4) quantization.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Sunghyun Wee",
+            "Suyoung Kim",
+            "Hyeonjin Kim",
+            "Kyomin Hwang",
+            "Nojun Kwak"
+        ],
+        "title": "Alignment-Aware Quantization for LLM Safety",
+        "abstract": "Safety and efficiency are both important factors when deploying large language models(LLMs). LLMs are trained to follow human alignment for safety, and post training quantization(PTQ) is applied afterward for efficiency. However, these two objectives are often in conflict, revealing a fundamental flaw in the conventional PTQ paradigm: quantization can turn into a safety vulnerability if it only aims to achieve low perplexity. Models can demonstrate low perplexity yet exhibit significant degradation in alignment with the safety policy, highlighting that perplexity alone is an insufficient and often misleading proxy for model safety. To address this, we propose Alignment-Aware Quantization(AAQ), a novel approach that integrates Alignment-Preserving Contrastive(APC) loss into the PTQ pipeline. Compared to simple reconstruction loss, ours explicitly preserves alignment by encouraging the quantized model to mimic its safe, instruction-tuned model while diverging from the unaligned, pre-trained counterpart. Our method achieves this robust safety alignment without resorting to specialized safety-focused calibration datasets, highlighting its practical utility and broad applicability. AAQ is compatible with standard PTQ techniques and enables robust 4-bit (W4A4) quantization across diverse model families such as LLaMA, Qwen, and Mistral while maintaining safety where previous methods fail. Our work resolves the critical trade-off between efficiency and safety, paving the way toward LLMs that are both efficient and trustworthy. Anonymized code is available in the supplementary material.",
+        "arxiv_id": "2511.07842"
+    },
+    "2511.08028": {
+        "SCORE": 16,
+        "ARXIVID": "2511.08028",
+        "COMMENT": "Model Architecture: proposes and analyzes a Graph Transformer (GDT) with theoretical expressivity/positional embedding insights validated across large-scale settings.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Timo Stoll",
+            "Luis M\\\"uller",
+            "Christopher Morris"
+        ],
+        "title": "Generalizable Insights for Graph Transformers in Theory and Practice",
+        "abstract": "Graph Transformers (GTs) have shown strong empirical performance, yet current architectures vary widely in their use of attention mechanisms, positional embeddings (PEs), and expressivity. Existing expressivity results are often tied to specific design choices and lack comprehensive empirical validation on large-scale data. This leaves a gap between theory and practice, preventing generalizable insights that exceed particular application domains. Here, we propose the Generalized-Distance Transformer (GDT), a GT architecture using standard attention that incorporates many advancements for GTs from recent years, and develop a fine-grained understanding of the GDT's representation power in terms of attention and PEs. Through extensive experiments, we identify design choices that consistently perform well across various applications, tasks, and model scales, demonstrating strong performance in a few-shot transfer setting without fine-tuning. Our evaluation covers over eight million graphs with roughly 270M tokens across diverse domains, including image-based object detection, molecular property prediction, code summarization, and out-of-distribution algorithmic reasoning. We distill our theoretical and practical findings into several generalizable insights about effective GT design, training, and inference.",
+        "arxiv_id": "2511.08028"
+    },
+    "2511.07464": {
+        "SCORE": 16,
+        "ARXIVID": "2511.07464",
+        "COMMENT": "Matches Model Architecture (Grouped Differential Attention) and ML Systems (custom high-performance kernels, fused activations, Parallel Muon algorithm) for distributed training efficiency of large models.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Junghwan Lim",
+            "Sungmin Lee",
+            "Dongseok Kim",
+            "Taehyun Kim",
+            "Eunhwan Park",
+            "Jeesoo Lee",
+            "Jeongdoo Lee",
+            "Junhyeok Lee",
+            "Wai Ting Cheung",
+            "Dahye Choi",
+            "Jaeheui Her",
+            "Jaeyeon Huh",
+            "Hanbin Jung",
+            "Changjin Kang",
+            "Beomgyu Kim",
+            "Minjae Kim",
+            "Taewhan Kim",
+            "Youngrok Kim",
+            "Hyukjin Kweon",
+            "Haesol Lee",
+            "Kungyu Lee",
+            "Dongpin Oh",
+            "Yeongjae Park",
+            "Bokki Ryu",
+            "Dongjoo Weon"
+        ],
+        "title": "Motif 2 12.7B technical report",
+        "abstract": "We introduce Motif-2-12.7B, a new open-weight foundation model that pushes the efficiency frontier of large language models by combining architectural innovation with system-level optimization. Designed for scalable language understanding and robust instruction generalization under constrained compute budgets, Motif-2-12.7B builds upon Motif-2.6B with the integration of Grouped Differential Attention (GDA), which improves representational efficiency by disentangling signal and noise-control attention pathways. The model is pre-trained on 5.5 trillion tokens spanning diverse linguistic, mathematical, scientific, and programming domains using a curriculum-driven data scheduler that gradually changes the data composition ratio. The training system leverages the MuonClip optimizer alongside custom high-performance kernels, including fused PolyNorm activations and the Parallel Muon algorithm, yielding significant throughput and memory efficiency gains in large-scale distributed environments. Post-training employs a three-stage supervised fine-tuning pipeline that successively enhances general instruction adherence, compositional understanding, and linguistic precision. Motif-2-12.7B demonstrates competitive performance across diverse benchmarks, showing that thoughtful architectural scaling and optimized training design can rival the capabilities of much larger models.",
+        "arxiv_id": "2511.07464"
+    },
+    "2511.08552": {
+        "SCORE": 16,
+        "ARXIVID": "2511.08552",
+        "COMMENT": "Representation Learning: novel MI estimator via learning a normalizing flow to map joint to marginals, enabling scalable high-dimensional estimation.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Ivan Butakov",
+            "Alexander Semenenko",
+            "Alexey Frolov",
+            "Ivan Oseledets"
+        ],
+        "title": "FMMI: Flow Matching Mutual Information Estimation",
+        "abstract": "We introduce a novel Mutual Information (MI) estimator that fundamentally reframes the discriminative approach. Instead of training a classifier to discriminate between joint and marginal distributions, we learn a normalizing flow that transforms one into the other. This technique produces a computationally efficient and precise MI estimate that scales well to high dimensions and across a wide range of ground-truth MI values.",
+        "arxiv_id": "2511.08552"
+    },
+    "2511.07824": {
+        "SCORE": 16,
+        "ARXIVID": "2511.07824",
+        "COMMENT": "Matches Representation Learning criterion: new multi-objective bilevel optimization algorithm (WC-MHGD) with finite-time convergence guarantees.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Zhiyao Zhang",
+            "Zhuqing Liu",
+            "Xin Zhang",
+            "Wen-Yen Chen",
+            "Jiyan Yang",
+            "Jia Liu"
+        ],
+        "title": "Multi-Objective Bilevel Learning",
+        "abstract": "As machine learning (ML) applications grow increasingly complex in recent years, modern ML frameworks often need to address multiple potentially conflicting objectives with coupled decision variables across different layers. This creates a compelling need for multi-objective bilevel learning (MOBL). So far, however, the field of MOBL remains in its infancy and many important problems remain under-explored. This motivates us to fill this gap and systematically investigate the theoretical and algorithmic foundation of MOBL. Specifically, we consider MOBL problems with multiple conflicting objectives guided by preferences at the upper-level subproblem, where part of the inputs depend on the optimal solution of the lower-level subproblem. Our goal is to develop efficient MOBL optimization algorithms to (1) identify a preference-guided Pareto-stationary solution with low oracle complexity; and (2) enable systematic Pareto front exploration. To this end, we propose a unifying algorithmic framework called weighted-Chebyshev multi-hyper-gradient-descent (WC-MHGD) for both deterministic and stochastic settings with finite-time Pareto-stationarity convergence rate guarantees, which not only implies low oracle complexity but also induces systematic Pareto front exploration. We further conduct extensive experiments to confirm our theoretical results.",
+        "arxiv_id": "2511.07824"
+    },
+    "2511.08287": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08287",
+        "COMMENT": "Compression/Efficiency and Representation Learning: linear-complexity community-based contrastive loss with decoupled GNN and distillation for scalable GCL.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Xiang Chen",
+            "Kun Yue",
+            "Wenjie Liu",
+            "Zhenyu Zhang",
+            "Liang Duan"
+        ],
+        "title": "Dual-Kernel Graph Community Contrastive Learning",
+        "abstract": "Graph Contrastive Learning (GCL) has emerged as a powerful paradigm for training Graph Neural Networks (GNNs) in the absence of task-specific labels. However, its scalability on large-scale graphs is hindered by the intensive message passing mechanism of GNN and the quadratic computational complexity of contrastive loss over positive and negative node pairs. To address these issues, we propose an efficient GCL framework that transforms the input graph into a compact network of interconnected node sets while preserving structural information across communities. We firstly introduce a kernelized graph community contrastive loss with linear complexity, enabling effective information transfer among node sets to capture hierarchical structural information of the graph. We then incorporate a knowledge distillation technique into the decoupled GNN architecture to accelerate inference while maintaining strong generalization performance. Extensive experiments on sixteen real-world datasets of varying scales demonstrate that our method outperforms state-of-the-art GCL baselines in both effectiveness and scalability.",
+        "arxiv_id": "2511.08287"
+    },
+    "2511.08094": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08094",
+        "COMMENT": "Model architecture: introduces a Stuart\u2013Landau oscillatory GNN with amplitude+phase dynamics to mitigate oversmoothing/vanishing gradients; theoretically grounded OGNN design.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Kaicheng Zhang",
+            "David N. Reynolds",
+            "Piero Deidda",
+            "Francesco Tudisco"
+        ],
+        "title": "Stuart-Landau Oscillatory Graph Neural Network",
+        "abstract": "Oscillatory Graph Neural Networks (OGNNs) are an emerging class of physics-inspired architectures designed to mitigate oversmoothing and vanishing gradient problems in deep GNNs. In this work, we introduce the Complex-Valued Stuart-Landau Graph Neural Network (SLGNN), a novel architecture grounded in Stuart-Landau oscillator dynamics. Stuart-Landau oscillators are canonical models of limit-cycle behavior near Hopf bifurcations, which are fundamental to synchronization theory and are widely used in e.g. neuroscience for mesoscopic brain modeling. Unlike harmonic oscillators and phase-only Kuramoto models, Stuart-Landau oscillators retain both amplitude and phase dynamics, enabling rich phenomena such as amplitude regulation and multistable synchronization. The proposed SLGNN generalizes existing phase-centric Kuramoto-based OGNNs by allowing node feature amplitudes to evolve dynamically according to Stuart-Landau dynamics, with explicit tunable hyperparameters (such as the Hopf-parameter and the coupling strength) providing additional control over the interplay between feature amplitudes and network structure. We conduct extensive experiments across node classification, graph classification, and graph regression tasks, demonstrating that SLGNN outperforms existing OGNNs and establishes a novel, expressive, and theoretically grounded framework for deep oscillatory architectures on graphs.",
+        "arxiv_id": "2511.08094"
+    },
+    "2511.07896": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07896",
+        "COMMENT": "Representation Learning + Efficiency: uses sparse autoencoders to extract interpretable preference features, yielding a lightweight reward model (<1% trainable params).",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Dengcan Liu",
+            "Jiahao Li",
+            "Zheren Fu",
+            "Yi Tu",
+            "Jiajun Li",
+            "Zhendong Mao",
+            "Yongdong Zhang"
+        ],
+        "title": "SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder",
+        "abstract": "Reward models (RMs) are a core component in the post-training of large language models (LLMs), serving as proxies for human preference evaluation and guiding model alignment. However, training reliable RMs under limited resources remains challenging due to the reliance on large-scale preference annotations and the high cost of fine-tuning LLMs. To address this, we propose SparseRM, which leverages Sparse Autoencoder (SAE) to extract preference-relevant information encoded in model representations, enabling the construction of a lightweight and interpretable reward model. SparseRM first employs SAE to decompose LLM representations into interpretable directions that capture preference-relevant features. The representations are then projected onto these directions to compute alignment scores, which quantify the strength of each preference feature in the representations. A simple reward head aggregates these scores to predict preference scores. Experiments on three preference modeling tasks show that SparseRM achieves superior performance over most mainstream RMs while using less than 1% of trainable parameters. Moreover, it integrates seamlessly into downstream alignment pipelines, highlighting its potential for efficient alignment.",
+        "arxiv_id": "2511.07896"
+    },
+    "2511.08379": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08379",
+        "COMMENT": "Representation Learning / mechanistic interpretability: extracts multiple latent refusal directions via SOMs and manipulates internal representations, extending single-direction concept methods.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Giorgio Piras",
+            "Raffaele Mura",
+            "Fabio Brau",
+            "Luca Oneto",
+            "Fabio Roli",
+            "Battista Biggio"
+        ],
+        "title": "SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models",
+        "abstract": "Refusal refers to the functional behavior enabling safety-aligned language models to reject harmful or unethical prompts. Following the growing scientific interest in mechanistic interpretability, recent work encoded refusal behavior as a single direction in the model's latent space; e.g., computed as the difference between the centroids of harmful and harmless prompt representations. However, emerging evidence suggests that concepts in LLMs often appear to be encoded as a low-dimensional manifold embedded in the high-dimensional latent space. Motivated by these findings, we propose a novel method leveraging Self-Organizing Maps (SOMs) to extract multiple refusal directions. To this end, we first prove that SOMs generalize the prior work's difference-in-means technique. We then train SOMs on harmful prompt representations to identify multiple neurons. By subtracting the centroid of harmless representations from each neuron, we derive a set of multiple directions expressing the refusal concept. We validate our method on an extensive experimental setup, demonstrating that ablating multiple directions from models' internals outperforms not only the single-direction baseline but also specialized jailbreak algorithms, leading to an effective suppression of refusal. Finally, we conclude by analyzing the mechanistic implications of our approach.",
+        "arxiv_id": "2511.08379"
+    },
+    "2511.07498": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07498",
+        "COMMENT": "Representation learning and interpretability of attention: LAHIS to identify language-specific/general heads and a soft head-mask adaptation with minimal parameters.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Xin Liu",
+            "Qiyang Song",
+            "Qihang Zhou",
+            "Haichao Du",
+            "Shaowen Xu",
+            "Wenbo Jiang",
+            "Weijuan Zhang",
+            "Xiaoqi Jia"
+        ],
+        "title": "Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models",
+        "abstract": "Large language models (LLMs) increasingly support multilingual understanding and generation. Meanwhile, efforts to interpret their internal mechanisms have emerged, offering insights to enhance multilingual performance. While multi-head self-attention (MHA) has proven critical in many areas, its role in multilingual capabilities remains underexplored. In this work, we study the contribution of MHA in supporting multilingual processing in LLMs. We propose Language Attention Head Importance Scores (LAHIS), an effective and efficient method that identifies attention head importance for multilingual capabilities via a single forward and backward pass through the LLM. Applying LAHIS to Aya-23-8B, Llama-3.2-3B, and Mistral-7B-v0.1, we reveal the existence of both language-specific and language-general heads. Language-specific heads enable cross-lingual attention transfer to guide the model toward target language contexts and mitigate off-target language generation issue, contributing to addressing challenges in multilingual LLMs. We also introduce a lightweight adaptation that learns a soft head mask to modulate attention outputs over language heads, requiring only 20 tunable parameters to improve XQuAD accuracy. Overall, our work enhances both the interpretability and multilingual capabilities of LLMs from the perspective of MHA.",
+        "arxiv_id": "2511.07498"
+    },
+    "2511.07885": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07885",
+        "COMMENT": "Matches ML Systems benchmarks/measurement: defines Intelligence per Watt and provides an open profiling harness across models/accelerators for inference efficiency.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Jon Saad-Falcon",
+            "Avanika Narayan",
+            "Hakki Orhun Akengin",
+            "J. Wes Griffin",
+            "Herumb Shandilya",
+            "Adrian Gamarra Lafuente",
+            "Medhya Goel",
+            "Rebecca Joseph",
+            "Shlok Natarajan",
+            "Etash Kumar Guha",
+            "Shang Zhu",
+            "Ben Athiwaratkun",
+            "John Hennessy",
+            "Azalia Mirhoseini",
+            "Christopher R\\'e"
+        ],
+        "title": "Intelligence per Watt: Measuring Intelligence Efficiency of Local AI",
+        "abstract": "Large language model (LLM) queries are predominantly processed by frontier models in centralized cloud infrastructure. Rapidly growing demand strains this paradigm, and cloud providers struggle to scale infrastructure at pace. Two advances enable us to rethink this paradigm: small LMs (<=20B active parameters) now achieve competitive performance to frontier models on many tasks, and local accelerators (e.g., Apple M4 Max) run these models at interactive latencies. This raises the question: can local inference viably redistribute demand from centralized infrastructure? Answering this requires measuring whether local LMs can accurately answer real-world queries and whether they can do so efficiently enough to be practical on power-constrained devices (i.e., laptops). We propose intelligence per watt (IPW), task accuracy divided by unit of power, as a metric for assessing capability and efficiency of local inference across model-accelerator pairs. We conduct a large-scale empirical study across 20+ state-of-the-art local LMs, 8 accelerators, and a representative subset of LLM traffic: 1M real-world single-turn chat and reasoning queries. For each query, we measure accuracy, energy, latency, and power. Our analysis reveals $3$ findings. First, local LMs can accurately answer 88.7% of single-turn chat and reasoning queries with accuracy varying by domain. Second, from 2023-2025, IPW improved 5.3x and local query coverage rose from 23.2% to 71.3%. Third, local accelerators achieve at least 1.4x lower IPW than cloud accelerators running identical models, revealing significant headroom for optimization. These findings demonstrate that local inference can meaningfully redistribute demand from centralized infrastructure, with IPW serving as the critical metric for tracking this transition. We release our IPW profiling harness for systematic intelligence-per-watt benchmarking.",
+        "arxiv_id": "2511.07885"
+    },
+    "2511.08570": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08570",
+        "COMMENT": "Matches Model Architecture criterion: proposes KAN layers with autonomous domain-grid updates (architecture-level mechanism).",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Jamison Moody",
+            "James Usevitch"
+        ],
+        "title": "Automatic Grid Updates for Kolmogorov-Arnold Networks using Layer Histograms",
+        "abstract": "Kolmogorov-Arnold Networks (KANs) are a class of neural networks that have received increased attention in recent literature. In contrast to MLPs, KANs leverage parameterized, trainable activation functions and offer several benefits including improved interpretability and higher accuracy on learning symbolic equations. However, the original KAN architecture requires adjustments to the domain discretization of the network (called the \"domain grid\") during training, creating extra overhead for the user in the training process. Typical KAN layers are not designed with the ability to autonomously update their domains in a data-driven manner informed by the changing output ranges of previous layers. As an added benefit, this histogram algorithm may also be applied towards detecting out-of-distribution (OOD) inputs in a variety of settings. We demonstrate that AdaptKAN exceeds or matches the performance of prior KAN architectures and MLPs on four different tasks: learning scientific equations from the Feynman dataset, image classification from frozen features, learning a control Lyapunov function, and detecting OOD inputs on the OpenOOD v1.5 benchmark.",
+        "arxiv_id": "2511.08570"
+    },
+    "2511.07423": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07423",
+        "COMMENT": "ML Systems (Inference-serving): device\u2013cloud co-serving with communication-efficient offloading, stall-free pipeline, and scalable batching.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Genglin Wang",
+            "Liekang Zeng",
+            "Bufang Yang",
+            "Kaiwei Liu",
+            "Guoliang Xing",
+            "Chumin Sun",
+            "Li Zhou",
+            "Jie Sun",
+            "Zhenyu Yan"
+        ],
+        "title": "Synera: Synergistic LLM Serving across Device and Cloud at Scale",
+        "abstract": "Large Language Models (LLMs) are becoming key components in various mobile operating systems, driving smart applications like interactive chatbots and personal assistants. While bringing enhanced intelligence to mobile ends, their deployment suffers from a set of performance challenges, especially the generation quality degradation and prolonged latency. Prior works have mainly relied on solutions of cloud offloading or on-device Small Language Models (SLMs). However, the former is usually limited by the communication bottleneck, and the latter sacrifices generation quality due to resource constraints. To mitigate these limitations, this paper proposes Synera, a device-cloud synergistic LLM serving system that applies an efficient SLM-LLM synergistic mechanism. Through empirical studies on LLM's unique computing characteristics, Synera identifies a set of underexplored optimization opportunities in device-cloud synergistic LLM inference, including offloading decisions, pipeline stalls, and batching bottlenecks. To translate them into enhanced performance, Synera introduces tailored designs of communication-efficient selective offloading, stall-free parallel inference, and scalable cloud batching. Extensive evaluations with real-world testbeds show that Synera enables 1.20-5.47x better generation quality against competitive baselines with on-par latency performance. Compared with existing cloud serving, Synera achieves 8.2-16.5% lower cloud serving cost on various benchmarks.",
+        "arxiv_id": "2511.07423"
+    },
+    "2511.07994": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07994",
+        "COMMENT": "Model Architecture/Expressiveness: enhances GNN logical expressiveness via path-neighbor aggregation with theoretical guarantees.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Han Yu",
+            "Xiaojuan Zhao",
+            "Aiping Li",
+            "Kai Chen",
+            "Ziniu Liu",
+            "Zhichao Peng"
+        ],
+        "title": "Enhancing Logical Expressiveness in Graph Neural Networks via Path-Neighbor Aggregation",
+        "abstract": "Graph neural networks (GNNs) can effectively model structural information of graphs, making them widely used in knowledge graph (KG) reasoning. However, existing studies on the expressive power of GNNs mainly focuses on simple single-relation graphs, and there is still insufficient discussion on the power of GNN to express logical rules in KGs. How to enhance the logical expressive power of GNNs is still a key issue. Motivated by this, we propose Path-Neighbor enhanced GNN (PN-GNN), a method to enhance the logical expressive power of GNN by aggregating node-neighbor embeddings on the reasoning path. First, we analyze the logical expressive power of existing GNN-based methods and point out the shortcomings of the expressive power of these methods. Then, we theoretically investigate the logical expressive power of PN-GNN, showing that it not only has strictly stronger expressive power than C-GNN but also that its $(k+1)$-hop logical expressiveness is strictly superior to that of $k$-hop. Finally, we evaluate the logical expressive power of PN-GNN on six synthetic datasets and two real-world datasets. Both theoretical analysis and extensive experiments confirm that PN-GNN enhances the expressive power of logical rules without compromising generalization, as evidenced by its competitive performance in KG reasoning tasks.",
+        "arxiv_id": "2511.07994"
+    }
+}
