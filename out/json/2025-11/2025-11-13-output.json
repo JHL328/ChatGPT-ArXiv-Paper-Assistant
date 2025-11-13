@@ -1,0 +1,503 @@
+{
+    "2511.08544": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Randall Balestriero",
+            "Yann LeCun"
+        ],
+        "title": "LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics",
+        "abstract": "Learning manipulable representations of the world and its dynamics is central to AI. Joint-Embedding Predictive Architectures (JEPAs) offer a promising blueprint, but lack of practical guidance and theory has led to ad-hoc R&D. We present a comprehensive theory of JEPAs and instantiate it in {\\bf LeJEPA}, a lean, scalable, and theoretically grounded training objective. First, we identify the isotropic Gaussian as the optimal distribution that JEPAs' embeddings should follow to minimize downstream prediction risk. Second, we introduce a novel objective--{\\bf Sketched Isotropic Gaussian Regularization} (SIGReg)--to constrain embeddings to reach that ideal distribution. Combining the JEPA predictive loss with SIGReg yields LeJEPA with numerous theoretical and practical benefits: (i) single trade-off hyperparameter, (ii) linear time and memory complexity, (iii) stability across hyper-parameters, architectures (ResNets, ViTs, ConvNets) and domains, (iv) heuristics-free, e.g., no stop-gradient, no teacher-student, no hyper-parameter schedulers, and (v) distributed training-friendly implementation requiring only $\\approx$50 lines of code. Our empirical validation covers 10+ datasets, 60+ architectures, all with varying scales and domains. As an example, using imagenet-1k for pretraining and linear evaluation with frozen backbone, LeJEPA reaches 79\\% with a ViT-H/14. We hope that the simplicity and theory-friendly ecosystem offered by LeJEPA will reestablish self-supervised pre-training as a core pillar of AI research (\\href{https://github.com/rbalestr-lab/lejepa}{GitHub repo}).",
+        "arxiv_id": "2511.08544"
+    },
+    "2511.09323": {
+        "SCORE": 18,
+        "ARXIVID": "2511.09323",
+        "COMMENT": "Model Architecture: MoE-like conditional/sparse FFN (Mixture-of-Channels) activating Top-K channels via gating; Compression/Efficiency: cuts activation memory and SRAM traffic for pre-training and inference.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Tong Wu",
+            "Yutong He",
+            "Bin Wang",
+            "Kun Yuan"
+        ],
+        "title": "Mixture-of-Channels: Exploiting Sparse FFNs for Efficient LLMs Pre-Training and Inference",
+        "abstract": "Large language models (LLMs) have demonstrated remarkable success across diverse artificial intelligence tasks, driven by scaling laws that correlate model size and training data with performance improvements. However, this scaling paradigm incurs substantial memory overhead, creating significant challenges for both training and inference. While existing research has primarily addressed parameter and optimizer state memory reduction, activation memory-particularly from feed-forward networks (FFNs)-has become the critical bottleneck, especially when FlashAttention is implemented. In this work, we conduct a detailed memory profiling of LLMs and identify FFN activations as the predominant source to activation memory overhead. Motivated by this, we introduce Mixture-of-Channels (MoC), a novel FFN architecture that selectively activates only the Top-K most relevant channels per token determined by SwiGLU's native gating mechanism. MoC substantially reduces activation memory during pre-training and improves inference efficiency by reducing memory access through partial weight loading into GPU SRAM. Extensive experiments validate that MoC delivers significant memory savings and throughput gains while maintaining competitive model performance.",
+        "arxiv_id": "2511.09323"
+    },
+    "2511.08821": {
+        "SCORE": 18,
+        "ARXIVID": "2511.08821",
+        "COMMENT": "Model Compression and Efficiency: Bayesian post-training quantization optimizing posterior-expected loss with uncertainty-aware codebooks and mixed-precision allocation.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Ismail Lamaakal",
+            "Chaymae Yahyati",
+            "Yassine Maleh",
+            "Khalid El Makkaoui",
+            "Ibrahim Ouahbi"
+        ],
+        "title": "BayesQ: Uncertainty-Guided Bayesian Quantization",
+        "abstract": "We present BayesQ, an uncertainty-guided post-training quantization framework that is the first to optimize quantization under the posterior expected loss. BayesQ fits a lightweight Gaussian posterior over weights (diagonal Laplace by default; optional K-FAC/low-rank), whitens by the posterior covariance, designs codebooks to minimize posterior-expected distortion, and allocates mixed precision via a greedy knapsack that maximizes marginal expected-loss reduction per bit under a global budget. For scalar quantizers, posterior-expected MSE yields closed-form tables; task-aware proxies are handled by short Monte Carlo on a small calibration set. An optional calibration-only distillation aligns the quantized model with the posterior predictive teacher. At matched average bits/weight of 3.0/3.5/4.0, BayesQ improves over strong PTQ baselines on ResNet-50 (ImageNet) and BERT-base (GLUE) e.g., vs. GPTQ by $+1.5/+0.7/+0.3$ top-1 percentage points on RN50 and $+1.1/+0.4/+0.2$ GLUE points on BERT, while requiring one-time preprocessing comparable to a GPTQ pass. BayesQ reframes low-bit quantization as uncertainty-aware risk minimization in a practical, post-training pipeline.",
+        "arxiv_id": "2511.08821"
+    },
+    "2511.08972": {
+        "SCORE": 18,
+        "ARXIVID": "2511.08972",
+        "COMMENT": "Model Architecture (MoE): Optimal-transport-based token-to-expert routing with selective Sinkhorn, removing auxiliary balancing losses and improving expert utilization.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Duc Anh Nguyen",
+            "Huu Binh Ta",
+            "Nhuan Le Duc",
+            "Tan M. Nguyen",
+            "Toan Tran"
+        ],
+        "title": "Selective Sinkhorn Routing for Improved Sparse Mixture of Experts",
+        "abstract": "Sparse Mixture-of-Experts (SMoE) has gained prominence as a scalable and computationally efficient architecture, enabling significant growth in model capacity without incurring additional inference costs. However, existing SMoE models often rely on auxiliary losses (e.g., z-loss, load balancing) and additional trainable parameters (e.g., noisy gating) to encourage expert diversity, leading to objective misalignment and increased model complexity. Moreover, existing Sinkhorn-based methods suffer from significant training overhead due to their heavy reliance on the computationally expensive Sinkhorn algorithm. In this work, we formulate token-to-expert assignment as an optimal transport problem, incorporating constraints to ensure balanced expert utilization. We demonstrate that introducing a minimal degree of optimal transport-based routing enhances SMoE performance without requiring auxiliary balancing losses. Unlike previous methods, our approach derives gating scores directly from the transport map, enabling more effective token-to-expert balancing, supported by both theoretical analysis and empirical results. Building on these insights, we propose Selective Sinkhorn Routing (SSR), a routing mechanism that replaces auxiliary loss with lightweight Sinkhorn-based routing. SSR promotes balanced token assignments while preserving flexibility in expert selection. Across both language modeling and image classification tasks, SSR achieves faster training, higher accuracy, and greater robustness to input corruption.",
+        "arxiv_id": "2511.08972"
+    },
+    "2511.09557": {
+        "SCORE": 18,
+        "ARXIVID": "2511.09557",
+        "COMMENT": "ML Systems/HPC: New hierarchical all-reduce (NVRAR) with NVSHMEM for multi-node LLM inference, showing lower latency than NCCL and end-to-end batch latency gains.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Prajwal Singhania",
+            "Siddharth Singh",
+            "Lannie Dalton Hough",
+            "Akarsh Srivastava",
+            "Harshitha Menon",
+            "Charles Fredrick Jekel",
+            "Abhinav Bhatele"
+        ],
+        "title": "LLM Inference Beyond a Single Node: From Bottlenecks to Mitigations with Fast All-Reduce Communication",
+        "abstract": "As large language models (LLMs) continue to grow in size, distributed inference has become increasingly important. Model-parallel strategies must now efficiently scale not only across multiple GPUs but also across multiple nodes. In this work, we present a detailed performance study of multi-node distributed inference using LLMs on GPU-based supercomputers. We conduct experiments with several state-of-the-art inference engines alongside YALIS, a research-oriented prototype engine designed for controlled experimentation. We analyze the strong-scaling behavior of different model-parallel schemes and identify key bottlenecks. Since all-reduce operations are a common performance bottleneck, we develop NVRAR, a hierarchical all-reduce algorithm based on recursive doubling with NVSHMEM. NVRAR achieves up to 1.9x-3.6x lower latency than NCCL for message sizes between 128 KB and 2 MB on HPE Slingshot and InfiniBand interconnects. Integrated into YALIS, NVRAR achieves up to a 1.72x reduction in end-to-end batch latency for the Llama 3.1 405B model in multi-node decode-heavy workloads using tensor parallelism.",
+        "arxiv_id": "2511.09557"
+    },
+    "2511.08968": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08968",
+        "COMMENT": "Model Architecture (MoE): Bayesian post-hoc uncertainty via structured Laplace on expert layers with Kronecker low-rank curvature approximations; improves calibration.",
+        "RELEVANCE": 10,
+        "NOVELTY": 7,
+        "authors": [
+            "Maryam Dialameh",
+            "Hossein Rajabzadeh",
+            "Weiwei Zhang",
+            "Walid Ahmed",
+            "Hyock Ju Kwon"
+        ],
+        "title": "Bayesian Mixture of Experts For Large Language Models",
+        "abstract": "We present Bayesian Mixture of Experts (Bayesian-MoE), a post-hoc uncertainty estimation framework for fine-tuned large language models (LLMs) based on Mixture-of-Experts architectures. Our method applies a structured Laplace approximation to the second linear layer of each expert, enabling calibrated uncertainty estimation without modifying the original training procedure or introducing new parameters. Unlike prior approaches, which apply Bayesian inference to added adapter modules, Bayesian-MoE directly targets the expert pathways already present in MoE models, leveraging their modular design for tractable block-wise posterior estimation. We use Kronecker-factored low-rank approximations to model curvature and derive scalable estimates of predictive uncertainty and marginal likelihood. Experiments on common-sense reasoning benchmarks with Qwen1.5-MoE and DeepSeek-MoE demonstrate that Bayesian-MoE improves both expected calibration error (ECE) and negative log-likelihood (NLL) over baselines, confirming its effectiveness for reliable downstream decision-making.",
+        "arxiv_id": "2511.08968"
+    },
+    "2511.07464": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07464",
+        "COMMENT": "Strong match to Model Architecture (Grouped Differential Attention) and ML Systems/HPC (custom fused kernels, Parallel Muon, distributed training throughput/memory optimizations).",
+        "RELEVANCE": 10,
+        "NOVELTY": 7,
+        "authors": [
+            "Junghwan Lim",
+            "Sungmin Lee",
+            "Dongseok Kim",
+            "Taehyun Kim",
+            "Eunhwan Park",
+            "Jeesoo Lee",
+            "Jeongdoo Lee",
+            "Junhyeok Lee",
+            "Wai Ting Cheung",
+            "Dahye Choi",
+            "Jaeheui Her",
+            "Jaeyeon Huh",
+            "Hanbin Jung",
+            "Changjin Kang",
+            "Beomgyu Kim",
+            "Minjae Kim",
+            "Taewhan Kim",
+            "Youngrok Kim",
+            "Hyukjin Kweon",
+            "Haesol Lee",
+            "Kungyu Lee",
+            "Dongpin Oh",
+            "Yeongjae Park",
+            "Bokki Ryu",
+            "Dongjoo Weon"
+        ],
+        "title": "Motif 2 12.7B technical report",
+        "abstract": "We introduce Motif-2-12.7B, a new open-weight foundation model that pushes the efficiency frontier of large language models by combining architectural innovation with system-level optimization. Designed for scalable language understanding and robust instruction generalization under constrained compute budgets, Motif-2-12.7B builds upon Motif-2.6B with the integration of Grouped Differential Attention (GDA), which improves representational efficiency by disentangling signal and noise-control attention pathways. The model is pre-trained on 5.5 trillion tokens spanning diverse linguistic, mathematical, scientific, and programming domains using a curriculum-driven data scheduler that gradually changes the data composition ratio. The training system leverages the MuonClip optimizer alongside custom high-performance kernels, including fused PolyNorm activations and the Parallel Muon algorithm, yielding significant throughput and memory efficiency gains in large-scale distributed environments. Post-training employs a three-stage supervised fine-tuning pipeline that successively enhances general instruction adherence, compositional understanding, and linguistic precision. Motif-2-12.7B demonstrates competitive performance across diverse benchmarks, showing that thoughtful architectural scaling and optimized training design can rival the capabilities of much larger models.",
+        "arxiv_id": "2511.07464"
+    },
+    "2511.08368": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08368",
+        "COMMENT": "Strong match to Model Architecture with theoretical analysis and innovation in positional encodings (RoPE/Mixed/Spherical) for higher-dimensional data.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Chase van de Geijn",
+            "Timo L\\\"uddecke",
+            "Polina Turishcheva",
+            "Alexander S. Ecker"
+        ],
+        "title": "A Circular Argument : Does RoPE need to be Equivariant for Vision?",
+        "abstract": "Rotary Positional Encodings (RoPE) have emerged as a highly effective technique for one-dimensional sequences in Natural Language Processing spurring recent progress towards generalizing RoPE to higher-dimensional data such as images and videos. The success of RoPE has been thought to be due to its positional equivariance, i.e. its status as a relative positional encoding. In this paper, we mathematically show RoPE to be one of the most general solutions for equivariant positional embedding in one-dimensional data. Moreover, we show Mixed RoPE to be the analogously general solution for M-dimensional data, if we require commutative generators -- a property necessary for RoPE's equivariance. However, we question whether strict equivariance plays a large role in RoPE's performance. We propose Spherical RoPE, a method analogous to Mixed RoPE, but assumes non-commutative generators. Empirically, we find Spherical RoPE to have the equivalent or better learning behavior compared to its equivariant analogues. This suggests that relative positional embeddings are not as important as is commonly believed, at least within computer vision. We expect this discovery to facilitate future work in positional encodings for vision that can be faster and generalize better by removing the preconception that they must be relative.",
+        "arxiv_id": "2511.08368"
+    },
+    "2511.07427": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07427",
+        "COMMENT": "ML Systems: hierarchical KV-cache management across DRAM/flash on smartphones (adaptive clustering, flash layout, cache virtualization) enabling efficient long-sequence decoding with latency gains.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Tuowei Wang",
+            "Minxing Huang",
+            "Fengzu Li",
+            "Ligeng Chen",
+            "Jinrui Zhang",
+            "Ju Ren"
+        ],
+        "title": "DynaKV: Enabling Accurate and Efficient Long-Sequence LLM Decoding on Smartphones",
+        "abstract": "As the demand for human-like reasoning, multi-turn dialogues, and long-form responses grows, large language models (LLMs) are increasingly expected to support efficient and effective long-sequence decoding. However, due to limited DRAM capacity, long-seuqence LLM decoding on smartphones is constrained by the key-value cache (KVCache), whose memory footprint increases linearly with sequence length. Retrieval-based methods mitigate DRAM pressure by offloading KVCache to flash and retrieving query-relevant entries through cluster-based indexing. Unfortunately, as decoding progresses, KVCache distribution shifts render static or local cluster updates progressively misaligned, excluding essential entries or fetching redundant ones. These issues are further exacerbated by smartphone-specific limitations in bandwidth, IOPS, and memory capacity.   We propose DynaKV, the first adaptive KVCache management approach that jointly addresses accuracy and efficiency for long-sequence decoding on smartphones. DynaKV integrates three key techniques: (1) Migration-Free Cluster Adaptation, which adaptively splits clusters during retrieval without incurring additional transfers; (2) Continuity-Centric Flash Management, which co-locates correlated entries and clusters and employs a dual-head layout for efficient updates; and (3) Memory-Efficient Cache Design, which virtualizes cache space across DRAM and flash and extends replacement policies to align with cluster-level access patterns. Evaluations demonstrate that DynaKV improves retrieval accuracy and reduces end-to-end latency compared to state-of-the-art solutions, achieving average gains of $1.38\\times$ in accuracy and $1.47\\times$ speedups. Furthermore, the insights of DynaKV naturally extend to other long-context workloads and multi-tier memory hierarchies, underscoring its broader applicability.",
+        "arxiv_id": "2511.07427"
+    },
+    "2511.07857": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07857",
+        "COMMENT": "Model Architecture/Theory: General modular framework (Universal Approximation Modules) to prove universal approximation across diverse network families.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Wei Wang"
+        ],
+        "title": "A General Method for Proving Networks Universal Approximation Property",
+        "abstract": "Deep learning architectures are highly diverse. To prove their universal approximation properties, existing works typically rely on model-specific proofs. Generally, they construct a dedicated mathematical formulation for each architecture (e.g., fully connected networks, CNNs, or Transformers) and then prove their universal approximability. However, this approach suffers from two major limitations: first, every newly proposed architecture often requires a completely new proof from scratch; second, these proofs are largely isolated from one another, lacking a common analytical foundation. This not only incurs significant redundancy but also hinders unified theoretical understanding across different network families. To address these issues, this paper proposes a general and modular framework for proving universal approximation. We define a basic building block (comprising one or multiple layers) that possesses the universal approximation property as a Universal Approximation Module (UAM). Under this condition, we show that any deep network composed of such modules inherently retains the universal approximation property. Moreover, the overall approximation process can be interpreted as a progressive refinement across modules. This perspective not only unifies the analysis of diverse architectures but also enables a step-by-step understanding of how expressive power evolves through the network.",
+        "arxiv_id": "2511.07857"
+    },
+    "2511.07482": {
+        "SCORE": 17,
+        "ARXIVID": "2511.07482",
+        "COMMENT": "Model Compression and Efficiency: dynamic structured pruning that preserves alignment-critical circuits (safety-aware sparse inference).",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Dev Patel",
+            "Gabrielle Gervacio",
+            "Diekola Raimi",
+            "Kevin Zhu",
+            "Ryan Lagasse",
+            "Gabriel Grand",
+            "Ashwinee Panda",
+            "Maheep Chaudhary"
+        ],
+        "title": "Alignment-Constrained Dynamic Pruning for LLMs: Identifying and Preserving Alignment-Critical Circuits",
+        "abstract": "Large Language Models require substantial computational resources for inference, posing deployment challenges. While dynamic pruning offers superior efficiency over static methods through adaptive circuit selection, it exacerbates alignment degradation by retaining only input-dependent safety-critical circuit preservation across diverse inputs. As a result, addressing these heightened alignment vulnerabilities remains critical. We introduce Alignment-Aware Probe Pruning (AAPP), a dynamic structured pruning method that adaptively preserves alignment-relevant circuits during inference, building upon Probe Pruning. Experiments on LLaMA 2-7B, Qwen2.5-14B-Instruct, and Gemma-3-12B-IT show AAPP improves refusal rates by 50\\% at matched compute, enabling efficient yet safety-preserving LLM deployment.",
+        "arxiv_id": "2511.07482"
+    },
+    "2511.09290": {
+        "SCORE": 17,
+        "ARXIVID": "2511.09290",
+        "COMMENT": "Relevant Representation Learning insight into when predictive coding yields low-dimensional structured representations, with theory and empirical validation.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Aviv Ratzon",
+            "Omri Barak"
+        ],
+        "title": "Multi-step Predictive Coding Leads To Simplicity Bias",
+        "abstract": "Predictive coding is a framework for understanding the formation of low-dimensional internal representations mirroring the environment's latent structure. The conditions under which such representations emerge remain unclear. In this work, we investigate how the prediction horizon and network depth shape the solutions of predictive coding tasks. Using a minimal abstract setting inspired by prior work, we show empirically and theoretically that sufficiently deep networks trained with multi-step prediction horizons consistently recover the underlying latent structure, a phenomenon explained through the Ordinary Least Squares estimator structure and biases in learning dynamics. We then extend these insights to nonlinear networks and complex datasets, including piecewise linear functions, MNIST, multiple latent states and higher dimensional state geometries. Our results provide a principled understanding of when and why predictive coding induces structured representations, bridging the gap between empirical observations and theoretical foundations.",
+        "arxiv_id": "2511.09290"
+    },
+    "2511.08003": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08003",
+        "COMMENT": "Matches Model Compression and Efficiency: adaptive pruning of visual tokens and hierarchical KV-cache pruning (without attention scores) for efficient VideoLLM inference.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Jialong Qin",
+            "Xin Zou",
+            "Di Lu",
+            "Yibo Yan",
+            "Xuming Hu"
+        ],
+        "title": "Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning",
+        "abstract": "Current Video Large Language Models (VideoLLMs) suffer from quadratic computational complexity and key-value cache scaling, due to their reliance on processing excessive redundant visual tokens. To address this problem, we propose SharpV, a minimalist and efficient method for adaptive pruning of visual tokens and KV cache. Different from most uniform compression approaches, SharpV dynamically adjusts pruning ratios based on spatial-temporal information. Remarkably, this adaptive mechanism occasionally achieves performance gains over dense models, offering a novel paradigm for adaptive pruning. During the KV cache pruning stage, based on observations of visual information degradation, SharpV prunes degraded visual features via a self-calibration manner, guided by similarity to original visual features. In this way, SharpV achieves hierarchical cache pruning from the perspective of information bottleneck, offering a new insight into VideoLLMs' information flow. Experiments on multiple public benchmarks demonstrate the superiority of SharpV. Moreover, to the best of our knowledge, SharpV is notably the first two-stage pruning framework that operates without requiring access to exposed attention scores, ensuring full compatibility with hardware acceleration techniques like Flash Attention.",
+        "arxiv_id": "2511.08003"
+    },
+    "2511.08577": {
+        "SCORE": 17,
+        "ARXIVID": "2511.08577",
+        "COMMENT": "Model Architecture & Efficiency: Conditional/Dynamic networks\u2014token-level latent iteration decider with duo-causal attention across iteration depth to reduce overthinking and allocate compute adaptively.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Tianyu Fu",
+            "Yichen You",
+            "Zekai Chen",
+            "Guohao Dai",
+            "Huazhong Yang",
+            "Yu Wang"
+        ],
+        "title": "Think-at-Hard: Selective Latent Iterations to Improve Reasoning Language Models",
+        "abstract": "Improving reasoning capabilities of Large Language Models (LLMs), especially under parameter constraints, is crucial for real-world applications. Prior work proposes recurrent transformers, which allocate a fixed number of extra iterations per token to improve generation quality. After the first, standard forward pass, instead of verbalization, last-layer hidden states are fed back as inputs for additional iterations to refine token predictions. Yet we identify a latent overthinking phenomenon: easy token predictions that are already correct after the first pass are sometimes revised into errors in additional iterations. To address this, we propose Think-at-Hard (TaH), a dynamic latent thinking method that iterates deeper only at hard tokens. It employs a lightweight neural decider to trigger latent iterations only at tokens that are likely incorrect after the standard forward pass. During latent iterations, Low-Rank Adaptation (LoRA) modules shift the LLM objective from general next-token prediction to focused hard-token refinement. We further introduce a duo-causal attention mechanism that extends attention from the token sequence dimension to an additional iteration depth dimension. This enables cross-iteration information flow while maintaining full sequential parallelism. Experiments show that TaH boosts LLM reasoning performance across five challenging benchmarks while maintaining the same parameter count. Compared with baselines that iterate twice for all output tokens, TaH delivers 8.1-11.3% accuracy gains while exempting 94% of tokens from the second iteration. Against strong single-iteration Qwen3 models finetuned with the same data, it also delivers 4.0-5.0% accuracy gains. When allowing less than 3% additional parameters from LoRA and the iteration decider, the gains increase to 8.5-12.6% and 5.3-5.4%, respectively. Our code is available at https://github.com/thu-nics/TaH.",
+        "arxiv_id": "2511.08577"
+    },
+    "2511.08360": {
+        "SCORE": 16,
+        "ARXIVID": "2511.08360",
+        "COMMENT": "Compression/Efficiency: unified framework combining structured sparsity with low-bit quantization using an angular-alignment regularizer to preserve accuracy at extreme compression.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Dan Liu",
+            "Nikita Dvornik",
+            "Xue Liu"
+        ],
+        "title": "Extreme Model Compression with Structured Sparsity at Low Precision",
+        "abstract": "Deep neural networks (DNNs) are used in many applications, but their large size and high computational cost make them hard to run on devices with limited resources. Two widely used techniques to address this challenge are weight quantization, which lowers the precision of all weights, and structured sparsity, which removes unimportant weights while retaining the important ones at full precision. Although both are effective individually, they are typically studied in isolation due to their compounded negative impact on model accuracy when combined. In this work, we introduce SLOPE Structured Sparsity at Low Precision), a unified framework, to effectively combine structured sparsity and low-bit quantization in a principled way. We show that naively combining sparsity and quantization severely harms performance due to the compounded impact of both techniques. To address this, we propose a training-time regularization strategy that minimizes the discrepancy between full-precision weights and their sparse, quantized counterparts by promoting angular alignment rather than direct matching. On ResNet-18, SLOPE achieves $\\sim20\\times$ model size reduction while retaining $\\sim$99% of the original accuracy. It consistently outperforms state-of-the-art quantization and structured sparsity methods across classification, detection, and segmentation tasks on models such as ResNet-18, ViT-Small, and Mask R-CNN.",
+        "arxiv_id": "2511.08360"
+    },
+    "2511.07842": {
+        "SCORE": 16,
+        "ARXIVID": "2511.07842",
+        "COMMENT": "Model Compression and Efficiency: Alignment-aware post-training quantization with a contrastive loss to preserve safety alignment in LLMs; a generalizable PTQ improvement.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Sunghyun Wee",
+            "Suyoung Kim",
+            "Hyeonjin Kim",
+            "Kyomin Hwang",
+            "Nojun Kwak"
+        ],
+        "title": "Alignment-Aware Quantization for LLM Safety",
+        "abstract": "Safety and efficiency are both important factors when deploying large language models(LLMs). LLMs are trained to follow human alignment for safety, and post training quantization(PTQ) is applied afterward for efficiency. However, these two objectives are often in conflict, revealing a fundamental flaw in the conventional PTQ paradigm: quantization can turn into a safety vulnerability if it only aims to achieve low perplexity. Models can demonstrate low perplexity yet exhibit significant degradation in alignment with the safety policy, highlighting that perplexity alone is an insufficient and often misleading proxy for model safety. To address this, we propose Alignment-Aware Quantization(AAQ), a novel approach that integrates Alignment-Preserving Contrastive(APC) loss into the PTQ pipeline. Compared to simple reconstruction loss, ours explicitly preserves alignment by encouraging the quantized model to mimic its safe, instruction-tuned model while diverging from the unaligned, pre-trained counterpart. Our method achieves this robust safety alignment without resorting to specialized safety-focused calibration datasets, highlighting its practical utility and broad applicability. AAQ is compatible with standard PTQ techniques and enables robust 4-bit (W4A4) quantization across diverse model families such as LLaMA, Qwen, and Mistral while maintaining safety where previous methods fail. Our work resolves the critical trade-off between efficiency and safety, paving the way toward LLMs that are both efficient and trustworthy. Anonymized code is available in the supplementary material.",
+        "arxiv_id": "2511.07842"
+    },
+    "2511.09432": {
+        "SCORE": 16,
+        "ARXIVID": "2511.09432",
+        "COMMENT": "Representation Learning/Architecture: Equivariant Sparse Autoencoders\u2014incorporates group symmetries into SAEs for more interpretable, symmetry-consistent features.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Ege Erdogan",
+            "Ana Lucic"
+        ],
+        "title": "Group Equivariance Meets Mechanistic Interpretability: Equivariant Sparse Autoencoders",
+        "abstract": "Sparse autoencoders (SAEs) have proven useful in disentangling the opaque activations of neural networks, primarily large language models, into sets of interpretable features. However, adapting them to domains beyond language, such as scientific data with group symmetries, introduces challenges that can hinder their effectiveness. We show that incorporating such group symmetries into the SAEs yields features more useful in downstream tasks. More specifically, we train autoencoders on synthetic images and find that a single matrix can explain how their activations transform as the images are rotated. Building on this, we develop adaptively equivariant SAEs that can adapt to the base model's level of equivariance. These adaptive SAEs discover features that lead to superior probing performance compared to regular SAEs, demonstrating the value of incorporating symmetries in mechanistic interpretability tools.",
+        "arxiv_id": "2511.09432"
+    },
+    "2511.09042": {
+        "SCORE": 16,
+        "ARXIVID": "2511.09042",
+        "COMMENT": "Matches Model Architecture (manifold-aware GNN aggregation) and Representation Learning (quantifies and mitigates semantic drift via manifold geometry).",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Liangwei Yang",
+            "Jing Ma",
+            "Jianguo Zhang",
+            "Zhiwei Liu",
+            "Jielin Qiu",
+            "Shirley Kokane",
+            "Shiyu Wang",
+            "Haolin Chen",
+            "Rithesh Murthy",
+            "Ming Zhu",
+            "Huan Wang",
+            "Weiran Yao",
+            "Caiming Xiong",
+            "Shelby Heinecke"
+        ],
+        "title": "GeoGNN: Quantifying and Mitigating Semantic Drift in Text-Attributed Graphs",
+        "abstract": "Graph neural networks (GNNs) on text--attributed graphs (TAGs) typically encode node texts using pretrained language models (PLMs) and propagate these embeddings through linear neighborhood aggregation. However, the representation spaces of modern PLMs are highly non--linear and geometrically structured, where textual embeddings reside on curved semantic manifolds rather than flat Euclidean spaces. Linear aggregation on such manifolds inevitably distorts geometry and causes semantic drift--a phenomenon where aggregated representations deviate from the intrinsic manifold, losing semantic fidelity and expressive power. To quantitatively investigate this problem, this work introduces a local PCA--based metric that measures the degree of semantic drift and provides the first quantitative framework to analyze how different aggregation mechanisms affect manifold structure. Building upon these insights, we propose Geodesic Aggregation, a manifold--aware mechanism that aggregates neighbor information along geodesics via log--exp mappings on the unit sphere, ensuring that representations remain faithful to the semantic manifold during message passing. We further develop GeoGNN, a practical instantiation that integrates spherical attention with manifold interpolation. Extensive experiments across four benchmark datasets and multiple text encoders show that GeoGNN substantially mitigates semantic drift and consistently outperforms strong baselines, establishing the importance of manifold--aware aggregation in text--attributed graph learning.",
+        "arxiv_id": "2511.09042"
+    },
+    "2511.09002": {
+        "SCORE": 16,
+        "ARXIVID": "2511.09002",
+        "COMMENT": "Matches Representation Learning (training dynamics): theoretical convergence and stability analysis of self-consuming generative model retraining using nonlinear Perron\u2013Frobenius tools.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Hongru Zhao",
+            "Jinwen Fu",
+            "Tuan Pham"
+        ],
+        "title": "Convergence and Stability Analysis of Self-Consuming Generative Models with Heterogeneous Human Curation",
+        "abstract": "Self-consuming generative models have received significant attention over the last few years. In this paper, we study a self-consuming generative model with heterogeneous preferences that is a generalization of the model in Ferbach et al. (2024). The model is retrained round by round using real data and its previous-round synthetic outputs. The asymptotic behavior of the retraining dynamics is investigated across four regimes using different techniques including the nonlinear Perron--Frobenius theory. Our analyses improve upon that of Ferbach et al. (2024) and provide convergence results in settings where the well-known Banach contraction mapping arguments do not apply. Stability and non-stability results regarding the retraining dynamics are also given.",
+        "arxiv_id": "2511.09002"
+    },
+    "2511.08888": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08888",
+        "COMMENT": "Compression/Efficiency: Kronecker product factorization of spatiotemporal attention reduces complexity from O(P^2N^2) to O(P^2N+N^2P), offering architectural insights into efficient attention.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Christopher Cheong",
+            "Gary Davis",
+            "Seongjin Choi"
+        ],
+        "title": "Weaver: Kronecker Product Approximations of Spatiotemporal Attention for Traffic Network Forecasting",
+        "abstract": "Spatiotemporal forecasting on transportation networks is a complex task that requires understanding how traffic nodes interact within a dynamic, evolving system dictated by traffic flow dynamics and social behavioral patterns. The importance of transportation networks and ITS for modern mobility and commerce necessitates forecasting models that are not only accurate but also interpretable, efficient, and robust under structural or temporal perturbations. Recent approaches, particularly Transformer-based architectures, have improved predictive performance but often at the cost of high computational overhead and diminished architectural interpretability. In this work, we introduce Weaver, a novel attention-based model that applies Kronecker product approximations (KPA) to decompose the PN X PN spatiotemporal attention of O(P^2N^2) complexity into local P X P temporal and N X N spatial attention maps. This Kronecker attention map enables our Parallel-Kronecker Matrix-Vector product (P2-KMV) for efficient spatiotemporal message passing with O(P^2N + N^2P) complexity. To capture real-world traffic dynamics, we address the importance of negative edges in modeling traffic behavior by introducing Valence Attention using the continuous Tanimoto coefficient (CTC), which provides properties conducive to precise latent graph generation and training stability. To fully utilize the model's learning capacity, we introduce the Traffic Phase Dictionary for self-conditioning. Evaluations on PEMS-BAY and METR-LA show that Weaver achieves competitive performance across model categories while training more efficiently.",
+        "arxiv_id": "2511.08888"
+    },
+    "2511.07885": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07885",
+        "COMMENT": "ML Systems: Proposes a reproducible metric (Intelligence per Watt) and benchmarking harness across models/accelerators, providing general measurement methodology for inference efficiency.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Jon Saad-Falcon",
+            "Avanika Narayan",
+            "Hakki Orhun Akengin",
+            "J. Wes Griffin",
+            "Herumb Shandilya",
+            "Adrian Gamarra Lafuente",
+            "Medhya Goel",
+            "Rebecca Joseph",
+            "Shlok Natarajan",
+            "Etash Kumar Guha",
+            "Shang Zhu",
+            "Ben Athiwaratkun",
+            "John Hennessy",
+            "Azalia Mirhoseini",
+            "Christopher R\\'e"
+        ],
+        "title": "Intelligence per Watt: Measuring Intelligence Efficiency of Local AI",
+        "abstract": "Large language model (LLM) queries are predominantly processed by frontier models in centralized cloud infrastructure. Rapidly growing demand strains this paradigm, and cloud providers struggle to scale infrastructure at pace. Two advances enable us to rethink this paradigm: small LMs (<=20B active parameters) now achieve competitive performance to frontier models on many tasks, and local accelerators (e.g., Apple M4 Max) run these models at interactive latencies. This raises the question: can local inference viably redistribute demand from centralized infrastructure? Answering this requires measuring whether local LMs can accurately answer real-world queries and whether they can do so efficiently enough to be practical on power-constrained devices (i.e., laptops). We propose intelligence per watt (IPW), task accuracy divided by unit of power, as a metric for assessing capability and efficiency of local inference across model-accelerator pairs. We conduct a large-scale empirical study across 20+ state-of-the-art local LMs, 8 accelerators, and a representative subset of LLM traffic: 1M real-world single-turn chat and reasoning queries. For each query, we measure accuracy, energy, latency, and power. Our analysis reveals $3$ findings. First, local LMs can accurately answer 88.7% of single-turn chat and reasoning queries with accuracy varying by domain. Second, from 2023-2025, IPW improved 5.3x and local query coverage rose from 23.2% to 71.3%. Third, local accelerators achieve at least 1.4x lower IPW than cloud accelerators running identical models, revealing significant headroom for optimization. These findings demonstrate that local inference can meaningfully redistribute demand from centralized infrastructure, with IPW serving as the critical metric for tracking this transition. We release our IPW profiling harness for systematic intelligence-per-watt benchmarking.",
+        "arxiv_id": "2511.07885"
+    },
+    "2511.08579": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08579",
+        "COMMENT": "Representation Learning/Interpretability: trains LMs to describe internal features, causal activation structure, and token influence using privileged access to activations.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Belinda Z. Li",
+            "Zifan Carl Guo",
+            "Vincent Huang",
+            "Jacob Steinhardt",
+            "Jacob Andreas"
+        ],
+        "title": "Training Language Models to Explain Their Own Computations",
+        "abstract": "Can language models (LMs) learn to faithfully describe their internal computations? Are they better able to describe themselves than other models? We study the extent to which LMs' privileged access to their own internals can be leveraged to produce new techniques for explaining their behavior. Using existing interpretability techniques as a source of ground truth, we fine-tune LMs to generate natural language descriptions of (1) the information encoded by LM features, (2) the causal structure of LMs' internal activations, and (3) the influence of specific input tokens on LM outputs. When trained with only tens of thousands of example explanations, explainer models exhibit non-trivial generalization to new queries. This generalization appears partly attributable to explainer models' privileged access to their own internals: using a model to explain its own computations generally works better than using a *different* model to explain its computations (even if the other model is significantly more capable). Our results suggest not only that LMs can learn to reliably explain their internal computations, but that such explanations offer a scalable complement to existing interpretability methods.",
+        "arxiv_id": "2511.08579"
+    },
+    "2511.08704": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08704",
+        "COMMENT": "Representation Learning/Scaling laws: analyzes optimal compute\u2013data\u2013model scaling for next-pixel Transformers across objectives and resolutions.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Xinchen Yan",
+            "Chen Liang",
+            "Lijun Yu",
+            "Adams Wei Yu",
+            "Yifeng Lu",
+            "Quoc V. Le"
+        ],
+        "title": "Rethinking generative image pretraining: How far are we from scaling up next-pixel prediction?",
+        "abstract": "This paper investigates the scaling properties of autoregressive next-pixel prediction, a simple, end-to-end yet under-explored framework for unified vision models. Starting with images at resolutions of 32x32, we train a family of Transformers using IsoFlops profiles across compute budgets up to 7e19 FLOPs and evaluate three distinct target metrics: next-pixel prediction objective, ImageNet classification accuracy, and generation quality measured by Fr'echet Distance. First, optimal scaling strategy is critically task-dependent. At a fixed 32x32 resolution alone, the optimal scaling properties for image classification and image generation diverge, where generation optimal setup requires the data size grow three to five times faster than for the classification optimal setup. Second, as image resolution increases, the optimal scaling strategy indicates that the model size must grow much faster than data size. Surprisingly, by projecting our findings, we discover that the primary bottleneck is compute rather than the amount of training data. As compute continues to grow four to five times annually, we forecast the feasibility of pixel-by-pixel modeling of images within the next five years.",
+        "arxiv_id": "2511.08704"
+    },
+    "2511.07994": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07994",
+        "COMMENT": "Model Architecture (GNN expressiveness): path-neighbor aggregation achieving provable gains in logical expressiveness over C-GNN.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Han Yu",
+            "Xiaojuan Zhao",
+            "Aiping Li",
+            "Kai Chen",
+            "Ziniu Liu",
+            "Zhichao Peng"
+        ],
+        "title": "Enhancing Logical Expressiveness in Graph Neural Networks via Path-Neighbor Aggregation",
+        "abstract": "Graph neural networks (GNNs) can effectively model structural information of graphs, making them widely used in knowledge graph (KG) reasoning. However, existing studies on the expressive power of GNNs mainly focuses on simple single-relation graphs, and there is still insufficient discussion on the power of GNN to express logical rules in KGs. How to enhance the logical expressive power of GNNs is still a key issue. Motivated by this, we propose Path-Neighbor enhanced GNN (PN-GNN), a method to enhance the logical expressive power of GNN by aggregating node-neighbor embeddings on the reasoning path. First, we analyze the logical expressive power of existing GNN-based methods and point out the shortcomings of the expressive power of these methods. Then, we theoretically investigate the logical expressive power of PN-GNN, showing that it not only has strictly stronger expressive power than C-GNN but also that its $(k+1)$-hop logical expressiveness is strictly superior to that of $k$-hop. Finally, we evaluate the logical expressive power of PN-GNN on six synthetic datasets and two real-world datasets. Both theoretical analysis and extensive experiments confirm that PN-GNN enhances the expressive power of logical rules without compromising generalization, as evidenced by its competitive performance in KG reasoning tasks.",
+        "arxiv_id": "2511.07994"
+    },
+    "2511.08878": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08878",
+        "COMMENT": "Strong Representation Learning and Model Architecture contribution (untrained covariance scattering transforms) with an efficiency angle via pruning and stability analysis.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Andrea Cavallo",
+            "Ayushman Raghuvanshi",
+            "Sundeep Prabhakar Chepuri",
+            "Elvin Isufi"
+        ],
+        "title": "Covariance Scattering Transforms",
+        "abstract": "Machine learning and data processing techniques relying on covariance information are widespread as they identify meaningful patterns in unsupervised and unlabeled settings. As a prominent example, Principal Component Analysis (PCA) projects data points onto the eigenvectors of their covariance matrix, capturing the directions of maximum variance. This mapping, however, falls short in two directions: it fails to capture information in low-variance directions, relevant when, e.g., the data contains high-variance noise; and it provides unstable results in low-sample regimes, especially when covariance eigenvalues are close. CoVariance Neural Networks (VNNs), i.e., graph neural networks using the covariance matrix as a graph, show improved stability to estimation errors and learn more expressive functions in the covariance spectrum than PCA, but require training and operate in a labeled setup. To get the benefits of both worlds, we propose Covariance Scattering Transforms (CSTs), deep untrained networks that sequentially apply filters localized in the covariance spectrum to the input data and produce expressive hierarchical representations via nonlinearities. We define the filters as covariance wavelets that capture specific and detailed covariance spectral patterns. We improve CSTs' computational and memory efficiency via a pruning mechanism, and we prove that their error due to finite-sample covariance estimations is less sensitive to close covariance eigenvalues compared to PCA, improving their stability. Our experiments on age prediction from cortical thickness measurements on 4 datasets collecting patients with neurodegenerative diseases show that CSTs produce stable representations in low-data settings, as VNNs but without any training, and lead to comparable or better predictions w.r.t. more complex learning models.",
+        "arxiv_id": "2511.08878"
+    },
+    "2511.08305": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08305",
+        "COMMENT": "Matches Model Architecture/Representation Learning: test-time activation steering via Riemannian optimization to diversify reasoning paths and improve accuracy.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Ly Tran Ho Khanh",
+            "Dongxuan Zhu",
+            "Man-Chung Yue",
+            "Viet Anh Nguyen"
+        ],
+        "title": "Test-time Diverse Reasoning by Riemannian Activation Steering",
+        "abstract": "Best-of-$N$ reasoning improves the accuracy of language models in solving complex tasks by sampling multiple candidate solutions and then selecting the best one based on some criteria. A critical bottleneck for this strategy is the output diversity limit, which occurs when the model generates similar outputs despite stochastic sampling, and hence recites the same error. To address this lack of variance in reasoning paths, we propose a novel unsupervised activation steering strategy that simultaneously optimizes the steering vectors for multiple reasoning trajectories at test time. At any synchronization anchor along the batch generation process, we find the steering vectors that maximize the total volume spanned by all possible intervened activation subsets. We demonstrate that these steering vectors can be determined by solving a Riemannian optimization problem over the product of spheres with a log-determinant objective function. We then use a Riemannian block-coordinate descent algorithm with a well-tuned learning rate to obtain a stationary point of the problem, and we apply these steering vectors until the generation process reaches the subsequent synchronization anchor. Empirical evaluations on popular mathematical benchmarks demonstrate that our test-time Riemannian activation steering strategy outperforms vanilla sampling techniques in terms of generative diversity and solution accuracy.",
+        "arxiv_id": "2511.08305"
+    },
+    "2511.07896": {
+        "SCORE": 15,
+        "ARXIVID": "2511.07896",
+        "COMMENT": "Matches Representation Learning and Efficiency: uses sparse autoencoders to extract interpretable preference features and build lightweight reward models (<1% trainable params).",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Dengcan Liu",
+            "Jiahao Li",
+            "Zheren Fu",
+            "Yi Tu",
+            "Jiajun Li",
+            "Zhendong Mao",
+            "Yongdong Zhang"
+        ],
+        "title": "SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder",
+        "abstract": "Reward models (RMs) are a core component in the post-training of large language models (LLMs), serving as proxies for human preference evaluation and guiding model alignment. However, training reliable RMs under limited resources remains challenging due to the reliance on large-scale preference annotations and the high cost of fine-tuning LLMs. To address this, we propose SparseRM, which leverages Sparse Autoencoder (SAE) to extract preference-relevant information encoded in model representations, enabling the construction of a lightweight and interpretable reward model. SparseRM first employs SAE to decompose LLM representations into interpretable directions that capture preference-relevant features. The representations are then projected onto these directions to compute alignment scores, which quantify the strength of each preference feature in the representations. A simple reward head aggregates these scores to predict preference scores. Experiments on three preference modeling tasks show that SparseRM achieves superior performance over most mainstream RMs while using less than 1% of trainable parameters. Moreover, it integrates seamlessly into downstream alignment pipelines, highlighting its potential for efficient alignment.",
+        "arxiv_id": "2511.07896"
+    },
+    "2511.08379": {
+        "SCORE": 15,
+        "ARXIVID": "2511.08379",
+        "COMMENT": "Matches Representation Learning: mechanistic interpretability showing concepts as multi-directional manifolds via SOMs and intervention through direction ablations.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Giorgio Piras",
+            "Raffaele Mura",
+            "Fabio Brau",
+            "Luca Oneto",
+            "Fabio Roli",
+            "Battista Biggio"
+        ],
+        "title": "SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models",
+        "abstract": "Refusal refers to the functional behavior enabling safety-aligned language models to reject harmful or unethical prompts. Following the growing scientific interest in mechanistic interpretability, recent work encoded refusal behavior as a single direction in the model's latent space; e.g., computed as the difference between the centroids of harmful and harmless prompt representations. However, emerging evidence suggests that concepts in LLMs often appear to be encoded as a low-dimensional manifold embedded in the high-dimensional latent space. Motivated by these findings, we propose a novel method leveraging Self-Organizing Maps (SOMs) to extract multiple refusal directions. To this end, we first prove that SOMs generalize the prior work's difference-in-means technique. We then train SOMs on harmful prompt representations to identify multiple neurons. By subtracting the centroid of harmless representations from each neuron, we derive a set of multiple directions expressing the refusal concept. We validate our method on an extensive experimental setup, demonstrating that ablating multiple directions from models' internals outperforms not only the single-direction baseline but also specialized jailbreak algorithms, leading to an effective suppression of refusal. Finally, we conclude by analyzing the mechanistic implications of our approach.",
+        "arxiv_id": "2511.08379"
+    }
+}
