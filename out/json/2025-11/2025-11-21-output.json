@@ -1,0 +1,373 @@
+{
+    "2511.16652": {
+        "SCORE": 18,
+        "ARXIVID": "2511.16652",
+        "COMMENT": "Model Compression/Efficiency + HPC: low-rank ES perturbations reduce memory/compute from mn to r(m+n) with O(1/r) convergence analysis, enabling large-scale, parallel training.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Bidipta Sarkar",
+            "Mattie Fellows",
+            "Juan Agustin Duque",
+            "Alistair Letcher",
+            "Antonio Le\\'on Villares",
+            "Anya Sims",
+            "Dylan Cope",
+            "Jarek Liesen",
+            "Lukas Seier",
+            "Theo Wolf",
+            "Uljad Berdica",
+            "Alexander David Goldie",
+            "Aaron Courville",
+            "Karin Sevegnani",
+            "Shimon Whiteson",
+            "Jakob Nicolaus Foerster"
+        ],
+        "title": "Evolution Strategies at the Hyperscale",
+        "abstract": "We introduce Evolution Guided General Optimization via Low-rank Learning (EGGROLL), an evolution strategies (ES) algorithm designed to scale backprop-free optimization to large population sizes for modern large neural network architectures with billions of parameters. ES is a set of powerful blackbox optimisation methods that can handle non-differentiable or noisy objectives with excellent scaling potential through parallelisation. Na{\\\"i}ve ES becomes prohibitively expensive at scale due to the computational and memory costs associated with generating matrix perturbations $E\\in\\mathbb{R}^{m\\times n}$ and the batched matrix multiplications needed to compute per-member forward passes. EGGROLL overcomes these bottlenecks by generating random matrices $A\\in \\mathbb{R}^{m\\times r},\\ B\\in \\mathbb{R}^{n\\times r}$ with $r\\ll \\min(m,n)$ to form a low-rank matrix perturbation $A B^\\top$ that are used in place of the full-rank perturbation $E$. As the overall update is an average across a population of $N$ workers, this still results in a high-rank update but with significant memory and computation savings, reducing the auxiliary storage from $mn$ to $r(m+n)$ per layer and the cost of a forward pass from $\\mathcal{O}(mn)$ to $\\mathcal{O}(r(m+n))$ when compared to full-rank ES. A theoretical analysis reveals our low-rank update converges to the full-rank update at a fast $\\mathcal{O}\\left(\\frac{1}{r}\\right)$ rate. Our experiments show that (1) EGGROLL does not compromise the performance of ES in tabula-rasa RL settings, despite being faster, (2) it is competitive with GRPO as a technique for improving LLM reasoning, and (3) EGGROLL enables stable pre-training of nonlinear recurrent language models that operate purely in integer datatypes.",
+        "arxiv_id": "2511.16652"
+    },
+    "2511.15927": {
+        "SCORE": 18,
+        "ARXIVID": "2511.15927",
+        "COMMENT": "Model Architecture and Efficiency: replaces quadratic-attention backbones with Mamba state-space layers for diffusion LMs, reducing KV-cache overhead and enabling linear-time inference.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Vaibhav Singh",
+            "Oleksiy Ostapenko",
+            "Pierre-Andr\\'e No\\\"el",
+            "Torsten Scholak"
+        ],
+        "title": "Breaking the Bottleneck with DiffuApriel: High-Throughput Diffusion LMs with Mamba Backbone",
+        "abstract": "Diffusion-based language models have recently emerged as a promising alternative to autoregressive generation, yet their reliance on Transformer backbones limits inference efficiency due to quadratic attention and KV-cache overhead. In this work, we introduce DiffuApriel, a masked diffusion language model built on a bidirectional Mamba backbone that combines the diffusion objective with linear-time sequence modeling. DiffuApriel matches the performance of Transformer-based diffusion models while achieving up to 4.4x higher inference throughput for long sequences with a 1.3B model. We further propose DiffuApriel-H, a hybrid variant that interleaves attention and mamba layers, offering up to 2.6x throughput improvement with balanced global and local context modeling. Our results demonstrate that bidirectional state-space architectures serve as strong denoisers in masked diffusion LMs, providing a practical and scalable foundation for faster, memory-efficient text generation.",
+        "arxiv_id": "2511.15927"
+    },
+    "2511.16665": {
+        "SCORE": 18,
+        "ARXIVID": "2511.16665",
+        "COMMENT": "ML Systems: adaptive speculative decoding for RL training with idle-GPU draft training and CUDAGraph-based rollout; memory/compute scheduling for high-throughput training.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Qinghao Hu",
+            "Shang Yang",
+            "Junxian Guo",
+            "Xiaozhe Yao",
+            "Yujun Lin",
+            "Yuxian Gu",
+            "Han Cai",
+            "Chuang Gan",
+            "Ana Klimovic",
+            "Song Han"
+        ],
+        "title": "Taming the Long-Tail: Efficient Reasoning RL Training with Adaptive Drafter",
+        "abstract": "The emergence of Large Language Models (LLMs) with strong reasoning capabilities marks a significant milestone, unlocking new frontiers in complex problem-solving. However, training these reasoning models, typically using Reinforcement Learning (RL), encounters critical efficiency bottlenecks: response generation during RL training exhibits a persistent long-tail distribution, where a few very long responses dominate execution time, wasting resources and inflating costs. To address this, we propose TLT, a system that accelerates reasoning RL training losslessly by integrating adaptive speculative decoding. Applying speculative decoding in RL is challenging due to the dynamic workloads, evolving target model, and draft model training overhead. TLT overcomes these obstacles with two synergistic components: (1) Adaptive Drafter, a lightweight draft model trained continuously on idle GPUs during long-tail generation to maintain alignment with the target model at no extra cost; and (2) Adaptive Rollout Engine, which maintains a memory-efficient pool of pre-captured CUDAGraphs and adaptively select suitable SD strategies for each input batch. Evaluations demonstrate that TLT achieves over 1.7x end-to-end RL training speedup over state-of-the-art systems, preserves the model accuracy, and yields a high-quality draft model as a free byproduct suitable for efficient deployment. Code is released at https://github.com/mit-han-lab/fastrl.",
+        "arxiv_id": "2511.16665"
+    },
+    "2511.14808": {
+        "SCORE": 18,
+        "ARXIVID": "2511.14808",
+        "COMMENT": "Architecture/Representation analysis: proves generic injectivity and bi-Lipschitz properties of Transformer hidden states and introduces geometric diagnostics (incl. quantization effects).",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Mikael von Strauss"
+        ],
+        "title": "Transformer Injectivity & Geometric Robustness - Analytic Margins and Bi-Lipschitz Uniformity of Sequence-Level Hidden States",
+        "abstract": "Under real-analytic assumptions on decoder-only Transformers, recent work shows that the map from discrete prompts to last-token hidden states is generically injective on finite prompt sets. We refine this picture: for each layer $\\ell$ we define a collision discriminant $\\Delta^\\ell \\subset \\Theta$ and injective stratum $U^\\ell = \\Theta \\setminus \\Delta^\\ell$, and prove a dichotomy -- either the model is nowhere injective on the set, or $U^\\ell$ is open and dense and every $F^\\ell_\\theta$ is injective. Under mild non-singularity assumptions on the optimizer and an absolutely continuous initialization, generic injectivity persists along smooth training trajectories over any fixed horizon. We also treat symmetry groups $G$, showing that discriminants and injective strata descend to the quotient $\\Theta/G$, so injectivity is naturally a property of functional equivalence classes.   We complement these results with an empirical study of layerwise geometric diagnostics. We define a separation margin and a co-Lipschitz (lower Lipschitz) constant between prompt space and last-token representation space, estimated via nearest-neighbor statistics on large prompt sets. Applying these diagnostics to pretrained LLaMA-3 and Qwen models, we study behavior across layers, sequence lengths, model scales, and 8- and 4-bit activation quantization. On our sampled prompts we see no collisions in full precision or at 8 bits, while 4-bit quantization induces a small number of collisions and markedly shrinks co-Lipschitz estimates. For a small GPT-2 trained from scratch, normalized metrics remain stable over training. Overall, the results suggest that Transformer representations are generically and persistently injective in the continuous-parameter idealization, while their practical invertibility can be probed using simple geometric diagnostics.",
+        "arxiv_id": "2511.14808"
+    },
+    "2511.15015": {
+        "SCORE": 18,
+        "ARXIVID": "2511.15015",
+        "COMMENT": "MoE + Quantization + ML Systems: dynamic per-expert precision control, asynchronous precision switching, and fragmentation-free memory pooling for scalable MoE inference.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Kexin Chu",
+            "Dawei Xiang",
+            "Zixu Shen",
+            "Yiwei Yang",
+            "Zecheng Liu",
+            "Wei Zhang"
+        ],
+        "title": "Dynamic Expert Quantization for Scalable Mixture-of-Experts Inference",
+        "abstract": "Mixture-of-Experts (MoE) models scale LLM capacity efficiently, but deployment on consumer GPUs is limited by the large memory footprint of inactive experts. Static post-training quantization reduces storage costs but cannot adapt to shifting activation patterns, causing accuracy loss under aggressive compression. So we present DynaExq, a runtime system that treats expert precision as a first-class, dynamically managed resource. DynaExq combines (1) a hotness-aware precision controller that continuously aligns expert bit-widths with long-term activation statistics, (2) a fully asynchronous precision-switching pipeline that overlaps promotion and demotion with MoE computation, and (3) a fragmentation-free memory pooling mechanism that supports hybrid-precision experts with deterministic allocation. Together, these components enable stable, non-blocking precision transitions under strict HBM budgets.   Across Qwen3-30B and Qwen3-80B MoE models and six representative benchmarks, DynaExq deploys large LLMs on single RTX 5090 and A6000 GPUs and improves accuracy by up to 4.03 points over static low-precision baselines. The results show that adaptive, workload-aware quantization is an effective strategy for memory-constrained MoE serving.",
+        "arxiv_id": "2511.15015"
+    },
+    "2511.14981": {
+        "SCORE": 17,
+        "ARXIVID": "2511.14981",
+        "COMMENT": "Model Compression and Efficiency \u2014 advances knowledge distillation with a feature-only framework and a teacher-layer quality metric, moving beyond logit-based losses.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Nicholas Cooper",
+            "Lijun Chen",
+            "Sailesh Dwivedy",
+            "Danna Gurari"
+        ],
+        "title": "Logit-Based Losses Limit the Effectiveness of Feature Knowledge Distillation",
+        "abstract": "Knowledge distillation (KD) methods can transfer knowledge of a parameter-heavy teacher model to a light-weight student model. The status quo for feature KD methods is to utilize loss functions based on logits (i.e., pre-softmax class scores) and intermediate layer features (i.e., latent representations). Unlike previous approaches, we propose a feature KD framework for training the student's backbone using feature-based losses exclusively (i.e., without logit-based losses such as cross entropy). Leveraging recent discoveries about the geometry of latent representations, we introduce a knowledge quality metric for identifying which teacher layers provide the most effective knowledge for distillation. Experiments on three image classification datasets with four diverse student-teacher pairs, spanning convolutional neural networks and vision transformers, demonstrate our KD method achieves state-of-the-art performance, delivering top-1 accuracy boosts of up to 15% over standard approaches. We publically share our code to facilitate future work at https://github.com/Thegolfingocto/KD_wo_CE.",
+        "arxiv_id": "2511.14981"
+    },
+    "2511.16309": {
+        "SCORE": 17,
+        "ARXIVID": "2511.16309",
+        "COMMENT": "Representation Learning: establishes a theoretical equivalence between Sparse Autoencoders and topic models (MAP view) and introduces a reusable SAE-based topic modeling framework.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Leander Girrbach",
+            "Zeynep Akata"
+        ],
+        "title": "Sparse Autoencoders are Topic Models",
+        "abstract": "Sparse autoencoders (SAEs) are used to analyze embeddings, but their role and practical value are debated. We propose a new perspective on SAEs by demonstrating that they can be naturally understood as topic models. We extend Latent Dirichlet Allocation to embedding spaces and derive the SAE objective as a maximum a posteriori estimator under this model. This view implies SAE features are thematic components rather than steerable directions. Based on this, we introduce SAE-TM, a topic modeling framework that: (1) trains an SAE to learn reusable topic atoms, (2) interprets them as word distributions on downstream data, and (3) merges them into any number of topics without retraining. SAE-TM yields more coherent topics than strong baselines on text and image datasets while maintaining diversity. Finally, we analyze thematic structure in image datasets and trace topic changes over time in Japanese woodblock prints. Our work positions SAEs as effective tools for large-scale thematic analysis across modalities. Code and data will be released upon publication.",
+        "arxiv_id": "2511.16309"
+    },
+    "2511.15120": {
+        "SCORE": 17,
+        "ARXIVID": "2511.15120",
+        "COMMENT": "Strong match to Representation Learning theory: proves two-layer nets learn multi-index models near information-theoretic limits via stage-wise GD dynamics.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Bohan Zhang",
+            "Zihao Wang",
+            "Hengyu Fu",
+            "Jason D. Lee"
+        ],
+        "title": "Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit",
+        "abstract": "In deep learning, a central issue is to understand how neural networks efficiently learn high-dimensional features. To this end, we explore the gradient descent learning of a general Gaussian Multi-index model $f(\\boldsymbol{x})=g(\\boldsymbol{U}\\boldsymbol{x})$ with hidden subspace $\\boldsymbol{U}\\in \\mathbb{R}^{r\\times d}$, which is the canonical setup to study representation learning. We prove that under generic non-degenerate assumptions on the link function, a standard two-layer neural network trained via layer-wise gradient descent can agnostically learn the target with $o_d(1)$ test error using $\\widetilde{\\mathcal{O}}(d)$ samples and $\\widetilde{\\mathcal{O}}(d^2)$ time. The sample and time complexity both align with the information-theoretic limit up to leading order and are therefore optimal. During the first stage of gradient descent learning, the proof proceeds via showing that the inner weights can perform a power-iteration process. This process implicitly mimics a spectral start for the whole span of the hidden subspace and eventually eliminates finite-sample noise and recovers this span. It surprisingly indicates that optimal results can only be achieved if the first layer is trained for more than $\\mathcal{O}(1)$ steps. This work demonstrates the ability of neural networks to effectively learn hierarchical functions with respect to both sample and time efficiency.",
+        "arxiv_id": "2511.15120"
+    },
+    "2511.15557": {
+        "SCORE": 17,
+        "ARXIVID": "2511.15557",
+        "COMMENT": "ML Systems: proposes a disk-based ANN index (B+ tree variant) with block partitioning and hybrid traversal to improve cache/I-O locality and billion-scale vector search throughput.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Selim Furkan Tekin",
+            "Rajesh Bordawekar"
+        ],
+        "title": "B+ANN: A Fast Billion-Scale Disk-based Nearest-Neighbor Index",
+        "abstract": "Storing and processing of embedding vectors by specialized Vector databases (VDBs) has become the linchpin in building modern AI pipelines. Most current VDBs employ variants of a graph-based ap- proximate nearest-neighbor (ANN) index algorithm, HNSW, to an- swer semantic queries over stored vectors. Inspite of its wide-spread use, the HNSW algorithm suffers from several issues: in-memory design and implementation, random memory accesses leading to degradation in cache behavior, limited acceleration scope due to fine-grained pairwise computations, and support of only semantic similarity queries. In this paper, we present a novel disk-based ANN index, B+ANN, to address these issues: it first partitions input data into blocks containing semantically similar items, then builds an B+ tree variant to store blocks both in-memory and on disks, and finally, enables hybrid edge- and block-based in-memory traversals. As demonstrated by our experimantal evaluation, the proposed B+ANN disk-based index improves both quality (Recall value), and execution performance (Queries per second/QPS) over HNSW, by improving spatial and temporal locality for semantic operations, reducing cache misses (19.23% relative gain), and decreasing the memory consumption and disk-based build time by 24x over the DiskANN algorithm. Finally, it enables dissimilarity queries, which are not supported by similarity-oriented ANN indices.",
+        "arxiv_id": "2511.15557"
+    },
+    "2511.15684": {
+        "SCORE": 17,
+        "ARXIVID": "2511.15684",
+        "COMMENT": "ML Systems + Architecture: transformer foundation model for PDEs with harmonic-analysis-based stabilization, compute-adaptive tokenization, and load-balanced distributed 2D/3D training strategies.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Michael McCabe",
+            "Payel Mukhopadhyay",
+            "Tanya Marwah",
+            "Bruno Regaldo-Saint Blancard",
+            "Francois Rozet",
+            "Cristiana Diaconu",
+            "Lucas Meyer",
+            "Kaze W. K. Wong",
+            "Hadi Sotoudeh",
+            "Alberto Bietti",
+            "Irina Espejo",
+            "Rio Fear",
+            "Siavash Golkar",
+            "Tom Hehir",
+            "Keiya Hirashima",
+            "Geraud Krawezik",
+            "Francois Lanusse",
+            "Rudy Morel",
+            "Ruben Ohana",
+            "Liam Parker",
+            "Mariel Pettee",
+            "Jeff Shen",
+            "Kyunghyun Cho",
+            "Miles Cranmer",
+            "Shirley Ho"
+        ],
+        "title": "Walrus: A Cross-Domain Foundation Model for Continuum Dynamics",
+        "abstract": "Foundation models have transformed machine learning for language and vision, but achieving comparable impact in physical simulation remains a challenge. Data heterogeneity and unstable long-term dynamics inhibit learning from sufficiently diverse dynamics, while varying resolutions and dimensionalities challenge efficient training on modern hardware. Through empirical and theoretical analysis, we incorporate new approaches to mitigate these obstacles, including a harmonic-analysis-based stabilization method, load-balanced distributed 2D and 3D training strategies, and compute-adaptive tokenization. Using these tools, we develop Walrus, a transformer-based foundation model developed primarily for fluid-like continuum dynamics. Walrus is pretrained on nineteen diverse scenarios spanning astrophysics, geoscience, rheology, plasma physics, acoustics, and classical fluids. Experiments show that Walrus outperforms prior foundation models on both short and long term prediction horizons on downstream tasks and across the breadth of pretraining data, while ablation studies confirm the value of our contributions to forecast stability, training throughput, and transfer performance over conventional approaches. Code and weights are released for community use.",
+        "arxiv_id": "2511.15684"
+    },
+    "2511.16061": {
+        "SCORE": 17,
+        "ARXIVID": "2511.16061",
+        "COMMENT": "Strong match: model compression/efficiency via structured pruning enabled by rotationally invariant activations and change-of-basis pruning.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Alex Ning",
+            "Vainateya Rangaraju"
+        ],
+        "title": "Change-of-Basis Pruning via Rotational Invariance",
+        "abstract": "Structured pruning removes entire neurons or channels, but its effectiveness depends on how importance is distributed across the representation space. Change-of-basis (CoB) pruning addresses this challenge by applying orthogonal linear transformations that concentrate importance within certain dimensions. However, many standard deep learning architectures are not inherently invariant to such transformations. To enable compatibility, we introduce two-subspace radial activations (TSRAs): an activation family that is invariant to orthogonal linear transformations applied independently within its two activation subspaces. This invariance allows CoB transformations to be merged into surrounding weights without incurring extra parameters. We position this work as a proof-of-concept that a rotationally invariant design may offer a principled approach towards change-of-basis pruning. We do not provide an analysis of multiple TSRA candidates nor do we explore weight initialization for any TSRAs. These limitations, combined with other necessary modifications we make to permit rotational invariance, result in a slight accuracy drop of $4.52\\%$ compared to a ReLU-based control. However, using activation-magnitude importance, VGG-16 implementing our CoB+TSRA framework shows encouraging results on CIFAR-10. Under fixed-ratio structured pruning, CoB improves accuracy over a TSRA baseline at all pruning ratios and extends reliable pruning frontier from roughly $30\\%$ to $70\\%$ of parameters without post-prune fine tuning. Under threshold-based pruning strategies, CoB prunes $90-96\\%$ of parameters while maintaining $1-6\\%$ accuracy drop after fine-tuning. Together, these results indicate that rotationally invariant architectures may offer a promising path towards CoB pruning.",
+        "arxiv_id": "2511.16061"
+    },
+    "2511.14852": {
+        "SCORE": 16,
+        "ARXIVID": "2511.14852",
+        "COMMENT": "ML Systems/HPC: fused CUDA kernels for KAN operators (operator fusion, tiling, two-stage reduction, layout reordering) enabling kernel-level acceleration with an open-source library.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Mingkun Yu",
+            "Heming Zhong",
+            "Dan Huang",
+            "Yutong Lu",
+            "Jiazhi Jiang"
+        ],
+        "title": "PolyKAN: Efficient Fused GPU Operators for Polynomial Kolmogorov-Arnold Network Variants",
+        "abstract": "Kolmogorov-Arnold Networks (KANs) promise higher expressive capability and stronger interpretability than Multi-Layer Perceptron, particularly in the domain of AI for Science. However, practical adoption has been hindered by low GPU utilization of existing parallel implementations. To address this challenge, we present a GPU-accelerated operator library, named PolyKAN which is the first general open-source implementation of KAN and its variants. PolyKAN fuses the forward and backward passes of polynomial KAN layers into a concise set of optimized CUDA kernels. Four orthogonal techniques underpin the design: (i) \\emph{lookup-table} with linear interpolation that replaces runtime expensive math-library functions; (ii) \\emph{2D tiling} to expose thread-level parallelism with preserving memory locality; (iii) a \\emph{two-stage reduction} scheme converting scattered atomic updates into a single controllable merge step; and (iv) \\emph{coefficient-layout reordering} yielding unit-stride reads under the tiled schedule. Using a KAN variant, Chebyshev KAN, as a case-study, PolyKAN delivers $1.2$--$10\\times$ faster inference and $1.4$--$12\\times$ faster training than a Triton + cuBLAS baseline, with identical accuracy on speech, audio-enhancement, and tabular-regression workloads on both highend GPU and consumer-grade GPU.",
+        "arxiv_id": "2511.14852"
+    },
+    "2511.16501": {
+        "SCORE": 16,
+        "ARXIVID": "2511.16501",
+        "COMMENT": "Model Architecture: reformulates ViT as a well-posed ODE system enabling a plug-and-play attention layer and teacher-guided continuous trajectories.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Carlos Boned Riera",
+            "David Romero Sanchez",
+            "Oriol Ramos Terrades"
+        ],
+        "title": "ODE-ViT: Plug & Play Attention Layer from the Generalization of the ViT as an Ordinary Differential Equation",
+        "abstract": "In recent years, increasingly large models have achieved outstanding performance across CV tasks. However, these models demand substantial computational resources and storage, and their growing complexity limits our understanding of how they make decisions. Most of these architectures rely on the attention mechanism within Transformer-based designs. Building upon the connection between residual neural networks and ordinary differential equations (ODEs), we introduce ODE-ViT, a Vision Transformer reformulated as an ODE system that satisfies the conditions for well-posed and stable dynamics. Experiments on CIFAR-10 and CIFAR-100 demonstrate that ODE-ViT achieves stable, interpretable, and competitive performance with up to one order of magnitude fewer parameters, surpassing prior ODE-based Transformer approaches in classification tasks. We further propose a plug-and-play teacher-student framework in which a discrete ViT guides the continuous trajectory of ODE-ViT by treating the intermediate representations of the teacher as solutions of the ODE. This strategy improves performance by more than 10% compared to training a free ODE-ViT from scratch.",
+        "arxiv_id": "2511.16501"
+    },
+    "2511.16550": {
+        "SCORE": 16,
+        "ARXIVID": "2511.16550",
+        "COMMENT": "Model Architecture/Theory: establishes norm-convergent universal approximation for randomized broad residual learning and introduces BSCRLS with supervisory constraints on random parameters.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Han Su",
+            "Zhongyan Li",
+            "Wanquan Liu"
+        ],
+        "title": "Broad stochastic configuration residual learning system for norm-convergent universal approximation",
+        "abstract": "Universal approximation serves as the foundation of neural network learning algorithms. However, some networks establish their universal approximation property by demonstrating that the iterative errors converge in probability measure rather than the more rigorous norm convergence, which makes the universal approximation property of randomized learning networks highly sensitive to random parameter selection, Broad residual learning system (BRLS), as a member of randomized learning models, also encounters this issue. We theoretically demonstrate the limitation of its universal approximation property, that is, the iterative errors do not satisfy norm convergence if the selection of random parameters is inappropriate and the convergence rate meets certain conditions. To address this issue, we propose the broad stochastic configuration residual learning system (BSCRLS) algorithm, which features a novel supervisory mechanism adaptively constraining the range settings of random parameters on the basis of BRLS framework, Furthermore, we prove the universal approximation theorem of BSCRLS based on the more stringent norm convergence. Three versions of incremental BSCRLS algorithms are presented to satisfy the application requirements of various network updates. Solar panels dust detection experiments are performed on publicly available dataset and compared with 13 deep and broad learning algorithms. Experimental results reveal the effectiveness and superiority of BSCRLS algorithms.",
+        "arxiv_id": "2511.16550"
+    },
+    "2511.15856": {
+        "SCORE": 16,
+        "ARXIVID": "2511.15856",
+        "COMMENT": "Model Architecture: domain-inspired, equivariant architecture with global receptive field for PDE surrogates; strong inductive biases and compact design.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Peter Sharpe"
+        ],
+        "title": "GLOBE: Accurate and Generalizable PDE Surrogates using Domain-Inspired Architectures and Equivariances",
+        "abstract": "We introduce GLOBE, a new neural surrogate for homogeneous PDEs that draws inductive bias from boundary-element methods and equivariant ML. GLOBE represents solutions as superpositions of learnable Green's-function-like kernels evaluated from boundary faces to targets, composed across multiscale branches and communication hyperlayers. The architecture is translation-, rotation-, and parity-equivariant; discretization-invariant in the fine-mesh limit; and units-invariant via rigorous nondimensionalization. An explicit far-field decay envelope stabilizes extrapolation, boundary-to-boundary hyperlayer communication mediates long-range coupling, and the all-to-all boundary-to-target evaluation yields a global receptive field that respects PDE information flow, even for elliptic PDEs.   On AirFRANS (steady incompressible RANS over NACA airfoils), GLOBE achieves substantial accuracy improvements. On the \"Full\" split, it reduces mean-squared error by roughly 200x on all fields relative to the dataset's reference baselines, and roughly 50x relative to the next-best-performing model. In the \"Scarce\" split, it achieves over 100x lower error on velocity and pressure fields and over 600x lower error on surface pressure than Transolver. Qualitative results show sharp near-wall gradients, coherent wakes, and limited errors under modest extrapolation in Reynolds number and angle of attack.   In addition to this accuracy, the model is quite compact (117k parameters), and fields can be evaluated at arbitrary points during inference. We also demonstrate the ability to train and predict with non-watertight meshes, which has strong practical implications.   These results show that rigorous physics- and domain-inspired inductive biases can achieve large gains in accuracy, generalizability, and practicality for ML-based PDE surrogates for industrial computer-aided engineering (CAE).",
+        "arxiv_id": "2511.15856"
+    },
+    "2511.16573": {
+        "SCORE": 16,
+        "ARXIVID": "2511.16573",
+        "COMMENT": "Model Architecture/Representation Learning: a general conservation-enforcing wrapper for neural operators with theoretical guarantees\u2014universal mechanism to preserve invariants.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Huanshuo Dong",
+            "Hong Wang",
+            "Hao Wu",
+            "Zhiwei Zhuang",
+            "Xuanze Yang",
+            "Ruiqi Shu",
+            "Yuan Gao",
+            "Xiaomeng Huang"
+        ],
+        "title": "An Exterior-Embedding Neural Operator Framework for Preserving Conservation Laws",
+        "abstract": "Neural operators have demonstrated considerable effectiveness in accelerating the solution of time-dependent partial differential equations (PDEs) by directly learning governing physical laws from data. However, for PDEs governed by conservation laws(e.g., conservation of mass, energy, or matter), existing neural operators fail to satisfy conservation properties, which leads to degraded model performance and limited generalizability. Moreover, we observe that distinct PDE problems generally require different optimal neural network architectures. This finding underscores the inherent limitations of specialized models in generalizing across diverse problem domains.   To address these limitations, we propose Exterior-Embedded Conservation Framework (ECF), a universal conserving framework that can be integrated with various data-driven neural operators to enforce conservation laws strictly in predictions. The framework consists of two key components: a conservation quantity encoder that extracts conserved quantities from input data, and a conservation quantity decoder that adjusts the neural operator's predictions using these quantities to ensure strict conservation compliance in the final output. Since our architecture enforces conservation laws, we theoretically prove that it enhances model performance. To validate the performance of our method, we conduct experiments on multiple conservation-law-constrained PDE scenarios, including adiabatic systems, shallow water equations, and the Allen-Cahn problem. These baselines demonstrate that our method effectively improves model accuracy while strictly enforcing conservation laws in the predictions.",
+        "arxiv_id": "2511.16573"
+    },
+    "2511.16674": {
+        "SCORE": 16,
+        "ARXIVID": "2511.16674",
+        "COMMENT": "Representation Learning/Efficiency: Linear Gradient Matching for dataset distillation targeting linear probes on pre-trained SSL backbones, matching classifier gradients and generalizing across models.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "George Cazenavette",
+            "Antonio Torralba",
+            "Vincent Sitzmann"
+        ],
+        "title": "Dataset Distillation for Pre-Trained Self-Supervised Vision Models",
+        "abstract": "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples. Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models. In contrast, state-of-the-art vision approaches are increasingly building on large, pre-trained self-supervised models rather than training from scratch. In this paper, we investigate the problem of distilling datasets that enable us to optimally train linear probes on top of such large, pre-trained vision models. We introduce a method of dataset distillation for this task called Linear Gradient Matching that optimizes the synthetic images such that, when passed through a pre-trained feature extractor, they induce gradients in the linear classifier similar to those produced by the real data. Our method yields synthetic data that outperform all real-image baselines and, remarkably, generalize across pre-trained vision models, enabling us, for instance, to train a linear CLIP probe that performs competitively using a dataset distilled via a DINO backbone. Further, we show that our distilled datasets are exceptionally effective for fine-grained classification and provide a valuable tool for model interpretability, predicting, among other things, how similar two models' embedding spaces are under the platonic representation hypothesis or whether a model is sensitive to spurious correlations in adversarial datasets.",
+        "arxiv_id": "2511.16674"
+    },
+    "2511.15941": {
+        "SCORE": 15,
+        "ARXIVID": "2511.15941",
+        "COMMENT": "Model Architecture: unified tabular foundation model combining tree-derived embeddings, meta-trained hypernetwork, and retrieval.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "David Bonet",
+            "Mar\\c{c}al Comajoan Cara",
+            "Alvaro Calafell",
+            "Daniel Mas Montserrat",
+            "Alexander G. Ioannidis"
+        ],
+        "title": "iLTM: Integrated Large Tabular Model",
+        "abstract": "Tabular data underpins decisions across science, industry, and public services. Despite rapid progress, advances in deep learning have not fully carried over to the tabular domain, where gradient-boosted decision trees (GBDTs) remain a default choice in practice. We present iLTM, an integrated Large Tabular Model that unifies tree-derived embeddings, dimensionality-agnostic representations, a meta-trained hypernetwork, multilayer perceptrons (MLPs), and retrieval within a single architecture. Pretrained on more than 1,800 heterogeneous classification datasets, iLTM achieves consistently superior performance across tabular classification and regression tasks, from small datasets to large and high-dimensional tasks. After light fine-tuning, the meta-trained hypernetwork transfers to regression targets, matching or surpassing strong baselines. Extensive experiments show that iLTM outperforms well-tuned GBDTs and leading deep tabular models while requiring less task-specific tuning. By bridging the gap between tree-based and neural methods, iLTM offers a new framework for tabular foundation models for robust, adaptable, and scalable tabular learning.",
+        "arxiv_id": "2511.15941"
+    },
+    "2511.15210": {
+        "SCORE": 15,
+        "ARXIVID": "2511.15210",
+        "COMMENT": "Representation Learning: analyzes intrinsic dimension and training dynamics; uses sparse autoencoders to identify causal, steerable features.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Vladislav Pedashenko",
+            "Laida Kushnareva",
+            "Yana Khassan Nibal",
+            "Eduard Tulchinskii",
+            "Kristian Kuznetsov",
+            "Vladislav Zharchinskii",
+            "Yury Maximov",
+            "Irina Piontkovskaya"
+        ],
+        "title": "Unveiling Intrinsic Dimension of Texts: from Academic Abstract to Creative Story",
+        "abstract": "Intrinsic dimension (ID) is an important tool in modern LLM analysis, informing studies of training dynamics, scaling behavior, and dataset structure, yet its textual determinants remain underexplored. We provide the first comprehensive study grounding ID in interpretable text properties through cross-encoder analysis, linguistic features, and sparse autoencoders (SAEs). In this work, we establish three key findings. First, ID is complementary to entropy-based metrics: after controlling for length, the two are uncorrelated, with ID capturing geometric complexity orthogonal to prediction quality. Second, ID exhibits robust genre stratification: scientific prose shows low ID (~8), encyclopedic content medium ID (~9), and creative/opinion writing high ID (~10.5) across all models tested. This reveals that contemporary LLMs find scientific text \"representationally simple\" while fiction requires additional degrees of freedom. Third, using SAEs, we identify causal features: scientific signals (formal tone, report templates, statistics) reduce ID; humanized signals (personalization, emotion, narrative) increase it. Steering experiments confirm these effects are causal. Thus, for contemporary models, scientific writing appears comparatively \"easy\", whereas fiction, opinion, and affect add representational degrees of freedom. Our multi-faceted analysis provides practical guidance for the proper use of ID and the sound interpretation of ID-based results.",
+        "arxiv_id": "2511.15210"
+    },
+    "2406.10219": {
+        "SCORE": 15,
+        "ARXIVID": "2406.10219",
+        "COMMENT": "Compression/Efficiency: second-order sensitivity\u2013based pruning for 3D Gaussian Splatting with a multi-round prune\u2013refine pipeline to reduce memory and speed up rendering.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Alex Hanson",
+            "Allen Tu",
+            "Vasu Singla",
+            "Mayuka Jayawardhana",
+            "Matthias Zwicker",
+            "Tom Goldstein"
+        ],
+        "title": "PUP 3D-GS: Principled Uncertainty Pruning for 3D Gaussian Splatting",
+        "abstract": "Recent advances in novel view synthesis have enabled real-time rendering speeds with high reconstruction accuracy. 3D Gaussian Splatting (3D-GS), a foundational point-based parametric 3D scene representation, models scenes as large sets of 3D Gaussians. However, complex scenes can consist of millions of Gaussians, resulting in high storage and memory requirements that limit the viability of 3D-GS on devices with limited resources. Current techniques for compressing these pretrained models by pruning Gaussians rely on combining heuristics to determine which Gaussians to remove. At high compression ratios, these pruned scenes suffer from heavy degradation of visual fidelity and loss of foreground details. In this paper, we propose a principled sensitivity pruning score that preserves visual fidelity and foreground details at significantly higher compression ratios than existing approaches. It is computed as a second-order approximation of the reconstruction error on the training views with respect to the spatial parameters of each Gaussian. Additionally, we propose a multi-round prune-refine pipeline that can be applied to any pretrained 3D-GS model without changing its training pipeline. After pruning 90% of Gaussians, a substantially higher percentage than previous methods, our PUP 3D-GS pipeline increases average rendering speed by 3.56$\\times$ while retaining more salient foreground information and achieving higher image quality metrics than existing techniques on scenes from the Mip-NeRF 360, Tanks & Temples, and Deep Blending datasets.",
+        "arxiv_id": "2406.10219"
+    },
+    "2511.16467": {
+        "SCORE": 15,
+        "ARXIVID": "2511.16467",
+        "COMMENT": "Matches Representation Learning/Architecture Analysis: circuit discovery (modified path patching) reveals specialized attention heads and token\u2013token interactions in transformers.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Andrew Gomes"
+        ],
+        "title": "Anatomy of an Idiom: Tracing Non-Compositionality in Language Models",
+        "abstract": "We investigate the processing of idiomatic expressions in transformer-based language models using a novel set of techniques for circuit discovery and analysis. First discovering circuits via a modified path patching algorithm, we find that idiom processing exhibits distinct computational patterns. We identify and investigate ``Idiom Heads,'' attention heads that frequently activate across different idioms, as well as enhanced attention between idiom tokens due to earlier processing, which we term ``augmented reception.'' We analyze these phenomena and the general features of the discovered circuits as mechanisms by which transformers balance computational efficiency and robustness. Finally, these findings provide insights into how transformers handle non-compositional language and suggest pathways for understanding the processing of more complex grammatical constructions.",
+        "arxiv_id": "2511.16467"
+    }
+}
