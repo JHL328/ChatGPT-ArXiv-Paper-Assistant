@@ -1,0 +1,410 @@
+{
+    "2512.02551": {
+        "SCORE": 18,
+        "ARXIVID": "2512.02551",
+        "COMMENT": "Strong match to ML Systems/HPC: automated low-level HGEMM kernel optimization via LLM-guided RL surpassing cuBLAS, demonstrating kernel-level performance gains.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Songqiao Su",
+            "Xiaofei Sun",
+            "Xiaoya Li",
+            "Albert Wang",
+            "Jiwei Li",
+            "Chris Shum"
+        ],
+        "title": "CUDA-L2: Surpassing cuBLAS Performance for Matrix Multiplication through Reinforcement Learning",
+        "abstract": "In this paper, we propose CUDA-L2, a system that combines large language models (LLMs) and reinforcement learning (RL) to automatically optimize Half-precision General Matrix Multiply (HGEMM) CUDA kernels. Using CUDA execution speed as the RL reward, CUDA-L2 automatically optimizes HGEMM kernels across 1,000 configurations. CUDA-L2 systematically outperforms major matmul baselines to date, from the widely-used {\\it torch.matmul} to state-of-the-art Nvidia's closed-source libraries, i.e., {\\it cuBLAS}, {\\it cuBLASLt}. In offline mode, where kernels are executed consecutively without time intervals, CUDA-L2 yields +22.0\\% over {\\it torch.matmul} on average; +19.2\\% over {\\it cuBLAS} using the optimal layout configuration (normal-normal NN and transposed-normal TN); +16.8\\% over {\\it cuBLASLt-heuristic}, which queries {\\it cuBLASLt} library and selects the algorithm based on the heuristic's suggestion; and +11.4\\% over the most competitive {\\it cuBLASLt-AutoTuning} model, which selects the fastest algorithm from up to 100 candidates from {\\it cuBLASLt}'s suggestions. In server mode, where kernels are executed at random intervals simulating real-time inference, the speedups further increase to +28.7\\%, +26.0\\%, +22.4\\%, and +15.9\\% for {\\it torch.matmul}, {\\it cuBLAS}, {\\it cuBLASLt-heuristic}, and {\\it cuBLASLt-AutoTuning} respectively. CUDA-L2 shows that even the most performance-critical, heavily-optimized kernels like HGEMM can be improved through LLM-guided RL automation by systematically exploring configuration spaces at scales impractical for humans. Project and code can be found at github.com/deepreinforce-ai/CUDA-L2",
+        "arxiv_id": "2512.02551"
+    },
+    "2512.02351": {
+        "SCORE": 18,
+        "ARXIVID": "2512.02351",
+        "COMMENT": "Strong match: Model Compression/Efficiency (training-free pruning analysis, sparse activation) and Model Architecture (MoE adaptation for generation).",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Shwai He",
+            "Chaorui Deng",
+            "Ang Li",
+            "Shen Yan"
+        ],
+        "title": "Understanding and Harnessing Sparsity in Unified Multimodal Models",
+        "abstract": "Large multimodal models have achieved remarkable progress in both understanding and generation. Recent efforts pursue unified multimodal models that integrate heterogeneous components to support both capabilities within a single framework. However, such unification introduces inference inefficiencies, e.g., specific tasks or samples may not require the full knowledge or capacity of the unified model. Yet, a systematic understanding of how these inefficiencies manifest across different components remains limited. In this work, we first conduct a systematic analysis of unified multimodal model components using training-free pruning as a probing methodology, considering both depth pruning and width reduction. Our study reveals that the understanding component exhibits notable compressibility in both understanding and generation tasks, which is more pronounced in the latter. In contrast, the generation components are highly sensitive to compression, with performance deteriorating sharply even under moderate compression ratios. To address this limitation, we propose the Mixture-of-Experts (MoE) Adaptation, inspired by the dynamic activation patterns observed across different samples. This approach partitions the generation module into multiple experts and enables sparse activation to restore generation quality. We validate the effectiveness of sparse activation through expert-frozen tuning and further demonstrate that a fully trainable adaptation delivers additional gains. As a result, the adapted BAGEL model achieves performance comparable to the full model while activating only about half of its parameters. The code is released at \\href{https://github.com/Shwai-He/SparseUnifiedModel}{this link}.",
+        "arxiv_id": "2512.02351"
+    },
+    "2512.02185": {
+        "SCORE": 18,
+        "ARXIVID": "2512.02185",
+        "COMMENT": "Strong match: Model Compression/Efficiency\u2014structured pruning tailored to reasoning LLMs using self-generated traces and decode-only gradients.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Ziyan Wang",
+            "Enmao Diao",
+            "Qi Le",
+            "Pu Wang",
+            "Guanchu Wang",
+            "Minwoo Lee",
+            "Shu-ping Yeh",
+            "Li Yang"
+        ],
+        "title": "Think Before You Prune: Self-Reflective Structured Pruning for Reasoning Language Models",
+        "abstract": "Reasoning LLMs (RLMs) such as OpenAI o1, DeepSeek-R1, and Qwen3 deliver strong multi-step reasoning through chain-of-thought generation, but their large model sizes and lengthy decode-time outputs make them costly to deploy and unsuitable for resource-constrained settings. To reduce computing and memory cost, pruning offers a promising solution by removing unimportant parameters. However, despite their success on standard LLMs, existing pruning methods severely damage RLMs, as even moderate sparsity (e.g., 20%) can collapse accuracy and completely disrupt the model's reasoning coherence. We begin by analyzing why existing pruning pipelines fail on reasoning LLMs and find that their brittleness largely stems from a mismatch between the calibration data, the pruning objective, and the model's decode-time reasoning behavior. Our study further shows that the most reliable calibration signal comes not from human-written labels but from the model's own self-generated reasoning traces, which more accurately reflect its inference distribution. Guided by these insights, we introduce RESP, a self-reflective structured pruning framework that aligns pruning decisions with the model's reasoning dynamics through self-generated calibration, decode-only gradient-based importance estimation, and progressive regeneration that maintains calibration fidelity as sparsity increases. Experiments on Qwen3-8B demonstrate that RESP markedly outperforms existing structured pruning methods on both GSM8K and MathQA, preserving near-dense accuracy at 20-30% sparsity and substantially mitigating performance collapse at higher sparsity levels. At 40% sparsity, RESP attains 81.3% accuracy on GSM8K and 59.6% on MathQA, surpassing the strongest baselines by 66.87% and 47%, respectively.",
+        "arxiv_id": "2512.02185"
+    },
+    "2512.02901": {
+        "SCORE": 18,
+        "ARXIVID": "2512.02901",
+        "COMMENT": "Model Compression and Efficiency: introduces a universal extremely low-bit QAT via lossless widely-linear (complex) reparameterization, phase-aware quantization with 4th-root codebook, and multiplication-free accumulation.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Feiyu Wang",
+            "Xinyu Tan",
+            "Bokai Huang",
+            "Yihao Zhang",
+            "Guoan Wang",
+            "Peizhuang Cong",
+            "Tong Yang"
+        ],
+        "title": "FAIRY2I: Universal Extremely-Low Bit QAT framework via Widely-Linear Representation and Phase-Aware Quantization",
+        "abstract": "Large language models (LLMs) have revolutionized artificial intelligence, yet their massive memory and computational demands necessitate aggressive quantization, increasingly pushing representations toward the theoretical limit of a single bit. While complex-valued LLMs, such as iFairy, offer a superior chance for low-bit representation compared to real-valued counterparts, they require training from scratch, preventing the utilization of the vast ecosystem of pre-trained real-valued foundation models. Here we present Fairy2i, a universal framework that transforms pre-trained real-valued layers into an equivalent widely-linear complex form, enabling extremely low-bit quantization while reusing existing checkpoints. By proving a lossless mathematical equivalence between real and widely-linear maps, we convert standard Transformers into the complex domain and employ a phase-aware quantization scheme with a highly efficient codebook of fourth roots of unity. Furthermore, we introduce a recursive residual quantization mechanism that iteratively minimizes quantization error, allowing inference to proceed via efficient multiplication-free accumulation. We demonstrate that Fairy2i restores the performance of LLaMA-2 7B at an effective 2-bit precision to levels nearly comparable with full-precision baselines, significantly outperforming state-of-the-art real-valued binary and ternary quantization methods. This work bridges the gap between the representational efficiency of complex-valued arithmetic and the practical utility of pre-trained models, paving a new way for efficient inference on commodity hardware.",
+        "arxiv_id": "2512.02901"
+    },
+    "2512.02056": {
+        "SCORE": 18,
+        "ARXIVID": "2512.02056",
+        "COMMENT": "Model Architecture + ML Systems: introduces reversible Transformer-style dynamics that retrieve activations during backprop to eliminate activation storage, enabling memory-optimized training; also provides a practical conversion of pretrained LLMs into reversible form.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Eshed Gal",
+            "Moshe Eliasof",
+            "Javier Turek",
+            "Uri Ascher",
+            "Eran Treister",
+            "Eldad Haber"
+        ],
+        "title": "Reversing Large Language Models for Efficient Training and Fine-Tuning",
+        "abstract": "Large Language Models (LLMs) are known for their expensive and time-consuming training. Thus, oftentimes, LLMs are fine-tuned to address a specific task, given the pretrained weights of a pre-trained LLM considered a foundation model. In this work, we introduce memory-efficient, reversible architectures for LLMs, inspired by symmetric and symplectic differential equations, and investigate their theoretical properties. Different from standard, baseline architectures that store all intermediate activations, the proposed models use time-reversible dynamics to retrieve hidden states during backpropagation, relieving the need to store activations. This property allows for a drastic reduction in memory consumption, allowing for the processing of larger batch sizes for the same available memory, thereby offering improved throughput. In addition, we propose an efficient method for converting existing, non-reversible LLMs into reversible architectures through fine-tuning, rendering our approach practical for exploiting existing pre-trained models. Our results show comparable or improved performance on several datasets and benchmarks, on several LLMs, building a scalable and efficient path towards reducing the memory and computational costs associated with both training from scratch and fine-tuning of LLMs.",
+        "arxiv_id": "2512.02056"
+    },
+    "2512.02409": {
+        "SCORE": 18,
+        "ARXIVID": "2512.02409",
+        "COMMENT": "Strong match to Representation Learning/Training Dynamics: theoretical analysis linking data curation (reweighting) to operator spectra; results on static limits vs time-dependent acceleration.",
+        "RELEVANCE": 9,
+        "NOVELTY": 9,
+        "authors": [
+            "Yizhou Zhang",
+            "Lun Du"
+        ],
+        "title": "Data Curation Through the Lens of Spectral Dynamics: Static Limits, Dynamic Acceleration, and Practical Oracles",
+        "abstract": "Large-scale neural models are increasingly trained with data pruning, synthetic data generation, cross-model distillation, reinforcement learning from human feedback (RLHF), and difficulty-based sampling. While several of these data-centric strategies reliably improve training efficiency and downstream performance, others fail to provide meaningful gains -- most notably self-generated synthetic data, which often increases dataset volume without enhancing model capability.   We formalize data curation as reweighting the sampling distribution and map its effect onto the eigenstructure of the data-induced operator. Our first main result shows that \\textbf{static pruning induces a bounded operator and therefore cannot change the spectral tail exponent}; it provides at most finite-region improvements and cannot alter asymptotic neural scaling. Our second result analyzes \\textbf{time-dependent data curation}, showing that an ideal oracle capable of tracking spectral residuals and continuously re-normalizing the tail can provably accelerate learning -- although practical systems can only approximate this behavior.",
+        "arxiv_id": "2512.02409"
+    },
+    "2512.02283": {
+        "SCORE": 17,
+        "ARXIVID": "2512.02283",
+        "COMMENT": "ML Systems + Architecture/Efficiency: replaces iterative NODE solvers with a parallelizable neural architecture equivalent to NODEs (algorithm\u2013system co-design) on FPGA, yielding memory/energy/runtime gains for edge inference.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Bin Xu",
+            "Ayan Banerjee",
+            "Sandeep K. S. Gupta"
+        ],
+        "title": "Model Recovery at the Edge under Resource Constraints for Physical AI",
+        "abstract": "Model Recovery (MR) enables safe, explainable decision making in mission-critical autonomous systems (MCAS) by learning governing dynamical equations, but its deployment on edge devices is hindered by the iterative nature of neural ordinary differential equations (NODEs), which are inefficient on FPGAs. Memory and energy consumption are the main concerns when applying MR on edge devices for real-time operation. We propose MERINDA, a novel FPGA-accelerated MR framework that replaces iterative solvers with a parallelizable neural architecture equivalent to NODEs. MERINDA achieves nearly 11x lower DRAM usage and 2.2x faster runtime compared to mobile GPUs. Experiments reveal an inverse relationship between memory and energy at fixed accuracy, highlighting MERINDA's suitability for resource-constrained, real-time MCAS.",
+        "arxiv_id": "2512.02283"
+    },
+    "2512.02337": {
+        "SCORE": 17,
+        "ARXIVID": "2512.02337",
+        "COMMENT": "Matches ML Systems/inference efficiency: speculative decoding with partial KV-cache verification for long-context acceleration.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Zhendong Tan",
+            "Xingjun Zhang",
+            "Chaoyi Hu",
+            "Junjie Peng",
+            "Kun Xia"
+        ],
+        "title": "SpecPV: Improving Self-Speculative Decoding for Long-Context Generation via Partial Verification",
+        "abstract": "Growing demands from tasks like code generation, deep reasoning, and long-document understanding have made long-context generation a crucial capability for large language models (LLMs). Speculative decoding is one of the most direct and effective approaches for accelerating generation. It follows a draft-verify paradigm, where a lightweight draft model proposes several candidate tokens and the target model verifies them. However, we find that as the context length grows, verification becomes the dominant bottleneck. To further accelerate speculative decoding in long-context generation, we introduce SpecPV, a self-speculative decoding approach that performs fast verification using partial key-value states (KV) and periodically applies full verification to eliminate accumulated errors. We validate SpecPV across multiple long-context benchmarks and models, including LLaMA-3.1-8B-Instruct and Qwen3-series. Experimental results show that SpecPV achieves up to 6x decoding speedup over standard autoregressive decoding with minor degradation.",
+        "arxiv_id": "2512.02337"
+    },
+    "2512.02494": {
+        "SCORE": 17,
+        "ARXIVID": "2512.02494",
+        "COMMENT": "Strong match to Model Compression/Efficiency and ML Systems: a fully first-order differentiable optimization layer avoiding Hessian solves with theoretical complexity guarantees and open-source implementation.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Zihao Zhao",
+            "Kai-Chia Mo",
+            "Shing-Hei Ho",
+            "Brandon Amos",
+            "Kai Wang"
+        ],
+        "title": "A Fully First-Order Layer for Differentiable Optimization",
+        "abstract": "Differentiable optimization layers enable learning systems to make decisions by solving embedded optimization problems. However, computing gradients via implicit differentiation requires solving a linear system with Hessian terms, which is both compute- and memory-intensive. To address this challenge, we propose a novel algorithm that computes the gradient using only first-order information. The key insight is to rewrite the differentiable optimization as a bilevel optimization problem and leverage recent advances in bilevel methods. Specifically, we introduce an active-set Lagrangian hypergradient oracle that avoids Hessian evaluations and provides finite-time, non-asymptotic approximation guarantees. We show that an approximate hypergradient can be computed using only first-order information in $\\tilde{\\oo}(1)$ time, leading to an overall complexity of $\\tilde{\\oo}(\\delta^{-1}\\epsilon^{-3})$ for constrained bilevel optimization, which matches the best known rate for non-smooth non-convex optimization. Furthermore, we release an open-source Python library that can be easily adapted from existing solvers. Our code is available here: https://github.com/guaguakai/FFOLayer.",
+        "arxiv_id": "2512.02494"
+    },
+    "2512.02303": {
+        "SCORE": 17,
+        "ARXIVID": "2512.02303",
+        "COMMENT": "Strong match to Representation Learning and training dynamics: defines an equivariance error metric and analyzes how models learn 3D-rotation equivariance with augmentation.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Max W. Shen",
+            "Ewa Nowara",
+            "Michael Maser",
+            "Kyunghyun Cho"
+        ],
+        "title": "Training Dynamics of Learning 3D-Rotational Equivariance",
+        "abstract": "While data augmentation is widely used to train symmetry-agnostic models, it remains unclear how quickly and effectively they learn to respect symmetries. We investigate this by deriving a principled measure of equivariance error that, for convex losses, calculates the percent of total loss attributable to imperfections in learned symmetry. We focus our empirical investigation to 3D-rotation equivariance on high-dimensional molecular tasks (flow matching, force field prediction, denoising voxels) and find that models reduce equivariance error quickly to $\\leq$2\\% held-out loss within 1k-10k training steps, a result robust to model and dataset size. This happens because learning 3D-rotational equivariance is an easier learning task, with a smoother and better-conditioned loss landscape, than the main prediction task. For 3D rotations, the loss penalty for non-equivariant models is small throughout training, so they may achieve lower test loss than equivariant models per GPU-hour unless the equivariant ``efficiency gap'' is narrowed. We also experimentally and theoretically investigate the relationships between relative equivariance error, learning gradients, and model parameters.",
+        "arxiv_id": "2512.02303"
+    },
+    "2512.02636": {
+        "SCORE": 17,
+        "ARXIVID": "2512.02636",
+        "COMMENT": "Strong match to Model Compression and Efficiency; joint distillation for few-step sampling and tractable likelihood in flow models reduces NFEs by orders of magnitude via shared velocity/divergence modeling.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Xinyue Ai",
+            "Yutong He",
+            "Albert Gu",
+            "Ruslan Salakhutdinov",
+            "J Zico Kolter",
+            "Nicholas Matthew Boffi",
+            "Max Simchowitz"
+        ],
+        "title": "Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models",
+        "abstract": "Log-likelihood evaluation enables important capabilities in generative models, including model comparison, certain fine-tuning objectives, and many downstream applications. Yet paradoxically, some of today's best generative models -- diffusion and flow-based models -- still require hundreds to thousands of neural function evaluations (NFEs) to compute a single likelihood. While recent distillation methods have successfully accelerated sampling to just a few steps, they achieve this at the cost of likelihood tractability: existing approaches either abandon likelihood computation entirely or still require expensive integration over full trajectories. We present fast flow joint distillation (F2D2), a framework that simultaneously reduces the number of NFEs required for both sampling and likelihood evaluation by two orders of magnitude. Our key insight is that in continuous normalizing flows, the coupled ODEs for sampling and likelihood are computed from a shared underlying velocity field, allowing us to jointly distill both the sampling trajectory and cumulative divergence using a single model. F2D2 is modular, compatible with existing flow-based few-step sampling models, and requires only an additional divergence prediction head. Experiments demonstrate F2D2's capability of achieving accurate log-likelihood with few-step evaluations while maintaining high sample quality, solving a long-standing computational bottleneck in flow-based generative models. As an application of our approach, we propose a lightweight self-guidance method that enables a 2-step MeanFlow model to outperform a 1024 step teacher model with only a single additional backward NFE.",
+        "arxiv_id": "2512.02636"
+    },
+    "2512.02061": {
+        "SCORE": 16,
+        "ARXIVID": "2512.02061",
+        "COMMENT": "Strong match to Model Architecture (MoE): Adaptive Mixture-of-Gaussian Experts with data-driven expert count via spectral analysis and Gaussian band-pass filtering.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Zhenliang Ni",
+            "Xiaowen Ma",
+            "Zhenkai Wu",
+            "Shuai Xiao",
+            "Han Shu",
+            "Xinghao Chen"
+        ],
+        "title": "Ada-MoGE: Adaptive Mixture of Gaussian Expert Model for Time Series Forecasting",
+        "abstract": "Multivariate time series forecasts are widely used, such as industrial, transportation and financial forecasts. However, the dominant frequencies in time series may shift with the evolving spectral distribution of the data. Traditional Mixture of Experts (MoE) models, which employ a fixed number of experts, struggle to adapt to these changes, resulting in frequency coverage imbalance issue. Specifically, too few experts can lead to the overlooking of critical information, while too many can introduce noise. To this end, we propose Ada-MoGE, an adaptive Gaussian Mixture of Experts model. Ada-MoGE integrates spectral intensity and frequency response to adaptively determine the number of experts, ensuring alignment with the input data's frequency distribution. This approach prevents both information loss due to an insufficient number of experts and noise contamination from an excess of experts. Additionally, to prevent noise introduction from direct band truncation, we employ Gaussian band-pass filtering to smoothly decompose the frequency domain features, further optimizing the feature representation. The experimental results show that our model achieves state-of-the-art performance on six public benchmarks with only 0.2 million parameters.",
+        "arxiv_id": "2512.02061"
+    },
+    "2512.02403": {
+        "SCORE": 16,
+        "ARXIVID": "2512.02403",
+        "COMMENT": "Matches Model Compression and Efficiency (sparsity prediction, quantization) and ML Systems (hardware\u2013software co-design for Transformers with novel SPLS and architectural innovations).",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Hongxiang Liu",
+            "Zhifang Deng",
+            "Tong Pu",
+            "Shengli Lu"
+        ],
+        "title": "ESACT: An End-to-End Sparse Accelerator for Compute-Intensive Transformers via Local Similarity",
+        "abstract": "Transformers, composed of QKV generation, attention computation, and FFNs,   have become the dominant model across various domains due to their outstanding performance.   However, their high computational cost hinders efficient hardware deployment.   Sparsity offers a promising solution,   yet most existing accelerators exploit only intra-row sparsity in attention,   while few consider inter-row sparsity.   Approaches leveraging inter-row sparsity often rely on costly global similarity estimation,   which diminishes the acceleration benefits of sparsity,   and typically apply sparsity to only one or two transformer components.   Through careful analysis of the attention distribution and computation flow,   we observe that local similarity allows end-to-end sparse acceleration with lower computational overhead.   Motivated by this observation, we propose ESACT,   an end-to-end sparse accelerator for compute-intensive Transformers.   ESACT centers on the Sparsity Prediction with Local Similarity (SPLS) mechanism,   which leverages HLog quantization to accurately predict local attention sparsity prior to QK generation,   achieving efficient sparsity across all transformer components.   To support efficient hardware realization, we introduce three architectural innovations.   Experimental results on 26 benchmarks demonstrate that   SPLS reduces total computation by 52.03% with less than 1% accuracy loss.   ESACT achieves an end-to-end energy efficiency of 3.29 TOPS/W,   and improves attention-level energy efficiency by 2.95x and 2.26x over   SOTA attention accelerators SpAtten and Sanger, respectively.",
+        "arxiv_id": "2512.02403"
+    },
+    "2512.02194": {
+        "SCORE": 16,
+        "ARXIVID": "2512.02194",
+        "COMMENT": "Model Architecture & Representation Learning: proposes Ordered Sparse Autoencoders resolving permutation non-identifiability in sparse dictionary learning with theory.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Sophie L. Wang",
+            "Alex Quach",
+            "Nithin Parsan",
+            "John J. Yang"
+        ],
+        "title": "Enforcing Orderedness to Improve Feature Consistency",
+        "abstract": "Sparse autoencoders (SAEs) have been widely used for interpretability of neural networks, but their learned features often vary across seeds and hyperparameter settings. We introduce Ordered Sparse Autoencoders (OSAE), which extend Matryoshka SAEs by (1) establishing a strict ordering of latent features and (2) deterministically using every feature dimension, avoiding the sampling-based approximations of prior nested SAE methods. Theoretically, we show that OSAEs resolve permutation non-identifiability in settings of sparse dictionary learning where solutions are unique (up to natural symmetries). Empirically on Gemma2-2B and Pythia-70M, we show that OSAEs can help improve consistency compared to Matryoshka baselines.",
+        "arxiv_id": "2512.02194"
+    },
+    "2512.02323": {
+        "SCORE": 16,
+        "ARXIVID": "2512.02323",
+        "COMMENT": "Efficiency/HPC: parallelizable sampler (Langevin SB) plus temperature estimation (CEM) enabling scalable training of Boltzmann Machines beyond RBMs.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Kentaro Kubo",
+            "Hayato Goto"
+        ],
+        "title": "Unlocking the Power of Boltzmann Machines by Parallelizable Sampler and Efficient Temperature Estimation",
+        "abstract": "Boltzmann machines (BMs) are powerful energy-based generative models, but their heavy training cost has largely confined practical use to Restricted BMs (RBMs) trained with an efficient learning method called contrastive divergence. More accurate learning typically requires Markov chain Monte Carlo (MCMC) Boltzmann sampling, but it is time-consuming due to the difficulty of parallelization for more expressive models. To address this limitation, we first propose a new Boltzmann sampler inspired by a quantum-inspired combinatorial optimization called simulated bifurcation (SB). This SB-inspired approach, which we name Langevin SB (LSB), enables parallelized sampling while maintaining accuracy comparable to MCMC. Furthermore, this is applicable not only to RBMs but also to BMs with general couplings. However, LSB cannot control the inverse temperature of the output Boltzmann distribution, which hinders learning and degrades performance. To overcome this limitation, we also developed an efficient method for estimating the inverse temperature during the learning process, which we call conditional expectation matching (CEM). By combining LSB and CEM, we establish an efficient learning framework for BMs with greater expressive power than RBMs. We refer to this framework as sampler-adaptive learning (SAL). SAL opens new avenues for energy-based generative modeling beyond RBMs.",
+        "arxiv_id": "2512.02323"
+    },
+    "2512.02193": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02193",
+        "COMMENT": "Model Architecture: formal decomposition of transducers into sub-transducers enabling modular, parallelizable world models and distributed inference\u2014general architectural principle rather than task-specific engineering.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Alexander Boyd",
+            "Franz Nowak",
+            "David Hyland",
+            "Manuel Baltieri",
+            "Fernando E. Rosas"
+        ],
+        "title": "From monoliths to modules: Decomposing transducers for efficient world modelling",
+        "abstract": "World models have been recently proposed as sandbox environments in which AI agents can be trained and evaluated before deployment. Although realistic world models often have high computational demands, efficient modelling is usually possible by exploiting the fact that real-world scenarios tend to involve subcomponents that interact in a modular manner. In this paper, we explore this idea by developing a framework for decomposing complex world models represented by transducers, a class of models generalising POMDPs. Whereas the composition of transducers is well understood, our results clarify how to invert this process, deriving sub-transducers operating on distinct input-output subspaces, enabling parallelizable and interpretable alternatives to monolithic world modelling that can support distributed inference. Overall, these results lay a groundwork for bridging the structural transparency demanded by AI safety and the computational efficiency required for real-world inference.",
+        "arxiv_id": "2512.02193"
+    },
+    "2512.02487": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02487",
+        "COMMENT": "Model Architecture: transformer masking redesign (geometry-adaptive and instruction-aware) replacing causal masks\u2014structural attention change with no added parameters.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Yerim Jeon",
+            "Miso Lee",
+            "WonJun Moon",
+            "Jae-Pil Heo"
+        ],
+        "title": "Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding",
+        "abstract": "Recent advances in 3D scene-language understanding have leveraged Large Language Models (LLMs) for 3D reasoning by transferring their general reasoning ability to 3D multi-modal contexts. However, existing methods typically adopt standard decoders from language modeling, which rely on a causal attention mask. This design introduces two fundamental conflicts in 3D scene understanding: sequential bias among order-agnostic 3D objects and restricted object-instruction attention, hindering task-specific reasoning. To overcome these limitations, we propose 3D Spatial Language Instruction Mask (3D-SLIM), an effective masking strategy that replaces the causal mask with an adaptive attention mask tailored to the spatial structure of 3D scenes. Our 3D-SLIM introduces two key components: a Geometry-adaptive Mask that constrains attention based on spatial density rather than token order, and an Instruction-aware Mask that enables object tokens to directly access instruction context. This design allows the model to process objects based on their spatial relationships while being guided by the user's task. 3D-SLIM is simple, requires no architectural modifications, and adds no extra parameters, yet it yields substantial performance improvements across diverse 3D scene-language tasks. Extensive experiments across multiple benchmarks and LLM baselines validate its effectiveness and underscore the critical role of decoder design in 3D multi-modal reasoning.",
+        "arxiv_id": "2512.02487"
+    },
+    "2512.02441": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02441",
+        "COMMENT": "Matches Compression/Efficiency via low-rank adaptation and parameter-efficient tuning using orthogonal, task-informed bases.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Junghwan Park",
+            "Woojin Cho",
+            "Junhyuk Heo",
+            "Darongsae Kwon",
+            "Kookjin Lee"
+        ],
+        "title": "Basis-Oriented Low-rank Transfer for Few-Shot and Test-Time Adaptation",
+        "abstract": "Adapting large pre-trained models to unseen tasks under tight data and compute budgets remains challenging. Meta-learning approaches explicitly learn good initializations, but they require an additional meta-training phase over many tasks, incur high training cost, and can be unstable. At the same time, the number of task-specific pre-trained models continues to grow, yet the question of how to transfer them to new tasks with minimal additional training remains relatively underexplored. We propose BOLT (Basis-Oriented Low-rank Transfer), a framework that reuses existing fine-tuned models not by merging weights, but instead by extracting an orthogonal, task-informed spectral basis and adapting within that subspace. In the offline phase, BOLT collects dominant singular directions from multiple task vectors and orthogonalizes them per layer to form reusable bases. In the online phase, we freeze these bases and train only a small set of diagonal coefficients per layer for the new task, yielding a rank-controlled update with very few trainable parameters. This design provides (i) a strong, training-free initialization for unseen tasks, obtained by pooling source-task coefficients, along with a lightweight rescaling step while leveraging the shared orthogonal bases, and (ii) a parameter-efficient fine-tuning (PEFT) path that, in our experiments, achieves robust performance compared to common PEFT baselines as well as a representative meta-learned initialization. Our results show that constraining adaptation to a task-informed orthogonal subspace provides an effective alternative for unseen-task transfer.",
+        "arxiv_id": "2512.02441"
+    },
+    "2512.03024": {
+        "SCORE": 15,
+        "ARXIVID": "2512.03024",
+        "COMMENT": "ML Systems: provides an open, reproducible benchmark and measurement methodology for LLM inference power with phase-aligned prefill/decode attribution and multi-level (GPU/node/system) power capture.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Chenxu Niu",
+            "Wei Zhang",
+            "Jie Li",
+            "Yongjian Zhao",
+            "Tongyang Wang",
+            "Xi Wang",
+            "Yong Chen"
+        ],
+        "title": "TokenPowerBench: Benchmarking the Power Consumption of LLM Inference",
+        "abstract": "Large language model (LLM) services now answer billions of queries per day, and industry reports show that inference, not training, accounts for more than 90% of total power consumption. However, existing benchmarks focus on either training/fine-tuning or performance of inference and provide little support for power consumption measurement and analysis of inference. We introduce TokenPowerBench, the first lightweight and extensible benchmark designed for LLM-inference power consumption studies. The benchmark combines (i) a declarative configuration interface covering model choice, prompt set, and inference engine, (ii) a measurement layer that captures GPU-, node-, and system-level power without specialized power meters, and (iii) a phase-aligned metrics pipeline that attributes energy to the prefill and decode stages of every request. These elements make it straight-forward to explore the power consumed by an LLM inference run; furthermore, by varying batch size, context length, parallelism strategy and quantization, users can quickly assess how each setting affects joules per token and other energy-efficiency metrics. We evaluate TokenPowerBench on four of the most widely used model series (Llama, Falcon, Qwen, and Mistral). Our experiments cover from 1 billion parameters up to the frontier-scale Llama3-405B model. Furthermore, we release TokenPowerBench as open source to help users to measure power consumption, forecast operating expenses, and meet sustainability targets when deploying LLM services.",
+        "arxiv_id": "2512.03024"
+    },
+    "2512.02547": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02547",
+        "COMMENT": "Representation Learning / Efficiency: learns tensor-product feature hyperparameters via learnable CPD with ALS, leveraging tensor networks to scale feature learning beyond standard cross-validation.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Albert Saiapin",
+            "Kim Batselier"
+        ],
+        "title": "Tensor Network Based Feature Learning Model",
+        "abstract": "Many approximations were suggested to circumvent the cubic complexity of kernel-based algorithms, allowing their application to large-scale datasets. One strategy is to consider the primal formulation of the learning problem by mapping the data to a higher-dimensional space using tensor-product structured polynomial and Fourier features. The curse of dimensionality due to these tensor-product features was effectively solved by a tensor network reparameterization of the model parameters. However, another important aspect of model training - identifying optimal feature hyperparameters - has not been addressed and is typically handled using the standard cross-validation approach. In this paper, we introduce the Feature Learning (FL) model, which addresses this issue by representing tensor-product features as a learnable Canonical Polyadic Decomposition (CPD). By leveraging this CPD structure, we efficiently learn the hyperparameters associated with different features alongside the model parameters using an Alternating Least Squares (ALS) optimization method. We prove the effectiveness of the FL model through experiments on real data of various dimensionality and scale. The results show that the FL model can be consistently trained 3-5 times faster than and have the prediction quality on par with a standard cross-validated model.",
+        "arxiv_id": "2512.02547"
+    },
+    "2512.02700": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02700",
+        "COMMENT": "Matches Model Compression and Efficiency via training-free token pruning with redundancy-aware and spatial-sparsity\u2013aware selection plus information fusion.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Zhenkai Wu",
+            "Xiaowen Ma",
+            "Zhenliang Ni",
+            "Dengming Zhang",
+            "Han Shu",
+            "Xin Jiang",
+            "Xinghao Chen"
+        ],
+        "title": "VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm",
+        "abstract": "Vision-language models (VLMs) excel at image understanding tasks, but the large number of visual tokens imposes significant computational costs, hindering deployment on mobile devices. Many pruning methods rely solely on token importance and thus overlook inter-token redundancy, retaining numerous duplicated tokens and wasting capacity. Although some redundancy-aware approaches have been proposed, they often ignore the spatial relationships among visual tokens. This can lead to overly sparse selections of retained tokens that fail to adequately cover the regions of target objects. To address these limitations, we propose VLM-Pruner, a training-free token pruning algorithm that explicitly balances redundancy and spatial sparsity. We introduce a centrifugal token pruning paradigm that enables near-to-far selection while prioritizing the preservation of fine-grained object details. Moreover, we design a Buffering for Spatial Sparsity (BSS) criterion that defers the selection of spatially distant tokens. We further adopt a parallel greedy strategy to conduct token selection efficiently. To mitigate information loss from pruning, we selectively fuse salient information from the discarded tokens into the retained ones. Comprehensive comparisons demonstrate that VLM-Pruner consistently outperforms strong baselines across five VLMs with an 88.9\\% pruning rate, while delivering an end-to-end inference speedup.",
+        "arxiv_id": "2512.02700"
+    },
+    "2512.02073": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02073",
+        "COMMENT": "Matches Representation Learning with a new GCL framework leveraging hierarchical topological granularity via cellular complexes and uncertainty-weighted multi-granularity contrast.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Qirui Ji",
+            "Bin Qin",
+            "Yifan Jin",
+            "Yunze Zhao",
+            "Chuxiong Sun",
+            "Changwen Zheng",
+            "Jianwen Cao",
+            "Jiangmeng Li"
+        ],
+        "title": "HTG-GCL: Leveraging Hierarchical Topological Granularity from Cellular Complexes for Graph Contrastive Learning",
+        "abstract": "Graph contrastive learning (GCL) aims to learn discriminative semantic invariance by contrasting different views of the same graph that share critical topological patterns. However, existing GCL approaches with structural augmentations often struggle to identify task-relevant topological structures, let alone adapt to the varying coarse-to-fine topological granularities required across different downstream tasks. To remedy this issue, we introduce Hierarchical Topological Granularity Graph Contrastive Learning (HTG-GCL), a novel framework that leverages transformations of the same graph to generate multi-scale ring-based cellular complexes, embodying the concept of topological granularity, thereby generating diverse topological views. Recognizing that a certain granularity may contain misleading semantics, we propose a multi-granularity decoupled contrast and apply a granularity-specific weighting mechanism based on uncertainty estimation. Comprehensive experiments on various benchmarks demonstrate the effectiveness of HTG-GCL, highlighting its superior performance in capturing meaningful graph representations through hierarchical topological information.",
+        "arxiv_id": "2512.02073"
+    },
+    "2512.02543": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02543",
+        "COMMENT": "Compression/Efficiency & ML Systems: training-free in-context distillation with self-consistency cascades to reduce agent inference cost with measured cost\u2013accuracy tradeoffs.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Vishnu Sarukkai",
+            "Asanshay Gupta",
+            "James Hong",
+            "Micha\\\"el Gharbi",
+            "Kayvon Fatahalian"
+        ],
+        "title": "In-Context Distillation with Self-Consistency Cascades: A Simple, Training-Free Way to Reduce LLM Agent Costs",
+        "abstract": "The world currently has an abundance of ideas for how to use new LLM agents, and developers seek to rapidly prototype and test new agentic designs. However, executing agents at scale using high-capacity LLMs incurs high inference costs. We propose a simple method for reducing LLM agent inference costs without incurring the development friction costs associated with LLM fine-tuning (long training cycles, optimization hyperparameter tweaking loops) or manual prompt engineering (laborious trial and error). Most importantly, we introduce $\\textit{in-context distillation}$, which adapts the idea of knowledge distillation (training a low cost-student model to mimic a high-cost teacher) to an in-context learning setting. Our approach retrieves relevant teacher demonstrations at each agent step and provides them to the student as in-context examples, enabling the student to imitate teacher behavior on-the-fly. We combine in-context distillation with the established idea of $\\textit{self-consistency cascades}$ to know when the trust the student. This adaptive strategy realizes the cost benefits of model specialization while preserving the productivity of working with frozen models. On the multi-step embodied reasoning benchmark ALFWorld, our method matches teacher-level accuracy at $\\textbf{2.5$\\times$ lower cost}$, reducing per-episode costs from \\$0.059 to \\$0.024. The upfront demonstration cost amortizes after just 843 episodes, yielding cumulative savings exceeding \\$34,900 at deployment scale (1M episodes). On AppWorld, a complex agent benchmark requiring multi-step API workflows, we shift the Pareto frontier by achieving a $\\textbf{2$\\times$ cost reduction}$ at iso-accuracy. By reducing operational costs while maintaining rapid experimentation cycles with frozen models, our approach makes advanced agentic systems economically viable for a broader range of applications.",
+        "arxiv_id": "2512.02543"
+    },
+    "2512.02080": {
+        "SCORE": 15,
+        "ARXIVID": "2512.02080",
+        "COMMENT": "ML Systems: formal convergence bound (4/\u03b4) for LLM\u2013Verifier loops with Markov-chain modeling and large-scale validation, giving general design principles.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "PIerre Dantas",
+            "Lucas Cordeiro",
+            "Youcheng Sun",
+            "Waldir Junior"
+        ],
+        "title": "The 4/$\\delta$ Bound: Designing Predictable LLM-Verifier Systems for Formal Method Guarantee",
+        "abstract": "The idea of using Formal Verification tools with large language models (LLMs) has enabled scaling software verification beyond manual workflows. However, current methods remain unreliable. Without a solid theoretical footing, the refinement process can wander; sometimes it settles, sometimes it loops back, and sometimes it breaks away from any stable trajectory. This work bridges this critical gap by developing an LLM-Verifier Convergence Theorem, providing the first formal framework with provable guarantees for termination and convergence. We model the interaction between the LLM and the verifier as a discrete-time Markov Chain, with state transitions determined by a key parameter: the error-reduction probability ($\\delta$). The procedure reaching the Verified state almost surely demonstrates that the program terminates for any $\\delta > 0$, with an expected iteration count bounded by $\\mathbb{E}[n] \\leq 4/\\delta$. We then stress-tested this prediction in an extensive empirical campaign comprising more than 90,000 trials. The empirical results match the theory with striking consistency. Every single run reached verification, and the convergence factor clustered tightly around $C_f\\approx$ 1.0. Consequently, the bound mirrors the system's actual behavior. The evidence is sufficiently robust to support dividing the workflow into three distinct operating zones: marginal, practical, and high-performance. Consequently, we establish the design thresholds with absolute confidence. Together, the theoretical guarantee and the experimental evidence provide a clearer architectural foundation for LLM-assisted verification. Heuristic tuning no longer has to be carried out by the system. Engineers gain a framework that supports predictable resource planning and performance budgeting, precisely what is needed before deploying these pipelines into safety-critical software environments.",
+        "arxiv_id": "2512.02080"
+    }
+}
