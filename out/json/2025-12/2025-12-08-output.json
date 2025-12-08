@@ -1,0 +1,302 @@
+{
+    "2512.05865": {
+        "SCORE": 19,
+        "ARXIVID": "2512.05865",
+        "COMMENT": "Model Compression and Efficiency + Model Architecture: post-training sparsity regularization makes transformer attention ~0.3% dense without loss, simplifying circuits for interpretability.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Florent Draye",
+            "Anson Lei",
+            "Ingmar Posner",
+            "Bernhard Sch\\\"olkopf"
+        ],
+        "title": "Sparse Attention Post-Training for Mechanistic Interpretability",
+        "abstract": "We introduce a simple post-training method that makes transformer attention sparse without sacrificing performance. Applying a flexible sparsity regularisation under a constrained-loss objective, we show on models up to 1B parameters that it is possible to retain the original pretraining loss while reducing attention connectivity to $\\approx 0.3 \\%$ of its edges. Unlike sparse-attention methods designed for computational efficiency, our approach leverages sparsity as a structural prior: it preserves capability while exposing a more organized and interpretable connectivity pattern. We find that this local sparsity cascades into global circuit simplification: task-specific circuits involve far fewer components (attention heads and MLPs) with up to 100x fewer edges connecting them. These results demonstrate that transformer attention can be made orders of magnitude sparser, suggesting that much of its computation is redundant and that sparsity may serve as a guiding principle for more structured and interpretable models.",
+        "arxiv_id": "2512.05865"
+    },
+    "2512.05534": {
+        "SCORE": 19,
+        "ARXIVID": "2512.05534",
+        "COMMENT": "Representation learning\u2014unified theoretical framework for sparse dictionary learning (incl. sparse autoencoders/transcoders) explaining training dynamics phenomena.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "authors": [
+            "Yiming Tang",
+            "Harshvardhan Saini",
+            "Yizhen Liao",
+            "Dianbo Liu"
+        ],
+        "title": "On the Theoretical Foundation of Sparse Dictionary Learning in Mechanistic Interpretability",
+        "abstract": "As AI models achieve remarkable capabilities across diverse domains, understanding what representations they learn and how they process information has become increasingly important for both scientific progress and trustworthy deployment. Recent works in mechanistic interpretability have shown that neural networks represent meaningful concepts as directions in their representation spaces and often encode many concepts in superposition. Various sparse dictionary learning (SDL) methods, including sparse autoencoders, transcoders, and crosscoders, address this by training auxiliary models with sparsity constraints to disentangle these superposed concepts into interpretable features. These methods have demonstrated remarkable empirical success but have limited theoretical understanding. Existing theoretical work is limited to sparse autoencoders with tied-weight constraints, leaving the broader family of SDL methods without formal grounding. In this work, we develop the first unified theoretical framework considering SDL as one unified optimization problem. We demonstrate how diverse methods instantiate the theoretical framwork and provide rigorous analysis on the optimization landscape. We provide the first theoretical explanations for some empirically observed phenomena, including feature absorption, dead neurons, and the neuron resampling technique. We further design controlled experiments to validate our theoretical results.",
+        "arxiv_id": "2512.05534"
+    },
+    "2512.05916": {
+        "SCORE": 18,
+        "ARXIVID": "2512.05916",
+        "COMMENT": "Model Compression and Efficiency: KV\u2011cache compression via optimal low\u2011rank decomposition of the attention matrix with provable attention fidelity guarantees.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Damien Lesens",
+            "Beheshteh T. Rakhshan",
+            "Guillaume Rabusseau"
+        ],
+        "title": "KQ-SVD: Compressing the KV Cache with Provable Guarantees on Attention Fidelity",
+        "abstract": "The Key-Value (KV) cache is central to the efficiency of transformer-based large language models (LLMs), storing previously computed vectors to accelerate inference. Yet, as sequence length and batch size grow, the cache becomes a major memory bottleneck. Prior compression methods typically apply low-rank decomposition to keys alone or attempt to jointly embed queries and keys, but both approaches neglect that attention fundamentally depends on their inner products. In this work, we prove that such strategies are suboptimal for approximating the attention matrix. We introduce KQ-SVD, a simple and computationally efficient method that directly performs an optimal low-rank decomposition of the attention matrix via a closed-form solution. By targeting the true source of redundancy, KQ-SVD preserves attention outputs with higher fidelity under compression. Extensive evaluations on LLaMA and Mistral models demonstrate that our approach consistently delivers superior projection quality.",
+        "arxiv_id": "2512.05916"
+    },
+    "2512.05915": {
+        "SCORE": 17,
+        "ARXIVID": "2512.05915",
+        "COMMENT": "Matches Model Architecture: general, provable construction of L-Lipschitz deep networks via LMI and LDL^T parameterization, enabling certified robustness.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Marius F. R. Juston",
+            "Ramavarapu S. Sreenivas",
+            "Dustin Nottage",
+            "Ahmet Soylemezoglu"
+        ],
+        "title": "LDLT $\\mathcal{L}$-Lipschitz Network: Generalized Deep End-To-End Lipschitz Network Construction",
+        "abstract": "Deep residual networks (ResNets) have demonstrated outstanding success in computer vision tasks, attributed to their ability to maintain gradient flow through deep architectures. Simultaneously, controlling the Lipschitz constant in neural networks has emerged as an essential area of research to enhance adversarial robustness and network certifiability. This paper presents a rigorous approach to the general design of $\\mathcal{L}$-Lipschitz deep residual networks using a Linear Matrix Inequality (LMI) framework. Initially, the ResNet architecture was reformulated as a cyclic tridiagonal LMI, and closed-form constraints on network parameters were derived to ensure $\\mathcal{L}$-Lipschitz continuity; however, using a new $LDL^\\top$ decomposition approach for certifying LMI feasibility, we extend the construction of $\\mathcal{L}$-Lipchitz networks to any other nonlinear architecture. Our contributions include a provable parameterization methodology for constructing Lipschitz-constrained residual networks and other hierarchical architectures. Cholesky decomposition is also used for efficient parameterization. These findings enable robust network designs applicable to adversarial robustness, certified training, and control systems. The $LDL^\\top$ formulation is shown to be a tight relaxation of the SDP-based network, maintaining full expressiveness and achieving 3\\%-13\\% accuracy gains over SLL Layers on 121 UCI data sets.",
+        "arxiv_id": "2512.05915"
+    },
+    "2512.05817": {
+        "SCORE": 17,
+        "ARXIVID": "2512.05817",
+        "COMMENT": "Model Compression and Efficiency + Representation Learning: unified generalization-error framework for dataset distillation with scaling and configuration-coverage laws that provide general, theory-driven insights.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Zhengquan Luo",
+            "Zhiqiang Xu"
+        ],
+        "title": "Utility Boundary of Dataset Distillation: Scaling and Configuration-Coverage Laws",
+        "abstract": "Dataset distillation (DD) aims to construct compact synthetic datasets that allow models to achieve comparable performance to full-data training while substantially reducing storage and computation. Despite rapid empirical progress, its theoretical foundations remain limited: existing methods (gradient, distribution, trajectory matching) are built on heterogeneous surrogate objectives and optimization assumptions, which makes it difficult to analyze their common principles or provide general guarantees. Moreover, it is still unclear under what conditions distilled data can retain the effectiveness of full datasets when the training configuration, such as optimizer, architecture, or augmentation, changes. To answer these questions, we propose a unified theoretical framework, termed configuration--dynamics--error analysis, which reformulates major DD approaches under a common generalization-error perspective and provides two main results: (i) a scaling law that provides a single-configuration upper bound, characterizing how the error decreases as the distilled sample size increases and explaining the commonly observed performance saturation effect; and (ii) a coverage law showing that the required distilled sample size scales linearly with configuration diversity, with provably matching upper and lower bounds. In addition, our unified analysis reveals that various matching methods are interchangeable surrogates, reducing the same generalization error, clarifying why they can all achieve dataset distillation and providing guidance on how surrogate choices affect sample efficiency and robustness. Experiments across diverse methods and configurations empirically confirm the derived laws, advancing a theoretical foundation for DD and enabling theory-driven design of compact, configuration-robust dataset distillation.",
+        "arxiv_id": "2512.05817"
+    },
+    "2512.05638": {
+        "SCORE": 17,
+        "ARXIVID": "2512.05638",
+        "COMMENT": "Representation learning/training dynamics\u2014identifiability of modular decompositions with theoretical jet-identifiability and an empirical jet estimation algorithm.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Suman Sanyal"
+        ],
+        "title": "Modular Jets for Supervised Pipelines: Diagnosing Mirage vs Identifiability",
+        "abstract": "Classical supervised learning evaluates models primarily via predictive risk on hold-out data. Such evaluations quantify how well a function behaves on a distribution, but they do not address whether the internal decomposition of a model is uniquely determined by the data and evaluation design. In this paper, we introduce \\emph{Modular Jets} for regression and classification pipelines. Given a task manifold (input space), a modular decomposition, and access to module-level representations, we estimate empirical jets, which are local linear response maps that describe how each module reacts to small structured perturbations of the input. We propose an empirical notion of \\emph{mirage} regimes, where multiple distinct modular decompositions induce indistinguishable jets and thus remain observationally equivalent, and contrast this with an \\emph{identifiable} regime, where the observed jets single out a decomposition up to natural symmetries. In the setting of two-module linear regression pipelines we prove a jet-identifiability theorem. Under mild rank assumptions and access to module-level jets, the internal factorisation is uniquely determined, whereas risk-only evaluation admits a large family of mirage decompositions that implement the same input-to-output map. We then present an algorithm (MoJet) for empirical jet estimation and mirage diagnostics, and illustrate the framework using linear and deep regression as well as pipeline classification.",
+        "arxiv_id": "2512.05638"
+    },
+    "2512.05439": {
+        "SCORE": 17,
+        "ARXIVID": "2512.05439",
+        "COMMENT": "ML-systems/verification\u2014deterministic, sound probability bounds for LLM constraint satisfaction with new token-trie/frontier exploration and formal guarantees.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Tarun Suresh",
+            "Nalin Wadhwa",
+            "Debangshu Banerjee",
+            "Gagandeep Singh"
+        ],
+        "title": "BEAVER: An Efficient Deterministic LLM Verifier",
+        "abstract": "As large language models (LLMs) transition from research prototypes to production systems, practitioners often need reliable methods to verify that model outputs satisfy required constraints. While sampling-based estimates provide an intuition of model behavior, they offer no sound guarantees. We present BEAVER, the first practical framework for computing deterministic, sound probability bounds on LLM constraint satisfaction. Given any prefix-closed semantic constraint, BEAVER systematically explores the generation space using novel token trie and frontier data structures, maintaining provably sound bounds at every iteration. We formalize the verification problem, prove soundness of our approach, and evaluate BEAVER on correctness verification, privacy verification and secure code generation tasks across multiple state of the art LLMs. BEAVER achieves 6 to 8 times tighter probability bounds and identifies 3 to 4 times more high risk instances compared to baseline methods under identical computational budgets, enabling precise characterization and risk assessment that loose bounds or empirical evaluation cannot provide.",
+        "arxiv_id": "2512.05439"
+    },
+    "2512.05790": {
+        "SCORE": 17,
+        "ARXIVID": "2512.05790",
+        "COMMENT": "Representation Learning: theoretical analysis of gating in RNNs; defines effective learning rates and a learnability window with scaling laws under heavy\u2011tailed noise.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Lorenzo Livi"
+        ],
+        "title": "Learnability Window in Gated Recurrent Neural Networks",
+        "abstract": "We develop a theoretical framework that explains how gating mechanisms determine the learnability window $\\mathcal{H}_N$ of recurrent neural networks, defined as the largest temporal horizon over which gradient information remains statistically recoverable. While classical analyses emphasize numerical stability of Jacobian products, we show that stability alone is insufficient: learnability is governed instead by the \\emph{effective learning rates} $\\mu_{t,\\ell}$, per-lag and per-neuron quantities obtained from first-order expansions of gate-induced Jacobian products in Backpropagation Through Time. These effective learning rates act as multiplicative filters that control both the magnitude and anisotropy of gradient transport. Under heavy-tailed ($\\alpha$-stable) gradient noise, we prove that the minimal sample size required to detect a dependency at lag~$\\ell$ satisfies $N(\\ell)\\propto f(\\ell)^{-\\alpha}$, where $f(\\ell)=\\|\\mu_{t,\\ell}\\|_1$ is the effective learning rate envelope. This leads to an explicit formula for $\\mathcal{H}_N$ and closed-form scaling laws for logarithmic, polynomial, and exponential decay of $f(\\ell)$. The theory predicts that broader or more heterogeneous gate spectra produce slower decay of $f(\\ell)$ and hence larger learnability windows, whereas heavier-tailed noise compresses $\\mathcal{H}_N$ by slowing statistical concentration. By linking gate-induced time-scale structure, gradient noise, and sample complexity, the framework identifies the effective learning rates as the fundamental quantities that govern when -- and for how long -- gated recurrent networks can learn long-range temporal dependencies.",
+        "arxiv_id": "2512.05790"
+    },
+    "2512.05325": {
+        "SCORE": 17,
+        "ARXIVID": "2512.05325",
+        "COMMENT": "Model Compression and Efficiency: online early-exit mechanism using hidden-state probes plus split conformal prediction to reduce inference compute with user-tunable confidence guarantees.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "\\\"Omer Faruk Akg\\\"ul",
+            "Yusuf Hakan Kalayc{\\i}",
+            "Rajgopal Kannan",
+            "Willie Neiswanger",
+            "Viktor Prasanna"
+        ],
+        "title": "LYNX: Learning Dynamic Exits for Confidence-Controlled Reasoning",
+        "abstract": "Large reasoning models achieve strong performance on complex tasks by generating extended chains of thought, but they often \"overthink\": continuing to reason long after they have enough information to answer correctly. This wastes inference-time compute and can hurt accuracy. Existing attempts to stop early either manipulate decoding with extra sampling and heuristics, rely on auxiliary verifier models, or operate only as post-hoc analysis pipelines without formal guarantees. We introduce LYNX, an online early-exit mechanism that turns a model's own hidden-state awareness into confidence-controlled stopping decisions. LYNX attaches exit decisions to naturally occurring reasoning cues (e.g., \"hmm\", \"wait\") during generation, trains a lightweight probe on hidden states at those cue tokens using supervision from forced exits, and wraps the resulting scores in split conformal prediction to obtain distribution-free control over premature exits. Crucially, we train and calibrate this probe once on a generic mathematical corpus and reuse it unchanged across benchmarks, decoding temperatures, and even non-mathematical tasks. Across three model families spanning 1.5B to 32B parameters, a single mathematically trained probe per base model yields strong accuracy--efficiency tradeoffs. On GSM8K, LYNX matches or improves baseline accuracy while reducing tokens by 40--65\\%; on MATH-500 it improves accuracy by up to 12 points with roughly 35--60\\% fewer tokens; on AIME 2024 it recovers baseline accuracy with more than 50\\% token savings; and on CommonsenseQA, a non-math benchmark, it transfers zero-shot with modest accuracy gains and up to 70\\% fewer tokens. Compared to state-of-the-art early-exit methods, LYNX offers competitive or superior Pareto frontiers while remaining fully online, requiring no proxy models at inference, and providing explicit, user-tunable confidence guarantees.",
+        "arxiv_id": "2512.05325"
+    },
+    "2512.05158": {
+        "SCORE": 17,
+        "ARXIVID": "2512.05158",
+        "COMMENT": "Model Architecture: formulates a fast-weights homeostatic reentry network as a continuous-time neural ODE and analyzes stability/attractors, defining a distinct recurrent architecture class.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Byung Gyu Chae"
+        ],
+        "title": "Continuous-Time Homeostatic Dynamics for Reentrant Inference Models",
+        "abstract": "We formulate the Fast-Weights Homeostatic Reentry Network (FHRN) as a continuous-time neural-ODE system, revealing its role as a norm-regulated reentrant dynamical process. Starting from the discrete reentry rule $x_t = x_t^{(\\mathrm{ex})} + \\gamma\\, W_r\\, g(\\|y_{t-1}\\|)\\, y_{t-1}$, we derive the coupled system $\\dot{y}=-y+f(W_ry;\\,x,\\,A)+g_{\\mathrm{h}}(y)$ showing that the network couples fast associative memory with global radial homeostasis. The dynamics admit bounded attractors governed by an energy functional, yielding a ring-like manifold. A Jacobian spectral analysis identifies a \\emph{reflective regime} in which reentry induces stable oscillatory trajectories rather than divergence or collapse. Unlike continuous-time recurrent neural networks or liquid neural networks, FHRN achieves stability through population-level gain modulation rather than fixed recurrence or neuron-local time adaptation. These results establish the reentry network as a distinct class of self-referential neural dynamics supporting recursive yet bounded computation.",
+        "arxiv_id": "2512.05158"
+    },
+    "2512.05693": {
+        "SCORE": 16,
+        "ARXIVID": "2512.05693",
+        "COMMENT": "Matches Model Architecture: introduces a Hierarchical Mixture-of-Experts (MoE) design for the action module to handle heterogeneity with adaptive routing across layers.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "authors": [
+            "Zhiying Du",
+            "Bei Liu",
+            "Yaobo Liang",
+            "Yichao Shen",
+            "Haidong Cao",
+            "Xiangyu Zheng",
+            "Zhiyuan Feng",
+            "Zuxuan Wu",
+            "Jiaolong Yang",
+            "Yu-Gang Jiang"
+        ],
+        "title": "HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action Policies",
+        "abstract": "The development of foundation models for embodied intelligence critically depends on access to large-scale, high-quality robot demonstration data. Recent approaches have sought to address this challenge by training on large collections of heterogeneous robotic datasets. However, unlike vision or language data, robotic demonstrations exhibit substantial heterogeneity across embodiments and action spaces as well as other prominent variations such as senor configurations and action control frequencies. The lack of explicit designs for handling such heterogeneity causes existing methods to struggle with integrating diverse factors, thereby limiting their generalization and leading to degraded performance when transferred to new settings. In this paper, we present HiMoE-VLA, a novel vision-language-action (VLA) framework tailored to effectively handle diverse robotic data with heterogeneity. Specifically, we introduce a Hierarchical Mixture-of-Experts (HiMoE) architecture for the action module which adaptively handles multiple sources of heterogeneity across layers and gradually abstracts them into shared knowledge representations. Through extensive experimentation with simulation benchmarks and real-world robotic platforms, HiMoE-VLA demonstrates a consistent performance boost over existing VLA baselines, achieving higher accuracy and robust generalization across diverse robots and action spaces. The code and models are publicly available at https://github.com/ZhiyingDu/HiMoE-VLA.",
+        "arxiv_id": "2512.05693"
+    },
+    "2512.05297": {
+        "SCORE": 16,
+        "ARXIVID": "2512.05297",
+        "COMMENT": "Matches Representation Learning: neural operator that learns continuous-time dynamics via flow matching; also Efficiency: training avoids backprop through ODE solvers while enabling arbitrary-time inference.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Xianglong Hou",
+            "Xinquan Huang",
+            "Paris Perdikaris"
+        ],
+        "title": "CFO: Learning Continuous-Time PDE Dynamics via Flow-Matched Neural Operators",
+        "abstract": "Neural operator surrogates for time-dependent partial differential equations (PDEs) conventionally employ autoregressive prediction schemes, which accumulate error over long rollouts and require uniform temporal discretization. We introduce the Continuous Flow Operator (CFO), a framework that learns continuous-time PDE dynamics without the computational burden of standard continuous approaches, e.g., neural ODE. The key insight is repurposing flow matching to directly learn the right-hand side of PDEs without backpropagating through ODE solvers. CFO fits temporal splines to trajectory data, using finite-difference estimates of time derivatives at knots to construct probability paths whose velocities closely approximate the true PDE dynamics. A neural operator is then trained via flow matching to predict these analytic velocity fields. This approach is inherently time-resolution invariant: training accepts trajectories sampled on arbitrary, non-uniform time grids while inference queries solutions at any temporal resolution through ODE integration. Across four benchmarks (Lorenz, 1D Burgers, 2D diffusion-reaction, 2D shallow water), CFO demonstrates superior long-horizon stability and remarkable data efficiency. CFO trained on only 25% of irregularly subsampled time points outperforms autoregressive baselines trained on complete data, with relative error reductions up to 87%. Despite requiring numerical integration at inference, CFO achieves competitive efficiency, outperforming autoregressive baselines using only 50% of their function evaluations, while uniquely enabling reverse-time inference and arbitrary temporal querying.",
+        "arxiv_id": "2512.05297"
+    },
+    "2512.05338": {
+        "SCORE": 16,
+        "ARXIVID": "2512.05338",
+        "COMMENT": "Algorithmic efficiency: exact high\u2011order Shapley interactions via tensor\u2011network (Tensor Train) contractions with provable polytime/NC2 complexity for scalable interpretability.",
+        "RELEVANCE": 8,
+        "NOVELTY": 8,
+        "authors": [
+            "Hiroki Hasegawa",
+            "Yukihiko Okada"
+        ],
+        "title": "Interaction Tensor Shap",
+        "abstract": "Machine learning models have grown increasingly deep and high dimensional, making it difficult to understand how individual and combined features influence their predictions. While Shapley value based methods provide principled feature attributions, existing formulations cannot tractably evaluate higher order interactions: the Shapley Taylor Interaction Index (STII) requires exponential scale enumeration of subsets, and current tensor based approaches such as the Marginal SHAP Tensor (MST) are restricted to first order effects. The central problem is that no existing framework simultaneously preserves the axiomatic exactness of STII and avoids the exponential computational blow up inherent to high order discrete derivatives. Here we show that high order Shapley interactions can be represented exactly as tensor network contractions, enabling polynomial time and polylog depth computation under Tensor Train (TT) structure. We introduce Interaction Tensor SHAP (IT SHAP), which reformulates STII as the contraction of a Value Tensor and a Weight Tensor, and assume a finite state TT representation of the Weight Tensor with polynomial TT ranks. Under TT structured model and distribution tensors, we show that IT SHAP reduces the exponential complex Theta(4^n) of STII to NC2 parallel time. These results demonstrate that IT SHAP provides a unified, axiomatic, and computationally tractable formulation of main effects and higher order interactions in high dimensional models. This framework establishes a foundation for scalable interaction aware explainable AI, with implications for large black box models whose combinatorial structure has previously rendered interaction analysis infeasible.",
+        "arxiv_id": "2512.05338"
+    },
+    "2512.05238": {
+        "SCORE": 15,
+        "ARXIVID": "2512.05238",
+        "COMMENT": "Matches Model Architecture: extends 1-WL to incorporate edge features and proposes an Edged GIN (EGIN), advancing the theoretical foundations of GNN expressivity.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Xiao Yue",
+            "Bo Liu",
+            "Feng Zhang",
+            "Guangzhi Qu"
+        ],
+        "title": "Edged Weisfeiler-Lehman Algorithm",
+        "abstract": "As a classical approach on graph learning, the propagation-aggregation methodology is widely exploited by many of Graph Neural Networks (GNNs), wherein the representation of a node is updated by aggregating representations from itself and neighbor nodes recursively. Similar to the propagation-aggregation methodology, the Weisfeiler-Lehman (1-WL) algorithm tests isomorphism through color refinement according to color representations of a node and its neighbor nodes. However, 1-WL does not leverage any edge features (labels), presenting a potential improvement on exploiting edge features in some fields. To address this limitation, we proposed a novel Edged-WL algorithm (E-WL) which extends the original 1-WL algorithm to incorporate edge features. Building upon the E-WL algorithm, we also introduce an Edged Graph Isomorphism Network (EGIN) model for further exploiting edge features, which addresses one key drawback in many GNNs that do not utilize any edge features of graph data. We evaluated the performance of proposed models using 12 edge-featured benchmark graph datasets and compared them with some state-of-the-art baseline models. Experimental results indicate that our proposed EGIN models, in general, demonstrate superior performance in graph learning on graph classification tasks.",
+        "arxiv_id": "2512.05238"
+    },
+    "2512.05306": {
+        "SCORE": 15,
+        "ARXIVID": "2512.05306",
+        "COMMENT": "Architecture innovation\u2014integrates sparse variational Gaussian processes with Kolmogorov\u2013Arnold Networks for scalable uncertainty-aware representation learning.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Y. Sungtaek Ju"
+        ],
+        "title": "Uncertainty Quantification for Scientific Machine Learning using Sparse Variational Gaussian Process Kolmogorov-Arnold Networks (SVGP KAN)",
+        "abstract": "Kolmogorov-Arnold Networks have emerged as interpretable alternatives to traditional multi-layer perceptrons. However, standard implementations lack principled uncertainty quantification capabilities essential for many scientific applications. We present a framework integrating sparse variational Gaussian process inference with the Kolmogorov-Arnold topology, enabling scalable Bayesian inference with computational complexity quasi-linear in sample size. Through analytic moment matching, we propagate uncertainty through deep additive structures while maintaining interpretability. We use three example studies to demonstrate the framework's ability to distinguish aleatoric from epistemic uncertainty: calibration of heteroscedastic measurement noise in fluid flow reconstruction, quantification of prediction confidence degradation in multi-step forecasting of advection-diffusion dynamics, and out-of-distribution detection in convolutional autoencoders. These results suggest Sparse Variational Gaussian Process Kolmogorov-Arnold Networks (SVGP KANs) is a promising architecture for uncertainty-aware learning in scientific machine learning.",
+        "arxiv_id": "2512.05306"
+    },
+    "2512.05254": {
+        "SCORE": 15,
+        "ARXIVID": "2512.05254",
+        "COMMENT": "Efficiency/ML-systems\u2014computationally efficient unlearning via screening low-influence points using influence functions; generalizable cost reduction strategy.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Anat Kleiman",
+            "Robert Fisher",
+            "Ben Deaner",
+            "Udi Wieder"
+        ],
+        "title": "When unlearning is free: leveraging low influence points to reduce computational costs",
+        "abstract": "As concerns around data privacy in machine learning grow, the ability to unlearn, or remove, specific data points from trained models becomes increasingly important. While state of the art unlearning methods have emerged in response, they typically treat all points in the forget set equally. In this work, we challenge this approach by asking whether points that have a negligible impact on the model's learning need to be removed. Through a comparative analysis of influence functions across language and vision tasks, we identify subsets of training data with negligible impact on model outputs. Leveraging this insight, we propose an efficient unlearning framework that reduces the size of datasets before unlearning leading to significant computational savings (up to approximately 50 percent) on real world empirical examples.",
+        "arxiv_id": "2512.05254"
+    },
+    "2512.05620": {
+        "SCORE": 15,
+        "ARXIVID": "2512.05620",
+        "COMMENT": "High Performance Computing / ML Systems: scalable hyperparameter transfer rules for matrix-preconditioned optimizers enabling compute-efficient large-model training.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Shikai Qiu",
+            "Zixi Chen",
+            "Hoang Phan",
+            "Qi Lei",
+            "Andrew Gordon Wilson"
+        ],
+        "title": "Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales",
+        "abstract": "Several recently introduced deep learning optimizers utilizing matrix-level preconditioning have shown promising speedups relative to the current dominant optimizer AdamW, particularly in relatively small-scale experiments. However, efforts to validate and replicate their successes have reported mixed results. To better understand the effectiveness of these optimizers at scale, in this work we investigate how to scale preconditioned optimizers via hyperparameter transfer, building on prior works such as $\\mu$P. We study how the optimal learning rate and weight decay should scale with model width and depth for a wide range of optimizers, including Shampoo, SOAP, and Muon, accounting for the impact of commonly used techniques such as blocking and grafting. We find that scaling the learning rate according to $\\mu$P improves transfer, but can still suffer from significant finite-width deviations that cause drifting optimal learning rates, which we show can be mitigated by blocking and explicit spectral normalization. For compute-optimal scaling, we find scaling independent weight decay as $1/\\mathrm{width}$ is nearly optimal across optimizers. Applying these scaling rules, we show Muon and Shampoo consistently achieve $1.4\\times$ and $1.3\\times$ speedup over AdamW for training Llama-architecture language models of sizes ranging from $190$M to $1.4$B, whereas the speedup vanishes rapidly with scale under incorrect scaling. Based on these results and further ablations, we argue that studying optimal hyperparameter transfer is essential for reliably comparing optimizers at scale given a realistic tuning budget.",
+        "arxiv_id": "2512.05620"
+    },
+    "2512.05648": {
+        "SCORE": 15,
+        "ARXIVID": "2512.05648",
+        "COMMENT": "Model Architecture / Representation Learning: selective gradient masking to localize knowledge into dedicated parameters for later removal (dynamic routing of updates).",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Igor Shilov",
+            "Alex Cloud",
+            "Aryo Pradipta Gema",
+            "Jacob Goldman-Wetzler",
+            "Nina Panickssery",
+            "Henry Sleight",
+            "Erik Jones",
+            "Cem Anil"
+        ],
+        "title": "Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs",
+        "abstract": "Large Language Models increasingly possess capabilities that carry dual-use risks. While data filtering has emerged as a pretraining-time mitigation, it faces significant challenges: labeling whether data is harmful is expensive at scale, and given improving sample efficiency with larger models, even small amounts of mislabeled content could give rise to dangerous capabilities. To address risks associated with mislabeled harmful content, prior work proposed Gradient Routing (Cloud et al., 2024) -- a technique that localizes target knowledge into a dedicated subset of model parameters so they can later be removed. We explore an improved variant of Gradient Routing, which we call Selective GradienT Masking (SGTM), with particular focus on evaluating its robustness to label noise. SGTM zero-masks selected gradients such that target domain examples only update their dedicated parameters. We test SGTM's effectiveness in two applications: removing knowledge of one language from a model trained on a bilingual synthetic dataset, and removing biology knowledge from a model trained on English Wikipedia. In both cases SGTM provides better retain/forget trade-off in the presence of labeling errors compared to both data filtering and a previously proposed instantiation of Gradient Routing. Unlike shallow unlearning approaches that can be quickly undone through fine-tuning, SGTM exhibits strong robustness to adversarial fine-tuning, requiring seven times more fine-tuning steps to reach baseline performance on the forget set compared to a finetuning-based unlearning method (RMU). Our results suggest SGTM provides a promising pretraining-time complement to existing safety mitigations, particularly in settings where label noise is unavoidable.",
+        "arxiv_id": "2512.05648"
+    },
+    "2512.05717": {
+        "SCORE": 15,
+        "ARXIVID": "2512.05717",
+        "COMMENT": "Representation Learning: comparative analysis of latent features in universal interatomic potentials, revealing how models encode chemical space.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Sofiia Chorna",
+            "Davide Tisi",
+            "Cesare Malosso",
+            "Wei Bin How",
+            "Michele Ceriotti",
+            "Sanggyu Chong"
+        ],
+        "title": "Comparing the latent features of universal machine-learning interatomic potentials",
+        "abstract": "The past few years have seen the development of ``universal'' machine-learning interatomic potentials (uMLIPs) capable of approximating the ground-state potential energy surface across a wide range of chemical structures and compositions with reasonable accuracy. While these models differ in the architecture and the dataset used, they share the ability to compress a staggering amount of chemical information into descriptive latent features. Herein, we systematically analyze what the different uMLIPs have learned by quantitatively assessing the relative information content of their latent features with feature reconstruction errors as metrics, and observing how the trends are affected by the choice of training set and training protocol. We find that the uMLIPs encode chemical space in significantly distinct ways, with substantial cross-model feature reconstruction errors. When variants of the same model architecture are considered, trends become dependent on the dataset, target, and training protocol of choice. We also observe that fine-tuning of a uMLIP retains a strong pre-training bias in the latent features. Finally, we discuss how atom-level features, which are directly output by MLIPs, can be compressed into global structure-level features via concatenation of progressive cumulants, each adding significantly new information about the variability across the atomic environments within a given system.",
+        "arxiv_id": "2512.05717"
+    }
+}
