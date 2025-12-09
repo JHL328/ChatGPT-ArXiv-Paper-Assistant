@@ -1,0 +1,238 @@
+{
+    "2512.07168": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Georgios Ioannides",
+            "Christos Constantinou",
+            "Aman Chadha",
+            "Aaron Elkins",
+            "Linsey Pang",
+            "Ravid Shwartz-Ziv",
+            "Yann LeCun"
+        ],
+        "title": "JEPA as a Neural Tokenizer: Learning Robust Speech Representations with Density Adaptive Attention",
+        "abstract": "We introduce a two-stage self-supervised framework that combines the Joint-Embedding Predictive Architecture (JEPA) with a Density Adaptive Attention Mechanism (DAAM) for learning robust speech representations. Stage~1 uses JEPA with DAAM to learn semantic audio features via masked prediction in latent space, fully decoupled from waveform reconstruction. Stage~2 leverages these representations for efficient tokenization using Finite Scalar Quantization (FSQ) and a mixed-radix packing scheme, followed by high-fidelity waveform reconstruction with a HiFi-GAN decoder. By integrating Gaussian mixture-based density-adaptive gating into the JEPA encoder, the model performs adaptive temporal feature selection and discovers hierarchical speech structure at a low frame rate of 2.5~Hz. The resulting tokens (47.5 tokens/sec) provide a reversible, highly compressed, and language-model-friendly representation that is competitive with, and often more efficient than, existing neural audio codecs.",
+        "arxiv_id": "2512.07168"
+    },
+    "2512.07090": {
+        "SCORE": 18,
+        "ARXIVID": "2512.07090",
+        "COMMENT": "Compression/Efficiency: online structured pruning during inference via joint key\u2013value similarity and variance-aware fusion; no calibration data required.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Jungmin Lee",
+            "Gwangeun Byeon",
+            "Yulhwa Kim",
+            "Seokin Hong"
+        ],
+        "title": "Leveraging KV Similarity for Online Structured Pruning in LLMs",
+        "abstract": "Pruning has emerged as a promising direction for accelerating large language model (LLM) inference, yet existing approaches often suffer from instability because they rely on offline calibration data that may not generalize across inputs. In this work, we introduce Token Filtering, a lightweight online structured pruning technique that makes pruning decisions directly during inference without any calibration data. The key idea is to measure token redundancy via joint key-value similarity and skip redundant attention computations, thereby reducing inference cost while preserving critical information. To further enhance stability, we design a variance-aware fusion strategy that adaptively weights key and value similarity across heads, ensuring that informative tokens are retained even under high pruning ratios. This design introduces no additional memory overhead and provides a more reliable criterion for token importance. Extensive experiments on LLaMA-2 (7B/13B), LLaMA-3 (8B), and Mistral (7B) demonstrate that Token Filtering consistently outperforms prior structured pruning methods, preserving accuracy on commonsense reasoning benchmarks and maintaining strong performance on challenging tasks such as MMLU, even with 50% pruning.",
+        "arxiv_id": "2512.07090"
+    },
+    "2512.07805": {
+        "SCORE": 18,
+        "ARXIVID": "2512.07805",
+        "COMMENT": "Model Architecture: unified positional encoding via group actions (GRAPE), subsuming RoPE/ALiBi with multiplicative (SO(d)) and additive (unipotent) formulations and efficient per-head costs.",
+        "RELEVANCE": 10,
+        "NOVELTY": 8,
+        "authors": [
+            "Yifan Zhang",
+            "Zixiang Chen",
+            "Yifeng Liu",
+            "Zhen Qin",
+            "Huizhuo Yuan",
+            "Kangping Xu",
+            "Yang Yuan",
+            "Quanquan Gu",
+            "Andrew Chi-Chih Yao"
+        ],
+        "title": "Group Representational Position Encoding",
+        "abstract": "We present GRAPE (Group RepresentAtional Position Encoding), a unified framework for positional encoding based on group actions. GRAPE brings together two families of mechanisms: (i) multiplicative rotations (Multiplicative GRAPE) in $\\mathrm{SO}(d)$ and (ii) additive logit biases (Additive GRAPE) arising from unipotent actions in the general linear group $\\mathrm{GL}$. In Multiplicative GRAPE, a position $n \\in \\mathbb{Z}$ (or $t \\in \\mathbb{R}$) acts as $\\mathbf{G}(n)=\\exp(n\\,\\omega\\,\\mathbf{L})$ with a rank-2 skew generator $\\mathbf{L} \\in \\mathbb{R}^{d \\times d}$, yielding a relative, compositional, norm-preserving map with a closed-form matrix exponential. RoPE is recovered exactly when the $d/2$ planes are the canonical coordinate pairs with log-uniform spectrum. Learned commuting subspaces and compact non-commuting mixtures strictly extend this geometry to capture cross-subspace feature coupling at $O(d)$ and $O(r d)$ cost per head, respectively. In Additive GRAPE, additive logits arise as rank-1 (or low-rank) unipotent actions, recovering ALiBi and the Forgetting Transformer (FoX) as exact special cases while preserving an exact relative law and streaming cacheability. Altogether, GRAPE supplies a principled design space for positional geometry in long-context models, subsuming RoPE and ALiBi as special cases. Project Page: https://github.com/model-architectures/GRAPE.",
+        "arxiv_id": "2512.07805"
+    },
+    "2512.07724": {
+        "SCORE": 18,
+        "ARXIVID": "2512.07724",
+        "COMMENT": "ML Systems and HW\u2013SW Co-design: spiking microarchitecture achieving bit-exact FP8 arithmetic with O(log N) linear layers; kernel-level and architectural innovations for efficient inference.",
+        "RELEVANCE": 9,
+        "NOVELTY": 9,
+        "authors": [
+            "Zhengzheng Tang"
+        ],
+        "title": "The Native Spiking Microarchitecture: From Iontronic Primitives to Bit-Exact FP8 Arithmetic",
+        "abstract": "The 2025 Nobel Prize in Chemistry for Metal-Organic Frameworks (MOFs) and recent breakthroughs by Huanting Wang's team at Monash University establish angstrom-scale channels as promising post-silicon substrates with native integrate-and-fire (IF) dynamics. However, utilizing these stochastic, analog materials for deterministic, bit-exact AI workloads (e.g., FP8) remains a paradox. Existing neuromorphic methods often settle for approximation, failing Transformer precision standards. To traverse the gap \"from stochastic ions to deterministic floats,\" we propose a Native Spiking Microarchitecture. Treating noisy neurons as logic primitives, we introduce a Spatial Combinational Pipeline and a Sticky-Extra Correction mechanism. Validation across all 16,129 FP8 pairs confirms 100% bit-exact alignment with PyTorch. Crucially, our architecture reduces Linear layer latency to O(log N), yielding a 17x speedup. Physical simulations further demonstrate robustness against extreme membrane leakage (beta approx 0.01), effectively immunizing the system against the stochastic nature of the hardware.",
+        "arxiv_id": "2512.07724"
+    },
+    "2512.06370": {
+        "SCORE": 17,
+        "ARXIVID": "2512.06370",
+        "COMMENT": "Matches Training dynamics/optimizer design: formal framework deriving optimizers and hyperparameters via convex objectives; dynamic during training.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Jaerin Lee",
+            "Kyoung Mu Lee"
+        ],
+        "title": "Optimizing Optimizers for Fast Gradient-Based Learning",
+        "abstract": "We lay the theoretical foundation for automating optimizer design in gradient-based learning. Based on the greedy principle, we formulate the problem of designing optimizers as maximizing the instantaneous decrease in loss. By treating an optimizer as a function that translates loss gradient signals into parameter motions, the problem reduces to a family of convex optimization problems over the space of optimizers. Solving these problems under various constraints not only recovers a wide range of popular optimizers as closed-form solutions, but also produces the optimal hyperparameters of these optimizers with respect to the problems at hand. This enables a systematic approach to design optimizers and tune their hyperparameters according to the gradient statistics that are collected during the training process. Furthermore, this optimization of optimization can be performed dynamically during training.",
+        "arxiv_id": "2512.06370"
+    },
+    "2512.07818": {
+        "SCORE": 17,
+        "ARXIVID": "2512.07818",
+        "COMMENT": "Matches Representation Learning theory: provable long-range structure from next-token prediction with complexity bounds.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Xinyuan Cao",
+            "Santosh S. Vempala"
+        ],
+        "title": "Provable Long-Range Benefits of Next-Token Prediction",
+        "abstract": "Why do modern language models, trained to do well on next-word prediction, appear to generate coherent documents and capture long-range structure? Here we show that next-token prediction is provably powerful for learning longer-range structure, even with common neural network architectures. Specifically, we prove that optimizing next-token prediction over a Recurrent Neural Network (RNN) yields a model that closely approximates the training distribution: for held-out documents sampled from the training distribution, no algorithm of bounded description length limited to examining the next $k$ tokens, for any $k$, can distinguish between $k$ consecutive tokens of such documents and $k$ tokens generated by the learned language model following the same prefix. We provide polynomial bounds (in $k$, independent of the document length) on the model size needed to achieve such $k$-token indistinguishability, offering a complexity-theoretic explanation for the long-range coherence observed in practice.",
+        "arxiv_id": "2512.07818"
+    },
+    "2512.06440": {
+        "SCORE": 17,
+        "ARXIVID": "2512.06440",
+        "COMMENT": "Model Compression and Efficiency: introduces an \u2018Expressiveness\u2019 pruning criterion enabling data-agnostic and hybrid pruning strategies beyond weight-importance, improving compression with minimal accuracy loss.",
+        "RELEVANCE": 9,
+        "NOVELTY": 8,
+        "authors": [
+            "Angelos-Christos Maroudis",
+            "Sotirios Xydis"
+        ],
+        "title": "Neural expressiveness for beyond importance model compression",
+        "abstract": "Neural Network Pruning has been established as driving force in the exploration of memory and energy efficient solutions with high throughput both during training and at test time. In this paper, we introduce a novel criterion for model compression, named \"Expressiveness\". Unlike existing pruning methods that rely on the inherent \"Importance\" of neurons' and filters' weights, ``Expressiveness\" emphasizes a neuron's or group of neurons ability to redistribute informational resources effectively, based on the overlap of activations. This characteristic is strongly correlated to a network's initialization state, establishing criterion autonomy from the learning state stateless and thus setting a new fundamental basis for the expansion of compression strategies in regards to the \"When to Prune\" question. We show that expressiveness is effectively approximated with arbitrary data or limited dataset's representative samples, making ground for the exploration of Data-Agnostic strategies. Our work also facilitates a \"hybrid\" formulation of expressiveness and importance-based pruning strategies, illustrating their complementary benefits and delivering up to 10x extra gains w.r.t. weight-based approaches in parameter compression ratios, with an average of 1% in performance degradation. We also show that employing expressiveness (independently) for pruning leads to an improvement over top-performing and foundational methods in terms of compression efficiency. Finally, on YOLOv8, we achieve a 46.1% MACs reduction by removing 55.4\\% of the parameters, with an increase of 3% in the mean Absolute Precision ($mAP_{50-95}$) for object detection on COCO dataset.",
+        "arxiv_id": "2512.06440"
+    },
+    "2512.06866": {
+        "SCORE": 15,
+        "ARXIVID": "2512.06866",
+        "COMMENT": "Efficiency: training-free dynamic token compression leveraging attention-derived keyframe priors to set per-frame token retention in VLLMs.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Yulin Li",
+            "Haokun Gui",
+            "Ziyang Fan",
+            "Junjie Wang",
+            "Bin Kang",
+            "Bin Chen",
+            "Zhuotao Tian"
+        ],
+        "title": "Less Is More, but Where? Dynamic Token Compression via LLM-Guided Keyframe Prior",
+        "abstract": "Recent advances in Video Large Language Models (VLLMs) have achieved remarkable video understanding capabilities, yet face critical efficiency bottlenecks due to quadratic computational growth with lengthy visual token sequences of long videos. While existing keyframe sampling methods can improve temporal modeling efficiency, additional computational cost is introduced before feature encoding, and the binary frame selection paradigm is found suboptimal. Therefore, in this work, we propose Dynamic Token compression via LLM-guided Keyframe prior (DyToK), a training-free paradigm that enables dynamic token compression by harnessing VLLMs' inherent attention mechanisms. Our analysis reveals that VLLM attention layers naturally encoding query-conditioned keyframe priors, by which DyToK dynamically adjusts per-frame token retention ratios, prioritizing semantically rich frames while suppressing redundancies. Extensive experiments demonstrate that DyToK achieves state-of-the-art efficiency-accuracy tradeoffs. DyToK shows plug-and-play compatibility with existing compression methods, such as VisionZip and FastV, attaining 4.3x faster inference while preserving accuracy across multiple VLLMs, such as LLaVA-OneVision and Qwen2.5-VL. Code is available at https://github.com/yu-lin-li/DyToK .",
+        "arxiv_id": "2512.06866"
+    },
+    "2512.07419": {
+        "SCORE": 15,
+        "ARXIVID": "2512.07419",
+        "COMMENT": "Model Compression: mixed-precision quantization with training-free automatic proxy discovery (LLM-driven TAP) instead of costly differentiable search.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Haidong Kang",
+            "Jun Du",
+            "Lihong Lin"
+        ],
+        "title": "Revolutionizing Mixed Precision Quantization: Towards Training-free Automatic Proxy Discovery via Large Language Models",
+        "abstract": "Mixed-Precision Quantization (MPQ) liberates the Deep Neural Networks (DNNs) from the Out-Of-Memory (OOM) bottleneck, which garnered increasing research attention. However, conventional methods either searched from costly differentiable optimization, which is neither efficient nor flexible, or learned a quantized DNN from the proxy (i.e., HAWQ) manually designed by human experts, which is labor-intensive and requires huge expert knowledge. Can we design a proxy without involving any human experts and training? In this paper, we provide an affirmative answer by proposing a novel Large Language Models (LLMs)-driven Training-free Automatic Proxy (dubbed TAP) discovery framework, which reforms the design paradigm of MPQ by utilizing LLMs to find superior TAP tailored for MPQ, automatically. In addition, to bridge the gap between black-box LLMs and the tough MPQ task, we ingeniously propose simple Direct Policy Optimization (DPO) based reinforcement learning to enhance LLMs' reasoning by optimizing prompts, which can construct a positive feedback loop between the LLM and the MPQ task, enabling LLMs to generate better TAP in the next evolution. Extensive experiments on mainstream benchmarks demonstrate that TAP achieves state-of-the-art performance. Finally, we truly believe that our TAP will significantly contribute to the MPQ community by providing a new perspective on LLM-driven design algorithms.",
+        "arxiv_id": "2512.07419"
+    },
+    "2512.07522": {
+        "SCORE": 15,
+        "ARXIVID": "2512.07522",
+        "COMMENT": "Matches Model Architecture/Training efficiency: augments token embeddings with linguistic metadata, improving pretraining efficiency with negligible params.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Sebastian Sztwiertnia",
+            "Felix Friedrich",
+            "Kristian Kersting",
+            "Patrick Schramowski",
+            "Bj\\\"orn Deiseroth"
+        ],
+        "title": "LIME: Making LLM Data More Efficient with Linguistic Metadata Embeddings",
+        "abstract": "Pre-training decoder-only language models relies on vast amounts of high-quality data, yet the availability of such data is increasingly reaching its limits. While metadata is commonly used to create and curate these datasets, its potential as a direct training signal remains under-explored. We challenge this status quo and propose LIME (Linguistic Metadata Embeddings), a method that enriches token embeddings with metadata capturing syntax, semantics, and contextual properties. LIME substantially improves pre-training efficiency. Specifically, it adapts up to 56% faster to the training data distribution, while introducing only 0.01% additional parameters at negligible compute overhead. Beyond efficiency, LIME improves tokenization, leading to remarkably stronger language modeling capabilities and generative task performance. These benefits persist across model scales (500M to 2B). In addition, we develop a variant with shifted metadata, LIME+1, that can guide token generation. Given prior metadata for the next token, LIME+1 improves reasoning performance by up to 38% and arithmetic accuracy by up to 35%.",
+        "arxiv_id": "2512.07522"
+    },
+    "2512.06154": {
+        "SCORE": 15,
+        "ARXIVID": "2512.06154",
+        "COMMENT": "Representation Learning: introduces Partial Information Decomposition (PID) to learn invariant graph representations for OOD generalization with a new redundancy-maximizing optimization framework.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Barproda Halder",
+            "Pasan Dissanayake",
+            "Sanghamitra Dutta"
+        ],
+        "title": "Learning Invariant Graph Representations Through Redundant Information",
+        "abstract": "Learning invariant graph representations for out-of-distribution (OOD) generalization remains challenging because the learned representations often retain spurious components. To address this challenge, this work introduces a new tool from information theory called Partial Information Decomposition (PID) that goes beyond classical information-theoretic measures. We identify limitations in existing approaches for invariant representation learning that solely rely on classical information-theoretic measures, motivating the need to precisely focus on redundant information about the target $Y$ shared between spurious subgraphs $G_s$ and invariant subgraphs $G_c$ obtained via PID. Next, we propose a new multi-level optimization framework that we call -- Redundancy-guided Invariant Graph learning (RIG) -- that maximizes redundant information while isolating spurious and causal subgraphs, enabling OOD generalization under diverse distribution shifts. Our approach relies on alternating between estimating a lower bound of redundant information (which itself requires an optimization) and maximizing it along with additional objectives. Experiments on both synthetic and real-world graph datasets demonstrate the generalization capabilities of our proposed RIG framework.",
+        "arxiv_id": "2512.06154"
+    },
+    "2512.06392": {
+        "SCORE": 15,
+        "ARXIVID": "2512.06392",
+        "COMMENT": "ML Systems: distributed training framework (parameter-server) for large-scale RL of LLMs on TPUs with preemptible training and system-level optimizations.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Runlong Zhou",
+            "Lefan Zhang",
+            "Shang-Chen Wu",
+            "Kelvin Zou",
+            "Hanzhi Zhou",
+            "Ke Ye",
+            "Yihao Feng",
+            "Dong Yin",
+            "Alex Guillen Garcia",
+            "Dmytro Babych",
+            "Rohit Chatterjee",
+            "Matthew Hopkins",
+            "Xiang Kong",
+            "Chang Lan",
+            "Lezhi Li",
+            "Yiping Ma",
+            "Daniele Molinari",
+            "Senyu Tong",
+            "Yanchao Sun",
+            "Thomas Voice",
+            "Jianyu Wang",
+            "Chong Wang",
+            "Simon Wang",
+            "Floris Weers",
+            "Yechen Xu",
+            "Guolin Yin",
+            "Muyang Yu",
+            "Yi Zhang",
+            "Zheng Zhou",
+            "Danyang Zhuo",
+            "Ruoming Pang",
+            "Cheng Leong"
+        ],
+        "title": "RLAX: Large-Scale, Distributed Reinforcement Learning for Large Language Models on TPUs",
+        "abstract": "Reinforcement learning (RL) has emerged as the de-facto paradigm for improving the reasoning capabilities of large language models (LLMs). We have developed RLAX, a scalable RL framework on TPUs. RLAX employs a parameter-server architecture. A master trainer periodically pushes updated model weights to the parameter server while a fleet of inference workers pull the latest weights and generates new rollouts. We introduce a suite of system techniques to enable scalable and preemptible RL for a diverse set of state-of-art RL algorithms. To accelerate convergence and improve model quality, we have devised new dataset curation and alignment techniques. Large-scale evaluations show that RLAX improves QwQ-32B's pass@8 accuracy by 12.8% in just 12 hours 48 minutes on 1024 v5p TPUs, while remaining robust to preemptions during training.",
+        "arxiv_id": "2512.06392"
+    },
+    "2512.06343": {
+        "SCORE": 15,
+        "ARXIVID": "2512.06343",
+        "COMMENT": "Representation Learning/Training Dynamics: analyzes BT-loss gradient bias from representation distance and proposes NormBT normalization to focus updates on prediction error, improving reward modeling.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "authors": [
+            "Tong Xie",
+            "Andrew Bai",
+            "Yuanhao Ban",
+            "Yunqi Hong",
+            "Haoyu Li",
+            "Cho-jui Hsieh"
+        ],
+        "title": "When Distance Distracts: Representation Distance Bias in BT-Loss for Reward Models",
+        "abstract": "Reward models are central to Large Language Model (LLM) alignment within the framework of RLHF. The standard objective used in reward modeling is the Bradley-Terry (BT) loss, which learns from pairwise data consisting of a pair of chosen and rejected responses. In this work, we analyze the per-sample gradient of BT-loss and show that its norm scales with two distinct components: (1) the difference in predicted rewards between chosen and rejected responses, which reflects the prediction error, and critically, (2) representation distance between the pair measured in the output space of the final layer. While the first term captures the intended training signal, we show that the second term can significantly impact the update magnitude and misalign learning. Specifically, pairs with small representation distance often receive vanishingly weak updates, even when misranked, while pairs with large distance receive disproportionately strong updates. This leads to gradients from large-distance pairs to overshadow those from small-distance pairs, where fine-grained distinctions are especially important. To overcome this limitation, we propose NormBT, an adaptive pair-wise normalization scheme that balances representation-driven effects and focuses learning signals on prediction error. NormBT is a lightweight, drop-in integration to BT loss with negligible overhead. Across various LLM backbones and datasets, NormBT improves reward model performance consistently, with notable gains of over 5% on the Reasoning category of RewardBench, which contains numerous small-distance pairs. This work reveals a key limitation in the widely used BT objective and provides a simple, effective correction.",
+        "arxiv_id": "2512.06343"
+    }
+}
