@@ -1,0 +1,32 @@
+{
+    "2512.09914": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Danyal Rehman",
+            "Tara Akhound-Sadegh",
+            "Artem Gazizov",
+            "Yoshua Bengio",
+            "Alexander Tong"
+        ],
+        "title": "FALCON: Few-step Accurate Likelihoods for Continuous Flows",
+        "abstract": "Scalable sampling of molecular states in thermodynamic equilibrium is a long-standing challenge in statistical physics. Boltzmann Generators tackle this problem by pairing a generative model, capable of exact likelihood computation, with importance sampling to obtain consistent samples under the target distribution. Current Boltzmann Generators primarily use continuous normalizing flows (CNFs) trained with flow matching for efficient training of powerful models. However, likelihood calculation for these models is extremely costly, requiring thousands of function evaluations per sample, severely limiting their adoption. In this work, we propose Few-step Accurate Likelihoods for Continuous Flows (FALCON), a method which allows for few-step sampling with a likelihood accurate enough for importance sampling applications by introducing a hybrid training objective that encourages invertibility. We show FALCON outperforms state-of-the-art normalizing flow models for molecular Boltzmann sampling and is two orders of magnitude faster than the equivalently performing CNF model.",
+        "arxiv_id": "2512.09914"
+    },
+    "2512.09929": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Arjun Parthasarathy",
+            "Nimit Kalra",
+            "Rohun Agrawal",
+            "Yann LeCun",
+            "Oumayma Bounou",
+            "Pavel Izmailov",
+            "Micah Goldblum"
+        ],
+        "title": "Closing the Train-Test Gap in World Models for Gradient-Based Planning",
+        "abstract": "World models paired with model predictive control (MPC) can be trained offline on large-scale datasets of expert trajectories and enable generalization to a wide range of planning tasks at inference time. Compared to traditional MPC procedures, which rely on slow search algorithms or on iteratively solving optimization problems exactly, gradient-based planning offers a computationally efficient alternative. However, the performance of gradient-based planning has thus far lagged behind that of other approaches. In this paper, we propose improved methods for training world models that enable efficient gradient-based planning. We begin with the observation that although a world model is trained on a next-state prediction objective, it is used at test-time to instead estimate a sequence of actions. The goal of our work is to close this train-test gap. To that end, we propose train-time data synthesis techniques that enable significantly improved gradient-based planning with existing world models. At test time, our approach outperforms or matches the classical gradient-free cross-entropy method (CEM) across a variety of object manipulation and navigation tasks in 10% of the time budget.",
+        "arxiv_id": "2512.09929"
+    }
+}
