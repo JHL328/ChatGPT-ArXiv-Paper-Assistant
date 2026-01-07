@@ -1,0 +1,30 @@
+{
+    "2601.03015": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Ana\\\"is Berkes",
+            "Vincent Taboga",
+            "Donna Vakalis",
+            "David Rolnick",
+            "Yoshua Bengio"
+        ],
+        "title": "In-Context Reinforcement Learning through Bayesian Fusion of Context and Value Prior",
+        "abstract": "In-context reinforcement learning (ICRL) promises fast adaptation to unseen environments without parameter updates, but current methods either cannot improve beyond the training distribution or require near-optimal data, limiting practical adoption. We introduce SPICE, a Bayesian ICRL method that learns a prior over Q-values via deep ensemble and updates this prior at test-time using in-context information through Bayesian updates. To recover from poor priors resulting from training on sub-optimal data, our online inference follows an Upper-Confidence Bound rule that favours exploration and adaptation. We prove that SPICE achieves regret-optimal behaviour in both stochastic bandits and finite-horizon MDPs, even when pretrained only on suboptimal trajectories. We validate these findings empirically across bandit and control benchmarks. SPICE achieves near-optimal decisions on unseen tasks, substantially reduces regret compared to prior ICRL and meta-RL approaches while rapidly adapting to unseen tasks and remaining robust under distribution shift.",
+        "arxiv_id": "2601.03015"
+    },
+    "2601.00844": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Matthieu Destrade",
+            "Oumayma Bounou",
+            "Quentin Le Lidec",
+            "Jean Ponce",
+            "Yann LeCun"
+        ],
+        "title": "Value-guided action planning with JEPA world models",
+        "abstract": "Building deep learning models that can reason about their environment requires capturing its underlying dynamics. Joint-Embedded Predictive Architectures (JEPA) provide a promising framework to model such dynamics by learning representations and predictors through a self-supervised prediction objective. However, their ability to support effective action planning remains limited. We propose an approach to enhance planning with JEPA world models by shaping their representation space so that the negative goal-conditioned value function for a reaching cost in a given environment is approximated by a distance (or quasi-distance) between state embeddings. We introduce a practical method to enforce this constraint during training and show that it leads to significantly improved planning performance compared to standard JEPA models on simple control tasks.",
+        "arxiv_id": "2601.00844"
+    }
+}
