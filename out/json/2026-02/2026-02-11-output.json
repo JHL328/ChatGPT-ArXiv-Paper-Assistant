@@ -1,0 +1,53 @@
+{
+    "2602.08235": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Jaylen Jones",
+            "Zhehao Zhang",
+            "Yuting Ning",
+            "Eric Fosler-Lussier",
+            "Pierre-Luc St-Charles",
+            "Yoshua Bengio",
+            "Dawn Song",
+            "Yu Su",
+            "Huan Sun"
+        ],
+        "title": "When Benign Inputs Lead to Severe Harms: Eliciting Unsafe Unintended Behaviors of Computer-Use Agents",
+        "abstract": "Although computer-use agents (CUAs) hold significant potential to automate increasingly complex OS workflows, they can demonstrate unsafe unintended behaviors that deviate from expected outcomes even under benign input contexts. However, exploration of this risk remains largely anecdotal, lacking concrete characterization and automated methods to proactively surface long-tail unintended behaviors under realistic CUA scenarios. To fill this gap, we introduce the first conceptual and methodological framework for unintended CUA behaviors, by defining their key characteristics, automatically eliciting them, and analyzing how they arise from benign inputs. We propose AutoElicit: an agentic framework that iteratively perturbs benign instructions using CUA execution feedback, and elicits severe harms while keeping perturbations realistic and benign. Using AutoElicit, we surface hundreds of harmful unintended behaviors from state-of-the-art CUAs such as Claude 4.5 Haiku and Opus. We further evaluate the transferability of human-verified successful perturbations, identifying persistent susceptibility to unintended behaviors across various other frontier CUAs. This work establishes a foundation for systematically analyzing unintended behaviors in realistic computer-use settings.",
+        "arxiv_id": "2602.08235"
+    },
+    "2602.09040": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Georgios Ioannides",
+            "Adrian Kieback",
+            "Judah Goldfeder",
+            "Linsey Pang",
+            "Aman Chadha",
+            "Aaron Elkins",
+            "Yann LeCun",
+            "Ravid Shwartz-Ziv"
+        ],
+        "title": "Soft Clustering Anchors for Self-Supervised Speech Representation Learning in Joint Embedding Prediction Architectures",
+        "abstract": "Joint Embedding Predictive Architectures (JEPA) offer a promising approach to self-supervised speech representation learning, but suffer from representation collapse without explicit grounding. We propose GMM-Anchored JEPA, which fits a Gaussian Mixture Model once on log-mel spectrograms and uses its frozen soft posteriors as auxiliary targets throughout training. A decaying supervision schedule allows GMM regularization to dominate early training before gradually yielding to the JEPA objective. Unlike HuBERT and WavLM, which require iterative re-clustering, our approach clusters input features once with soft rather than hard assignments. On ~50k hours of speech, GMM anchoring improves ASR (28.68% vs. 33.22% WER), emotion recognition (67.76% vs. 65.46%), and slot filling (64.7% vs. 59.1% F1) compared to a WavLM-style baseline with matched compute. Cluster analysis shows GMM-anchored representations achieve up to 98% entropy compared to 31% for WavLM-style, indicating substantially more uniform cluster utilization. Code is made available at https://github.com/gioannides/clustering-anchored-jepa.",
+        "arxiv_id": "2602.09040"
+    },
+    "2602.08968": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Lucas Maes",
+            "Quentin Le Lidec",
+            "Dan Haramati",
+            "Nassim Massaudi",
+            "Damien Scieur",
+            "Yann LeCun",
+            "Randall Balestriero"
+        ],
+        "title": "stable-worldmodel-v1: Reproducible World Modeling Research and Evaluation",
+        "abstract": "World Models have emerged as a powerful paradigm for learning compact, predictive representations of environment dynamics, enabling agents to reason, plan, and generalize beyond direct experience. Despite recent interest in World Models, most available implementations remain publication-specific, severely limiting their reusability, increasing the risk of bugs, and reducing evaluation standardization. To mitigate these issues, we introduce stable-worldmodel (SWM), a modular, tested, and documented world-model research ecosystem that provides efficient data-collection tools, standardized environments, planning algorithms, and baseline implementations. In addition, each environment in SWM enables controllable factors of variation, including visual and physical properties, to support robustness and continual learning research. Finally, we demonstrate the utility of SWM by using it to study zero-shot robustness in DINO-WM.",
+        "arxiv_id": "2602.08968"
+    }
+}
