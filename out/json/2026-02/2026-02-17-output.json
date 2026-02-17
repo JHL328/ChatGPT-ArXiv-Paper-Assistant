@@ -1,0 +1,18 @@
+{
+    "2602.14272": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Yilun Kuang",
+            "Yash Dagade",
+            "Deep Chakraborty",
+            "Erik Learned-Miller",
+            "Randall Balestriero",
+            "Tim G. J. Rudner",
+            "Yann LeCun"
+        ],
+        "title": "Radial-VCReg: More Informative Representation Learning Through Radial Gaussianization",
+        "abstract": "Self-supervised learning aims to learn maximally informative representations, but explicit information maximization is hindered by the curse of dimensionality. Existing methods like VCReg address this by regularizing first and second-order feature statistics, which cannot fully achieve maximum entropy. We propose Radial-VCReg, which augments VCReg with a radial Gaussianization loss that aligns feature norms with the Chi distribution-a defining property of high-dimensional Gaussians. We prove that Radial-VCReg transforms a broader class of distributions towards normality compared to VCReg and show on synthetic and real-world datasets that it consistently improves performance by reducing higher-order dependencies and promoting more diverse and informative representations.",
+        "arxiv_id": "2602.14272"
+    }
+}
