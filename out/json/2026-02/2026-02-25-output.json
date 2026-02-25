@@ -1,0 +1,18 @@
+{
+    "2602.20399": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Haixu Wu",
+            "Minghao Guo",
+            "Zongyi Li",
+            "Zhiyang Dou",
+            "Mingsheng Long",
+            "Kaiming He",
+            "Wojciech Matusik"
+        ],
+        "title": "GeoPT: Scaling Physics Simulation via Lifted Geometric Pre-Training",
+        "abstract": "Neural simulators promise efficient surrogates for physics simulation, but scaling them is bottlenecked by the prohibitive cost of generating high-fidelity training data. Pre-training on abundant off-the-shelf geometries offers a natural alternative, yet faces a fundamental gap: supervision on static geometry alone ignores dynamics and can lead to negative transfer on physics tasks. We present GeoPT, a unified pre-trained model for general physics simulation based on lifted geometric pre-training. The core idea is to augment geometry with synthetic dynamics, enabling dynamics-aware self-supervision without physics labels. Pre-trained on over one million samples, GeoPT consistently improves industrial-fidelity benchmarks spanning fluid mechanics for cars, aircraft, and ships, and solid mechanics in crash simulation, reducing labeled data requirements by 20-60% and accelerating convergence by 2$\\times$. These results show that lifting with synthetic dynamics bridges the geometry-physics gap, unlocking a scalable path for neural simulation and potentially beyond. Code is available at https://github.com/Physics-Scaling/GeoPT.",
+        "arxiv_id": "2602.20399"
+    }
+}
