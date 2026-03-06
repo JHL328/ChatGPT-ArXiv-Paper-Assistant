@@ -1,0 +1,54 @@
+{
+    "2603.05225": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Deming Chen",
+            "Jason Cong",
+            "Azalia Mirhoseini",
+            "Christos Kozyrakis",
+            "Subhasish Mitra",
+            "Jinjun Xiong",
+            "Cliff Young",
+            "Anima Anandkumar",
+            "Michael Littman",
+            "Aron Kirschen",
+            "Sophia Shao",
+            "Serge Leef",
+            "Naresh Shanbhag",
+            "Dejan Milojicic",
+            "Michael Schulte",
+            "Gert Cauwenberghs",
+            "Jerry M. Chow",
+            "Tri Dao",
+            "Kailash Gopalakrishnan",
+            "Richard Ho",
+            "Hoshik Kim",
+            "Kunle Olukotun",
+            "David Z. Pan",
+            "Mark Ren",
+            "Dan Roth",
+            "Aarti Singh",
+            "Yizhou Sun",
+            "Yusu Wang",
+            "Yann LeCun",
+            "Ruchir Puri"
+        ],
+        "title": "AI+HW 2035: Shaping the Next Decade",
+        "abstract": "Artificial intelligence (AI) and hardware (HW) are advancing at unprecedented rates, yet their trajectories have become inseparably intertwined. The global research community lacks a cohesive, long-term vision to strategically coordinate the development of AI and HW. This fragmentation constrains progress toward holistic, sustainable, and adaptive AI systems capable of learning, reasoning, and operating efficiently across cloud, edge, and physical environments. The future of AI depends not only on scaling intelligence, but on scaling efficiency, achieving exponential gains in intelligence per joule, rather than unbounded compute consumption. Addressing this grand challenge requires rethinking the entire computing stack. This vision paper lays out a 10-year roadmap for AI+HW co-design and co-development, spanning algorithms, architectures, systems, and sustainability. We articulate key insights that redefine scaling around energy efficiency, system-level integration, and cross-layer optimization. We identify key challenges and opportunities, candidly assess potential obstacles and pitfalls, and propose integrated solutions grounded in algorithmic innovation, hardware advances, and software abstraction. Looking ahead, we define what success means in 10 years: achieving a 1000x improvement in efficiency for AI training and inference; enabling energy-aware, self-optimizing systems that seamlessly span cloud, edge, and physical AI; democratizing access to advanced AI infrastructure; and embedding human-centric principles into the design of intelligent systems. Finally, we outline concrete action items for academia, industry, government, and the broader community, calling for coordinated national initiatives, shared infrastructure, workforce development, cross-agency collaboration, and sustained public-private partnerships to ensure that AI+HW co-design becomes a unifying long-term mission.",
+        "arxiv_id": "2603.05225"
+    },
+    "2603.05498": {
+        "COMMENT": "Author match",
+        "SCORE": 20.0,
+        "authors": [
+            "Shangwen Sun",
+            "Alfredo Canziani",
+            "Yann LeCun",
+            "Jiachen Zhu"
+        ],
+        "title": "The Spike, the Sparse and the Sink: Anatomy of Massive Activations and Attention Sinks",
+        "abstract": "We study two recurring phenomena in Transformer language models: massive activations, in which a small number of tokens exhibit extreme outliers in a few channels, and attention sinks, in which certain tokens attract disproportionate attention mass regardless of semantic relevance. Prior work observes that these phenomena frequently co-occur and often involve the same tokens, but their functional roles and causal relationship remain unclear. Through systematic experiments, we show that the co-occurrence is largely an architectural artifact of modern Transformer design, and that the two phenomena serve related but distinct functions. Massive activations operate globally: they induce near-constant hidden representations that persist across layers, effectively functioning as implicit parameters of the model. Attention sinks operate locally: they modulate attention outputs across heads and bias individual heads toward short-range dependencies. We identify the pre-norm configuration as the key choice that enables the co-occurrence, and show that ablating it causes the two phenomena to decouple.",
+        "arxiv_id": "2603.05498"
+    }
+}
