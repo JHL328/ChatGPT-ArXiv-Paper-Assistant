@@ -5,28 +5,17 @@
 | **Token**   | 0        | 0            | 0       |
 | **Cost**    | $0.0     | $0.0         | $0.0    |
 
-Total arXiv papers: 699
+Total arXiv papers: 782
 
-Total scanned papers: 453
+Total scanned papers: 466
 
-Total relevant papers: 1
+Total relevant papers: 0
 
 **Table of contents with paper titles:**
 
-1. [Hierarchical Planning with Latent World Models](#user-content-link1)
-**Authors:** Wancong Zhang, Basile Terver, Artem Zholus, Soham Chitnis, Harsh Sutaria, Mido Assran, Randall Balestriero, Amir Bar, Adrien Bardes, Yann LeCun, Nicolas Ballas
+
 
 ---
-
-## 1. [Hierarchical Planning with Latent World Models](https://arxiv.org/abs/2604.03208) <a id="link1"></a>
-
-**ArXiv ID:** 2604.03208
-
-**Authors:** Wancong Zhang, Basile Terver, Artem Zholus, Soham Chitnis, Harsh Sutaria, Mido Assran, Randall Balestriero, Amir Bar, Adrien Bardes, Yann LeCun, Nicolas Ballas
-
-**Abstract:** Model predictive control (MPC) with learned world models has emerged as a promising paradigm for embodied control, particularly for its ability to generalize zero-shot when deployed in new environments. However, learned world models often struggle with long-horizon control due to the accumulation of prediction errors and the exponentially growing search space. In this work, we address these challenges by learning latent world models at multiple temporal scales and performing hierarchical planning across these scales, enabling long-horizon reasoning while substantially reducing inference-time planning complexity. Our approach serves as a modular planning abstraction that applies across diverse latent world-model architectures and domains. We demonstrate that this hierarchical approach enables zero-shot control on real-world non-greedy robotic tasks, achieving a 70% success rate on pick-&-place using only a final goal specification, compared to 0% for a single-level world model. In addition, across physics-based simulated environments including push manipulation and maze navigation, hierarchical planning achieves higher success while requiring up to 4x less planning-time compute.
-
-**Comment:** Author match
 
 
 
