@@ -1,13 +1,13 @@
-# Personalized Daily ArXiv Papers 2026-10-13
+# Personalized Daily ArXiv Papers 2026-10-22
 
 | *[gpt-5]*   | Prompt   | Completion   | Total   |
 |:-----------:|:--------:|:------------:|:-------:|
 | **Token**   | 0        | 0            | 0       |
 | **Cost**    | $0.0     | $0.0         | $0.0    |
 
-Total arXiv papers: 313
+Total arXiv papers: 852
 
-Total scanned papers: 161
+Total scanned papers: 561
 
 Total relevant papers: 0
 
